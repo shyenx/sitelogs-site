@@ -1,7 +1,7 @@
 # sitelogs-site
 
-Marketing site for [SiteLogs](https://github.com/shyenx/sitelogs) — a
-local-first browsing-analytics Chrome extension.
+Marketing site for SiteLogs — a local-first browsing-analytics Chrome
+extension.
 
 ## Stack
 
