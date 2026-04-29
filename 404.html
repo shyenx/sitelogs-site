@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>SiteLogs — Page not found</title>
+<link rel="icon" type="image/png" href="./assets/icon-128.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Lora:wght@600&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: {
+    colors: { ember: '#d97757', cream: '#faf9f5', ink: '#1f1d1a', muted: '#6b665a' },
+  } } };
+</script>
+<style>
+  body { font-family: Inter, system-ui, sans-serif; }
+  h1 { font-family: Lora, Georgia, serif; }
+</style>
+</head>
+<body class="bg-cream text-ink min-h-screen flex items-center justify-center">
+  <main class="text-center px-6">
+    <img src="./assets/logo.svg" alt="" class="w-12 h-12 mx-auto mb-6" />
+    <h1 class="text-6xl font-semibold mb-4">404</h1>
+    <p class="text-muted text-lg mb-8">That page isn't here.</p>
+    <a href="./" class="inline-block bg-ink text-cream px-6 py-2.5 rounded-full font-medium hover:opacity-90">
+      Go home
+    </a>
+  </main>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>SiteLogs — Privacy Policy</title>
+<meta name="description" content="SiteLogs is local-first. Your browsing data never leaves your device." />
+<link rel="icon" type="image/png" href="./assets/icon-128.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600;700&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: {
+    colors: { ember: '#d97757', cream: '#faf9f5', ink: '#1f1d1a', stone: '#cdc9bf', line: '#e6e2d6', muted: '#6b665a' },
+    fontFamily: { ui: ['Inter','system-ui','sans-serif'], display: ['Lora','Georgia','serif'] },
+  } } };
+</script>
+<style>
+  body { font-family: Inter, system-ui, sans-serif; }
+  h1, h2, h3, .font-display { font-family: Lora, Georgia, serif; }
+  .prose h2 { margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1.75rem; font-weight: 600; }
+  .prose h3 { margin-top: 1.75rem; margin-bottom: .5rem; font-size: 1.15rem; font-weight: 600; }
+  .prose p, .prose ul, .prose ol { margin-bottom: 1rem; line-height: 1.75; }
+  .prose ul { list-style: disc; padding-left: 1.5rem; }
+  .prose code { background: #e6e2d6; padding: 1px 6px; border-radius: 4px; font-size: 0.9em; }
+  .prose strong { font-weight: 600; color: #1f1d1a; }
+  .prose table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.95em; }
+  .prose th, .prose td { padding: 0.6rem 0.75rem; border-bottom: 1px solid #e6e2d6; text-align: left; vertical-align: top; }
+  .prose th { font-weight: 600; }
+</style>
+</head>
+<body class="bg-cream text-ink antialiased">
+
+<header class="w-full max-w-6xl mx-auto px-6 py-8 flex items-center justify-between">
+  <a href="./" class="flex items-center gap-2.5">
+    <img src="./assets/logo.svg" alt="" class="w-7 h-7" />
+    <span class="font-display text-2xl font-semibold tracking-tight">SiteLogs</span>
+  </a>
+  <nav class="text-sm text-muted flex gap-6">
+    <a href="./guide.html" class="hover:text-ink">Guide</a>
+    <a href="./privacy.html" class="text-ink">Privacy</a>
+    <a href="./contact.html" class="hover:text-ink">Contact</a>
+    <a href="https://github.com/shyenx/sitelogs" class="hover:text-ink" rel="noopener">GitHub</a>
+  </nav>
+</header>
+
+<main class="w-full max-w-3xl mx-auto px-6 py-12">
+  <p class="font-ui text-xs uppercase tracking-[0.2em] text-ember mb-4">Legal</p>
+  <h1 class="font-display text-5xl font-semibold tracking-tight mb-4">Privacy Policy</h1>
+  <p class="text-sm text-muted mb-12">Last updated: 2026-04-29</p>
+
+  <article class="prose">
+    <h2>TL;DR</h2>
+    <p>SiteLogs is a Chrome extension that records how long you spend on each website <strong>on your own machine</strong>. None of your browsing data leaves your device. We don't have a server. We can't see what you visit.</p>
+
+    <h2>What data is recorded</h2>
+    <p>When you have a normal http(s) tab in focus, SiteLogs records, for each session:</p>
+    <ul>
+      <li><strong>URL</strong> (full URL including path and query string)</li>
+      <li><strong>Page title</strong></li>
+      <li><strong>Domain</strong></li>
+      <li><strong>A category</strong> automatically chosen from a built-in dictionary or your own rules</li>
+      <li><strong>Start time</strong> and <strong>end time</strong> of the focused session</li>
+      <li><strong>Active milliseconds</strong> (focus time minus idle gaps)</li>
+    </ul>
+    <p>The extension <strong>does not</strong> record:</p>
+    <ul>
+      <li>Page content (HTML / text / DOM)</li>
+      <li>Form input, passwords, tokens, cookies</li>
+      <li>Network requests made by pages</li>
+      <li>Anything from <code>chrome://</code>, <code>chrome-extension://</code>, or <code>file://</code> URLs</li>
+      <li>Anything from incognito / private windows (Chrome blocks extensions there by default)</li>
+      <li>Anything from domains you add to the <strong>ignore list</strong> in Settings</li>
+    </ul>
+
+    <h2>Where the data is stored</h2>
+    <ul>
+      <li><strong>Visit records and aggregated stats</strong>: in your browser's IndexedDB, on this device only.</li>
+      <li><strong>User preferences</strong> (rules, ignore list, tags, pinned sites, focus budgets): in <code>chrome.storage.sync</code>, which Chrome syncs across your own Chrome profiles when you're signed in to Chrome. This is Google's sync service; the SiteLogs author never sees it.</li>
+      <li><strong>Tracker runtime state</strong> (the current active-tab session): in <code>chrome.storage.session</code>, which Chrome wipes when you close the browser.</li>
+    </ul>
+
+    <h2>Permissions and why we need them</h2>
+    <table>
+      <thead><tr><th>Permission</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td><code>tabs</code></td><td>Read which tab is active and its URL/title to time it.</td></tr>
+        <tr><td><code>tabGroups</code></td><td>Required for the "Organize" feature to group same-domain tabs.</td></tr>
+        <tr><td><code>history</code></td><td>Reserved for an opt-in import feature; not actively used today.</td></tr>
+        <tr><td><code>storage</code></td><td>Read/write the local databases above.</td></tr>
+        <tr><td><code>idle</code></td><td>Detect when you've been away from the keyboard so we don't count idle time as active.</td></tr>
+        <tr><td><code>favicon</code></td><td>Render site icons inline using Chrome's built-in favicon service. No external favicon CDN is contacted.</td></tr>
+        <tr><td><code>sessions</code></td><td>Required to support the Sessions feature (save and restore groups of tabs).</td></tr>
+        <tr><td><code>alarms</code></td><td>Schedule a 60-second heartbeat so the service worker writes your visits even if Chrome killed it.</td></tr>
+        <tr><td><code>host_permissions: &lt;all_urls&gt;</code></td><td>Inject a tiny visibility/heartbeat script that posts only "visible"/"hidden" events and throttled "user is interacting" pings to the background. The script does not read page DOM, network, or credentials. Source: <a href="https://github.com/shyenx/sitelogs/blob/main/src/content/visibility.ts" rel="noopener" class="text-ember underline">visibility.ts</a></td></tr>
+      </tbody>
+    </table>
+
+    <h2>What is sent over the network</h2>
+    <p><strong>Nothing about your browsing.</strong></p>
+    <p>There are exactly two outbound calls SiteLogs is responsible for:</p>
+    <ol class="list-decimal pl-6 mb-4 space-y-3">
+      <li><strong>Google Fonts CSS</strong> — the dashboard loads Inter and Lora from <code>fonts.googleapis.com</code> on the new tab. This exposes your IP address to Google Fonts the same way most websites do. We will self-host fonts in a future release to remove this dependency.</li>
+      <li><strong>Lemon Squeezy</strong> (<code>api.lemonsqueezy.com</code>) — used only when you activate, validate, or deactivate a license key:
+        <ul>
+          <li>When you click "Buy", we open Lemon Squeezy's hosted checkout page in a new tab. You enter your email + payment details there; SiteLogs never sees them.</li>
+          <li>After payment, you receive a license key by email. When you paste it into the activation field, we POST <code>{license_key, instance_name}</code> to <code>api.lemonsqueezy.com/v1/licenses/activate</code> and store the returned <code>instance_id</code> and your customer email locally so we can show "Activated · you@example.com" in Settings.</li>
+          <li>About once per week, we re-validate the license to detect refunds or revocations. If you click "Deactivate" we POST a deactivation and clear local state.</li>
+          <li>The customer email is the only personal datum that returns to SiteLogs from Lemon Squeezy.</li>
+          <li>Read <a href="https://www.lemonsqueezy.com/privacy" rel="noopener" class="text-ember underline">Lemon Squeezy's privacy policy</a> for what they retain on their side.</li>
+        </ul>
+      </li>
+    </ol>
+    <p>No analytics, no telemetry, no crash reporting is sent.</p>
+
+    <h2>Sync</h2>
+    <p>If you're signed in to Chrome and have sync enabled, your <strong>rules, tags, pinned sites and budgets</strong> travel with your Chrome profile via <code>chrome.storage.sync</code>. <strong>Visits and stats do not</strong> — they stay on each device.</p>
+
+    <h2>Data retention and deletion</h2>
+    <p>We never delete your data automatically. You can:</p>
+    <ul>
+      <li>Open Settings → "Data" → <strong>Export JSON</strong> to back up everything.</li>
+      <li>Open Settings → "Data" → <strong>Wipe all data</strong> to delete everything from IndexedDB and <code>chrome.storage</code>.</li>
+    </ul>
+    <p>Uninstalling the extension removes everything stored in your browser.</p>
+
+    <h2>Children</h2>
+    <p>The extension does not knowingly target users under 13.</p>
+
+    <h2>Changes to this policy</h2>
+    <p>We will update the "Last updated" date when we change this document. The canonical version is at <a href="./privacy.html" class="text-ember underline">this page</a>; a Markdown mirror is kept at <a href="https://github.com/shyenx/sitelogs/blob/main/PRIVACY.md" rel="noopener" class="text-ember underline">github.com/shyenx/sitelogs/PRIVACY.md</a>.</p>
+
+    <h2>Contact</h2>
+    <p>Bug or question: see our <a href="./contact.html" class="text-ember underline">Contact</a> page.</p>
+  </article>
+</main>
+
+<footer class="w-full max-w-6xl mx-auto px-6 py-12 mt-12 border-t border-line">
+  <div class="flex flex-wrap items-center justify-between gap-6 text-sm text-muted">
+    <div class="flex items-center gap-2">
+      <img src="./assets/logo.svg" alt="" class="w-5 h-5" />
+      <span>© 2026 SiteLogs</span>
+    </div>
+    <div class="flex flex-wrap gap-6">
+      <a href="./guide.html" class="hover:text-ink">Guide</a>
+      <a href="./privacy.html" class="hover:text-ink">Privacy</a>
+      <a href="./contact.html" class="hover:text-ink">Contact</a>
+      <a href="https://github.com/shyenx/sitelogs" class="hover:text-ink" rel="noopener">Source on GitHub</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

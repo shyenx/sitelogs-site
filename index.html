@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>SiteLogs — Local-first browsing analytics & tab manager for Chrome</title>
+<meta name="description" content="See where your time goes online. Local-first browsing analytics, tab grouping, focus blocks. 7-day free trial, then $15 lifetime." />
+<meta property="og:title" content="SiteLogs — Browsing time, made visible" />
+<meta property="og:description" content="Local-first browsing analytics. Your data never leaves your machine." />
+<meta property="og:image" content="./assets/promo-tile.svg" />
+<meta property="og:type" content="website" />
+<link rel="icon" type="image/png" href="./assets/icon-128.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600;700&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ember: '#d97757', cream: '#faf9f5', ink: '#1f1d1a',
+          stone: '#cdc9bf', line: '#e6e2d6', muted: '#6b665a',
+        },
+        fontFamily: {
+          ui: ['Inter', 'system-ui', 'sans-serif'],
+          display: ['Lora', 'Georgia', 'serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  body { font-family: Inter, system-ui, sans-serif; }
+  h1, h2, h3, .font-display { font-family: Lora, Georgia, serif; }
+</style>
+</head>
+<body class="bg-cream text-ink antialiased">
+
+<!-- ═══ Header ═══ -->
+<header class="w-full max-w-6xl mx-auto px-6 py-8 flex items-center justify-between">
+  <a href="./" class="flex items-center gap-2.5">
+    <img src="./assets/logo.svg" alt="" class="w-7 h-7" />
+    <span class="font-display text-2xl font-semibold tracking-tight">SiteLogs</span>
+  </a>
+  <nav class="text-sm text-muted flex gap-6">
+    <a href="./guide.html" class="hover:text-ink">Guide</a>
+    <a href="./privacy.html" class="hover:text-ink">Privacy</a>
+    <a href="./contact.html" class="hover:text-ink">Contact</a>
+    <a href="https://github.com/shyenx/sitelogs" class="hover:text-ink" rel="noopener">GitHub</a>
+  </nav>
+</header>
+
+<!-- ═══ Hero ═══ -->
+<section class="w-full max-w-6xl mx-auto px-6 pt-16 pb-24">
+  <div class="max-w-3xl">
+    <p class="font-ui text-xs uppercase tracking-[0.2em] text-ember mb-4">Browsing analytics · Local-first</p>
+    <h1 class="font-display text-5xl md:text-6xl font-semibold tracking-tight leading-[1.05]">
+      See where your time<br/>actually goes online.
+    </h1>
+    <p class="mt-6 text-lg text-muted leading-relaxed max-w-2xl">
+      SiteLogs is a Chrome extension that quietly records how long you spend
+      on each site — locally, on your machine. Daily, weekly, yearly views
+      Chrome's History never gave you. Tab organizer included.
+    </p>
+    <div class="mt-10 flex flex-wrap items-center gap-3">
+      <a href="https://sitelogs.lemonsqueezy.com/buy/ede8fe62-bd81-4d3d-8301-ced40535196f?logo=0&checkout%5Bdiscount_code%5D=KXMZIWNQ"
+         class="inline-flex items-center gap-2 bg-ink text-cream px-6 py-3 rounded-full font-medium hover:opacity-90 transition">
+        Buy lifetime · <span class="line-through opacity-50">$15</span> <span>$10 early bird</span>
+      </a>
+      <a href="#install" class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-line text-ink hover:bg-stone/20">
+        Install for Chrome
+      </a>
+      <span class="text-sm text-muted">7-day free trial · no card up front</span>
+    </div>
+  </div>
+
+  <!-- Hero narrative box -->
+  <div class="mt-16 border border-line rounded-2xl bg-white/40 p-8 max-w-3xl">
+    <div class="text-xs uppercase tracking-[0.18em] text-muted mb-2">Today, in one line</div>
+    <div class="font-display text-2xl leading-relaxed">
+      Online <span class="text-ember">1h 14m</span>
+      &middot; <span class="text-muted">↑ +12% vs yesterday</span><br/>
+      Longest <span class="text-ink">github.com 47m</span>
+      &middot; <span class="text-muted">switches/hr 8</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Features ═══ -->
+<section class="w-full max-w-6xl mx-auto px-6 py-24 border-t border-line">
+  <h2 class="font-display text-3xl font-semibold mb-12">What it does</h2>
+  <div class="grid md:grid-cols-2 gap-x-12 gap-y-10">
+    <Feature title="📊 Time-spent visibility">
+      Active milliseconds per visit, per URL, per domain, per category.
+      Idle ≥60s automatically pauses tracking, so the number is real focus,
+      not "tab open duration".
+    </Feature>
+    <Feature title="🕒 24×7 heatmap">
+      A GitHub-style grid showing when you actually browse. Switch between
+      calendar years from one dropdown.
+    </Feature>
+    <Feature title="🎯 Focus blocks">
+      Continuous reading sessions ≥10 min surfaced as "best work today".
+      Set per-category daily focus budgets with progress bars.
+    </Feature>
+    <Feature title="📈 Period-over-period">
+      Today vs your average Tuesday, this week vs last week, with weekday
+      baselines. New / lapsed domains show what you started and what you
+      dropped.
+    </Feature>
+    <Feature title="⚡ One-click tab organize">
+      Dedupe by URL, group by domain into Chrome's native colored tab
+      groups. Pinned tabs untouched. Save the current window as a named
+      Session, restore later.
+    </Feature>
+    <Feature title="🏷 Tags & rules">
+      Tag any URL/domain. Custom domain or regex rules override the built-in
+      200+ category dictionary. Filter History by tag.
+    </Feature>
+  </div>
+</section>
+
+<!-- ═══ Privacy ═══ -->
+<section id="privacy-callout" class="w-full max-w-6xl mx-auto px-6 py-24 border-t border-line">
+  <div class="max-w-3xl">
+    <h2 class="font-display text-3xl font-semibold mb-6">Privacy by design</h2>
+    <ul class="space-y-3 text-lg leading-relaxed">
+      <li>🚫 No telemetry. No analytics. No external server.</li>
+      <li>📦 All visit data lives in your browser's <strong>IndexedDB</strong> on this device.</li>
+      <li>🔄 The only outbound calls are Google Fonts CSS (will self-host) and Lemon Squeezy (only when you click Buy / paste a license key).</li>
+      <li>📤 One click in Settings exports everything to JSON, or wipes it.</li>
+      <li>🔍 Full source code is public on <a href="https://github.com/shyenx/sitelogs" class="text-ember underline" rel="noopener">GitHub</a> — auditable, no obfuscation.</li>
+    </ul>
+    <p class="mt-6 text-sm text-muted">
+      Read the full <a href="./privacy.html" class="underline">Privacy Policy</a>.
+    </p>
+  </div>
+</section>
+
+<!-- ═══ Pricing ═══ -->
+<section id="pricing" class="w-full max-w-6xl mx-auto px-6 py-24 border-t border-line">
+  <h2 class="font-display text-3xl font-semibold mb-12">One price. No subscription.</h2>
+  <div class="grid md:grid-cols-2 gap-6 max-w-4xl">
+    <div class="border border-line rounded-2xl p-8 bg-white/40">
+      <div class="text-sm uppercase tracking-wider text-muted mb-2">Lifetime</div>
+      <div class="font-display text-5xl font-semibold mb-1">$15</div>
+      <div class="text-sm text-muted mb-6">One-time · keep forever</div>
+      <ul class="space-y-2 text-sm mb-8">
+        <li>✓ All current and future features</li>
+        <li>✓ Activate on multiple devices</li>
+        <li>✓ 30-day money-back guarantee</li>
+      </ul>
+      <a href="https://sitelogs.lemonsqueezy.com/buy/ede8fe62-bd81-4d3d-8301-ced40535196f?logo=0"
+         class="block text-center bg-ink text-cream px-6 py-3 rounded-full font-medium hover:opacity-90">
+        Buy $15 lifetime
+      </a>
+    </div>
+    <div class="border-2 border-ember rounded-2xl p-8 bg-ember/5 relative">
+      <span class="absolute -top-3 left-6 bg-ember text-cream text-xs px-3 py-1 rounded-full font-medium">Early bird · first 100</span>
+      <div class="text-sm uppercase tracking-wider text-ember mb-2">Lifetime · early bird</div>
+      <div class="font-display text-5xl font-semibold mb-1">$10</div>
+      <div class="text-sm text-muted mb-6">$5 off · while supplies last</div>
+      <ul class="space-y-2 text-sm mb-8">
+        <li>✓ Same product, same lifetime access</li>
+        <li>✓ Code applied automatically</li>
+        <li>✓ 30-day money-back guarantee</li>
+      </ul>
+      <a href="https://sitelogs.lemonsqueezy.com/buy/ede8fe62-bd81-4d3d-8301-ced40535196f?logo=0&checkout%5Bdiscount_code%5D=KXMZIWNQ"
+         class="block text-center bg-ember text-cream px-6 py-3 rounded-full font-medium hover:opacity-90">
+        Buy $10 early bird
+      </a>
+    </div>
+  </div>
+  <p class="mt-8 text-sm text-muted max-w-2xl">
+    7-day free trial — no credit card up front. After purchase you'll receive a
+    license key by email; paste it into Settings → License to unlock. Payments
+    are processed by <a href="https://www.lemonsqueezy.com" class="underline" rel="noopener">Lemon Squeezy</a>.
+  </p>
+</section>
+
+<!-- ═══ Install ═══ -->
+<section id="install" class="w-full max-w-6xl mx-auto px-6 py-24 border-t border-line">
+  <h2 class="font-display text-3xl font-semibold mb-6">Install</h2>
+  <div class="grid md:grid-cols-2 gap-8">
+    <div class="border border-line rounded-2xl p-8 bg-white/40">
+      <h3 class="font-display text-xl font-semibold mb-3">Chrome Web Store</h3>
+      <p class="text-muted mb-6">Pending review. When live, install in two clicks.</p>
+      <button disabled class="w-full bg-stone/40 text-muted px-6 py-3 rounded-full cursor-not-allowed">
+        Coming soon
+      </button>
+    </div>
+    <div class="border border-line rounded-2xl p-8 bg-white/40">
+      <h3 class="font-display text-xl font-semibold mb-3">Build from source</h3>
+      <p class="text-muted mb-4">For technical users — clone, build, load unpacked.</p>
+      <pre class="bg-ink text-cream text-xs p-4 rounded-lg overflow-x-auto"><code>git clone https://github.com/shyenx/sitelogs
+cd sitelogs &amp;&amp; npm install &amp;&amp; npm run build</code></pre>
+      <p class="text-xs text-muted mt-3">Then load <code>dist/</code> via <code>chrome://extensions</code> → Developer mode → Load unpacked.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Footer ═══ -->
+<footer class="w-full max-w-6xl mx-auto px-6 py-12 border-t border-line">
+  <div class="flex flex-wrap items-center justify-between gap-6 text-sm text-muted">
+    <div class="flex items-center gap-2">
+      <img src="./assets/logo.svg" alt="" class="w-5 h-5" />
+      <span>© 2026 SiteLogs</span>
+    </div>
+    <div class="flex flex-wrap gap-6">
+      <a href="./guide.html" class="hover:text-ink">Guide</a>
+      <a href="./privacy.html" class="hover:text-ink">Privacy</a>
+      <a href="./contact.html" class="hover:text-ink">Contact</a>
+      <a href="https://github.com/shyenx/sitelogs" class="hover:text-ink" rel="noopener">Source on GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Custom <Feature> via inline component pattern (simulated) -->
+<script>
+  // Replace <Feature> tags with proper markup since this is plain HTML
+  document.querySelectorAll('Feature').forEach(el => {
+    const title = el.getAttribute('title');
+    const body = el.innerHTML;
+    const div = document.createElement('div');
+    div.innerHTML = `<h3 class="font-display text-xl font-semibold mb-2">${title}</h3><p class="text-muted leading-relaxed">${body}</p>`;
+    el.replaceWith(div);
+  });
+</script>
+
+</body>
+</html>

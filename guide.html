@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>SiteLogs — User Guide</title>
+<meta name="description" content="How to install, use, and get the most out of SiteLogs." />
+<link rel="icon" type="image/png" href="./assets/icon-128.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600;700&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: {
+    colors: { ember: '#d97757', cream: '#faf9f5', ink: '#1f1d1a', stone: '#cdc9bf', line: '#e6e2d6', muted: '#6b665a' },
+    fontFamily: { ui: ['Inter','system-ui','sans-serif'], display: ['Lora','Georgia','serif'] },
+  } } };
+</script>
+<style>
+  body { font-family: Inter, system-ui, sans-serif; }
+  h1, h2, h3, h4, .font-display { font-family: Lora, Georgia, serif; }
+  .prose h2 { margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1.75rem; font-weight: 600; }
+  .prose h3 { margin-top: 2rem; margin-bottom: .75rem; font-size: 1.25rem; font-weight: 600; }
+  .prose p, .prose ul, .prose ol { margin-bottom: 1rem; line-height: 1.7; }
+  .prose ul { list-style: disc; padding-left: 1.5rem; }
+  .prose ol { list-style: decimal; padding-left: 1.5rem; }
+  .prose code { background: #e6e2d6; padding: 1px 6px; border-radius: 4px; font-size: 0.9em; }
+  .prose kbd { background: #fff; border: 1px solid #cdc9bf; border-bottom-width: 2px; padding: 1px 6px; border-radius: 4px; font-size: 0.85em; }
+  .prose strong { font-weight: 600; color: #1f1d1a; }
+</style>
+</head>
+<body class="bg-cream text-ink antialiased">
+
+<header class="w-full max-w-6xl mx-auto px-6 py-8 flex items-center justify-between">
+  <a href="./" class="flex items-center gap-2.5">
+    <img src="./assets/logo.svg" alt="" class="w-7 h-7" />
+    <span class="font-display text-2xl font-semibold tracking-tight">SiteLogs</span>
+  </a>
+  <nav class="text-sm text-muted flex gap-6">
+    <a href="./guide.html" class="text-ink">Guide</a>
+    <a href="./privacy.html" class="hover:text-ink">Privacy</a>
+    <a href="./contact.html" class="hover:text-ink">Contact</a>
+    <a href="https://github.com/shyenx/sitelogs" class="hover:text-ink" rel="noopener">GitHub</a>
+  </nav>
+</header>
+
+<main class="w-full max-w-3xl mx-auto px-6 py-12">
+  <p class="font-ui text-xs uppercase tracking-[0.2em] text-ember mb-4">Documentation</p>
+  <h1 class="font-display text-5xl font-semibold tracking-tight mb-6">User Guide</h1>
+  <p class="text-lg text-muted mb-12">
+    Everything you need to know to install, configure, and get the most out of SiteLogs.
+  </p>
+
+  <nav class="border border-line rounded-xl p-6 mb-12 bg-white/40">
+    <div class="text-xs uppercase tracking-wider text-muted mb-3">On this page</div>
+    <ul class="text-sm space-y-1.5">
+      <li><a href="#install" class="text-ember hover:underline">1. Install</a></li>
+      <li><a href="#first-run" class="text-ember hover:underline">2. First run</a></li>
+      <li><a href="#tracking" class="text-ember hover:underline">3. How time tracking works</a></li>
+      <li><a href="#tabs" class="text-ember hover:underline">4. Tab organizer</a></li>
+      <li><a href="#sessions" class="text-ember hover:underline">5. Sessions</a></li>
+      <li><a href="#tags-rules" class="text-ember hover:underline">6. Tags &amp; classification rules</a></li>
+      <li><a href="#license" class="text-ember hover:underline">7. Activating your license</a></li>
+      <li><a href="#shortcuts" class="text-ember hover:underline">8. Keyboard shortcuts</a></li>
+      <li><a href="#data" class="text-ember hover:underline">9. Export &amp; reset</a></li>
+      <li><a href="#faq" class="text-ember hover:underline">10. FAQ &amp; troubleshooting</a></li>
+    </ul>
+  </nav>
+
+  <article class="prose">
+    <h2 id="install">1. Install</h2>
+    <p><strong>From Chrome Web Store</strong> (recommended): once approved, click "Install" on the listing. The dashboard opens automatically when you create a new tab.</p>
+    <p><strong>From source</strong> (technical users):</p>
+    <ol>
+      <li><code>git clone https://github.com/shyenx/sitelogs</code></li>
+      <li><code>cd sitelogs &amp;&amp; npm install &amp;&amp; npm run build</code></li>
+      <li>Open <code>chrome://extensions</code>, enable <strong>Developer mode</strong>, click <strong>Load unpacked</strong>, select the <code>dist/</code> folder.</li>
+    </ol>
+
+    <h2 id="first-run">2. First run</h2>
+    <p>SiteLogs replaces Chrome's default new-tab page with the dashboard. The first time you open it you'll see an empty Overview — that's expected. Browse normally for a few minutes, then come back; the heartbeat persists every 60 seconds.</p>
+    <p>The 7-day free trial starts now. A small pill at the bottom-right shows the time remaining; you can dismiss it any time.</p>
+
+    <h2 id="tracking">3. How time tracking works</h2>
+    <p>SiteLogs counts <strong>active milliseconds</strong> — the time you're actually focused on a tab — not "tab open duration". The mechanism:</p>
+    <ul>
+      <li>Chrome's native <code>idle</code> API marks you "idle" after 60 s without keyboard or mouse input. SiteLogs pauses the timer for that period.</li>
+      <li>A tiny visibility script tracks tab focus and throttled interaction pings (≤ once per 10 s). It does <strong>not</strong> read page DOM, network, cookies, or form data.</li>
+      <li>When the service worker is killed by Chrome (Manifest V3 behavior), an <code>alarms</code>-driven 60-second heartbeat flushes the in-flight session to IndexedDB so nothing is lost.</li>
+      <li><code>chrome://</code>, <code>chrome-extension://</code>, <code>file://</code>, and incognito tabs are <strong>never</strong> tracked. Domains in your ignore list are also skipped.</li>
+    </ul>
+
+    <h2 id="tabs">4. Tab organizer</h2>
+    <p>The <strong>Tabs</strong> page lists every open tab in your current window:</p>
+    <ul>
+      <li><strong>✨ Organize</strong> — closes duplicate URLs (keeps the most recently used one) and groups remaining tabs by domain into Chrome's native colored tab groups. Pinned tabs stay put.</li>
+      <li><strong>Filters</strong> — show only duplicates or "cold" tabs (>3 days unused).</li>
+      <li><strong>Group by</strong> — switch between domain and category grouping.</li>
+      <li><strong>Save as session</strong> — snapshot the current window for later restore.</li>
+    </ul>
+
+    <h2 id="sessions">5. Sessions</h2>
+    <p>A Session is a named snapshot of all tabs in a window. Use it to switch between contexts (work / research / personal).</p>
+    <ul>
+      <li>Save: Tabs page → "Save as session" → enter a name.</li>
+      <li>Restore: Sessions page → "Restore in new window".</li>
+      <li>Sessions are stored locally and don't sync across devices.</li>
+    </ul>
+
+    <h2 id="tags-rules">6. Tags &amp; classification rules</h2>
+    <p>SiteLogs ships with a 200+ entry domain → category dictionary (AI / Tech / Social / Video / News / Shopping / Docs / Tools / Work / Finance / Research / Leisure / Other). Override it any way you like:</p>
+    <ul>
+      <li><strong>Tags</strong> — attach freeform tags to URLs or domains directly from Tabs / History rows. Filter History by tag.</li>
+      <li><strong>Domain rules</strong> (Settings → Rules) — pin a single domain to a custom category.</li>
+      <li><strong>Regex rules</strong> — match URL patterns. First-match wins.</li>
+      <li><strong>Ignore list</strong> — domains never tracked at all.</li>
+      <li><strong>Focus budgets</strong> — daily minute caps per category, with progress bars on the Overview.</li>
+    </ul>
+
+    <h2 id="license">7. Activating your license</h2>
+    <p>After a successful purchase via Lemon Squeezy you'll receive a license key by email (format: <code>XXXX-XXXX-XXXX-XXXX-XXXX</code>). To activate:</p>
+    <ol>
+      <li>Open the dashboard (a new tab) and go to <strong>Settings → License</strong>.</li>
+      <li>Paste the key into the activation field and click <strong>Activate</strong>.</li>
+      <li>The page reloads — you should see "Lifetime license active · &lt;your email&gt;".</li>
+    </ol>
+    <p>One license key activates on multiple devices. To free up a slot, click <strong>Deactivate this device</strong> in Settings.</p>
+
+    <h2 id="shortcuts">8. Keyboard shortcuts</h2>
+    <ul>
+      <li><kbd>/</kbd> — focus the global search box on History</li>
+      <li><kbd>g</kbd> then <kbd>o</kbd> — Overview</li>
+      <li><kbd>g</kbd> then <kbd>t</kbd> — Tabs</li>
+      <li><kbd>g</kbd> then <kbd>h</kbd> — History</li>
+      <li><kbd>g</kbd> then <kbd>s</kbd> — Sessions</li>
+      <li><kbd>g</kbd> then <kbd>a</kbd> — Tags</li>
+      <li><kbd>g</kbd> then <kbd>,</kbd> — Settings</li>
+    </ul>
+
+    <h2 id="data">9. Export &amp; reset</h2>
+    <p>Settings → Data:</p>
+    <ul>
+      <li><strong>Export JSON</strong> — downloads a complete dump of visit records and aggregates.</li>
+      <li><strong>Wipe all data</strong> — clears IndexedDB and chrome.storage. Cannot be undone.</li>
+      <li>Uninstalling the extension also removes everything stored in your browser.</li>
+    </ul>
+
+    <h2 id="faq">10. FAQ &amp; troubleshooting</h2>
+    <h3>Why is my "active time" lower than the time the tab was open?</h3>
+    <p>Because the number is real focus time minus idle gaps. If you opened a tab and then walked away for 10 minutes, those 10 minutes are not counted. That's the whole point.</p>
+
+    <h3>Why does today look empty?</h3>
+    <p>Heartbeat persists every minute. If you just installed, give it a few minutes after browsing to start showing. Also check that the domain isn't in your ignore list and that you're not in incognito.</p>
+
+    <h3>Does my data sync across devices?</h3>
+    <p>No. Visits and aggregates stay on each device. Your <em>preferences</em> (tags, rules, budgets, ignore list) sync via Chrome Sync if you're signed in, but visit data does not.</p>
+
+    <h3>I bought but the dashboard still says "trial".</h3>
+    <p>You need to activate the license key. Go to Settings → License and paste the key from the purchase email. If you can't find it, check spam or contact us.</p>
+
+    <h3>Refunds?</h3>
+    <p>30-day no-questions-asked money-back guarantee via Lemon Squeezy. Email us with your order ID.</p>
+
+    <h3>Still stuck?</h3>
+    <p><a href="./contact.html" class="text-ember underline">Contact us</a> — we read every message.</p>
+  </article>
+</main>
+
+<footer class="w-full max-w-6xl mx-auto px-6 py-12 mt-12 border-t border-line">
+  <div class="flex flex-wrap items-center justify-between gap-6 text-sm text-muted">
+    <div class="flex items-center gap-2">
+      <img src="./assets/logo.svg" alt="" class="w-5 h-5" />
+      <span>© 2026 SiteLogs</span>
+    </div>
+    <div class="flex flex-wrap gap-6">
+      <a href="./guide.html" class="hover:text-ink">Guide</a>
+      <a href="./privacy.html" class="hover:text-ink">Privacy</a>
+      <a href="./contact.html" class="hover:text-ink">Contact</a>
+      <a href="https://github.com/shyenx/sitelogs" class="hover:text-ink" rel="noopener">Source on GitHub</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>SiteLogs — Contact</title>
+<meta name="description" content="Get in touch with the SiteLogs team." />
+<link rel="icon" type="image/png" href="./assets/icon-128.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600;700&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: {
+    colors: { ember: '#d97757', cream: '#faf9f5', ink: '#1f1d1a', stone: '#cdc9bf', line: '#e6e2d6', muted: '#6b665a' },
+    fontFamily: { ui: ['Inter','system-ui','sans-serif'], display: ['Lora','Georgia','serif'] },
+  } } };
+</script>
+<style>
+  body { font-family: Inter, system-ui, sans-serif; }
+  h1, h2, h3, .font-display { font-family: Lora, Georgia, serif; }
+</style>
+</head>
+<body class="bg-cream text-ink antialiased">
+
+<header class="w-full max-w-6xl mx-auto px-6 py-8 flex items-center justify-between">
+  <a href="./" class="flex items-center gap-2.5">
+    <img src="./assets/logo.svg" alt="" class="w-7 h-7" />
+    <span class="font-display text-2xl font-semibold tracking-tight">SiteLogs</span>
+  </a>
+  <nav class="text-sm text-muted flex gap-6">
+    <a href="./guide.html" class="hover:text-ink">Guide</a>
+    <a href="./privacy.html" class="hover:text-ink">Privacy</a>
+    <a href="./contact.html" class="text-ink">Contact</a>
+    <a href="https://github.com/shyenx/sitelogs" class="hover:text-ink" rel="noopener">GitHub</a>
+  </nav>
+</header>
+
+<main class="w-full max-w-3xl mx-auto px-6 py-12">
+  <p class="font-ui text-xs uppercase tracking-[0.2em] text-ember mb-4">Get in touch</p>
+  <h1 class="font-display text-5xl font-semibold tracking-tight mb-6">Contact us</h1>
+  <p class="text-lg text-muted leading-relaxed mb-12 max-w-2xl">
+    Bug reports, feature ideas, refund requests, license-key trouble, or just
+    saying hi — we read every message.
+  </p>
+
+  <div class="grid md:grid-cols-2 gap-6">
+    <!-- Email card -->
+    <div class="border border-line rounded-2xl p-8 bg-white/40">
+      <div class="text-xs uppercase tracking-wider text-muted mb-3">Email</div>
+      <h2 class="font-display text-xl font-semibold mb-4">Write to us</h2>
+      <p class="text-muted mb-6 text-sm leading-relaxed">
+        Best for bug reports with screenshots, refund requests (include your
+        order ID), or anything sensitive.
+      </p>
+      <a id="email-link" href="#"
+         class="inline-flex items-center gap-2 bg-ink text-cream px-5 py-2.5 rounded-full font-medium hover:opacity-90 text-sm">
+        <span id="email-text">support@…</span>
+      </a>
+      <p class="mt-4 text-xs text-muted">
+        We typically reply within 1–2 business days.
+      </p>
+    </div>
+
+    <!-- GitHub card -->
+    <div class="border border-line rounded-2xl p-8 bg-white/40">
+      <div class="text-xs uppercase tracking-wider text-muted mb-3">Public</div>
+      <h2 class="font-display text-xl font-semibold mb-4">Open an issue</h2>
+      <p class="text-muted mb-6 text-sm leading-relaxed">
+        Best for technical bug reports, feature requests, or anything you'd
+        like discussed in public.
+      </p>
+      <a href="https://github.com/shyenx/sitelogs/issues/new" rel="noopener"
+         class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-line text-ink hover:bg-stone/20 text-sm">
+        GitHub Issues →
+      </a>
+    </div>
+  </div>
+
+  <div class="mt-12 border-t border-line pt-12">
+    <h2 class="font-display text-2xl font-semibold mb-4">Common requests</h2>
+    <div class="space-y-5 text-sm">
+      <div>
+        <div class="font-medium mb-1">Refund (within 30 days)</div>
+        <p class="text-muted leading-relaxed">Email us with your Lemon Squeezy order ID. We'll process it the same day, no questions asked.</p>
+      </div>
+      <div>
+        <div class="font-medium mb-1">Lost license key</div>
+        <p class="text-muted leading-relaxed">The original purchase email from Lemon Squeezy contains it. Search for "SiteLogs license". If you can't find it, email us with the address you used to buy.</p>
+      </div>
+      <div>
+        <div class="font-medium mb-1">Activation slot exhausted</div>
+        <p class="text-muted leading-relaxed">Open Settings → License on a device you no longer use, click "Deactivate this device". The slot is freed instantly. If you've lost access to that device, email us.</p>
+      </div>
+      <div>
+        <div class="font-medium mb-1">Feature suggestion</div>
+        <p class="text-muted leading-relaxed">Open a <a href="https://github.com/shyenx/sitelogs/issues/new" rel="noopener" class="text-ember underline">GitHub issue</a> with the "feature" label so others can vote.</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="w-full max-w-6xl mx-auto px-6 py-12 mt-12 border-t border-line">
+  <div class="flex flex-wrap items-center justify-between gap-6 text-sm text-muted">
+    <div class="flex items-center gap-2">
+      <img src="./assets/logo.svg" alt="" class="w-5 h-5" />
+      <span>© 2026 SiteLogs</span>
+    </div>
+    <div class="flex flex-wrap gap-6">
+      <a href="./guide.html" class="hover:text-ink">Guide</a>
+      <a href="./privacy.html" class="hover:text-ink">Privacy</a>
+      <a href="./contact.html" class="hover:text-ink">Contact</a>
+      <a href="https://github.com/shyenx/sitelogs" class="hover:text-ink" rel="noopener">Source on GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Tiny obfuscation so naive scrapers don't grab the address -->
+<script>
+  (function () {
+    var u = ['support', 'sitelogs'];   // ← user replaces with the real address
+    var d = ['gmail', 'com'];
+    var addr = u[0] + '.' + u[1] + '@' + d[0] + '.' + d[1];
+    var a = document.getElementById('email-link');
+    var t = document.getElementById('email-text');
+    if (a) a.href = 'mailto:' + addr + '?subject=SiteLogs%20—%20';
+    if (t) t.textContent = addr;
+  })();
+</script>
+</body>
+</html>
