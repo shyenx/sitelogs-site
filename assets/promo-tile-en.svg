@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 280" width="440" height="280" font-family="Lora, Georgia, serif">
+  <rect width="440" height="280" fill="#faf9f5" />
+  <rect x="0" y="0" width="6" height="280" fill="#d97757" />
+
+  <g transform="translate(36, 36)">
+    <rect x="0"  y="22" width="8" height="22" rx="2" fill="#d97757" />
+    <rect x="14" y="6"  width="8" height="38" rx="2" fill="#d97757" />
+    <rect x="28" y="14" width="8" height="30" rx="2" fill="#d97757" />
+  </g>
+
+  <text x="92" y="74" font-size="34" font-weight="600" fill="#141413" letter-spacing="-0.5">SiteLogs</text>
+
+  <text x="36" y="158" font-size="22" font-weight="500" fill="#141413" letter-spacing="-0.3">
+    See where your time
+  </text>
+  <text x="36" y="190" font-size="22" font-weight="500" fill="#d97757" letter-spacing="-0.3">
+    actually goes online.
+  </text>
+
+  <text x="36" y="246" font-size="12" font-weight="500" fill="#7a786f" font-family="Inter, system-ui, sans-serif" letter-spacing="0.5">
+    LOCAL-FIRST  ·  ZERO TELEMETRY
+  </text>
+
+  <g transform="translate(308, 156)" fill="#d97757" opacity="0.85">
+    <rect x="0"  y="48" width="8" height="22" rx="1.5" />
+    <rect x="14" y="36" width="8" height="34" rx="1.5" opacity="0.75" />
+    <rect x="28" y="22" width="8" height="48" rx="1.5" opacity="0.6" />
+    <rect x="42" y="40" width="8" height="30" rx="1.5" opacity="0.85" />
+    <rect x="56" y="14" width="8" height="56" rx="1.5" />
+    <rect x="70" y="28" width="8" height="42" rx="1.5" opacity="0.75" />
+    <rect x="84" y="52" width="8" height="18" rx="1.5" opacity="0.5" />
+  </g>
+</svg>
