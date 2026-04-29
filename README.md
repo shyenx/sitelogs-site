@@ -31,7 +31,6 @@ Default URL: `https://shyenx.github.io/sitelogs-site/`
 
 ## TODO before launch
 
-- [ ] Replace placeholder email in `contact.html` (`support.sitelogs@gmail.com`) with the real address.
 - [ ] Take real product screenshots, drop in `assets/screenshots/`, link them on the landing page.
 - [ ] Generate `assets/og.png` (1200×630) for social sharing.
 - [ ] When the Chrome Web Store listing is live, replace the "Coming soon" install button on `index.html` with the actual store URL.

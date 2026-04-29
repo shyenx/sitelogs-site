@@ -99,9 +99,10 @@
 <!-- Tiny obfuscation so naive scrapers don't grab the address -->
 <script>
   (function () {
-    var u = ['support', 'sitelogs'];   // ← user replaces with the real address
+    // Lightly obfuscated to slow naive scrapers; rebuilt at runtime.
+    var u = ['shyenx', 'site', 'support'];
     var d = ['gmail', 'com'];
-    var addr = u[0] + '.' + u[1] + '@' + d[0] + '.' + d[1];
+    var addr = u.join('.') + '@' + d.join('.');
     var a = document.getElementById('email-link');
     var t = document.getElementById('email-text');
     if (a) a.href = 'mailto:' + addr + '?subject=SiteLogs%20—%20';
