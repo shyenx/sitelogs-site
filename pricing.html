@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>SiteLogs — Pricing</title>
+<meta name="description" content="One-time purchase. $15 lifetime. $10 early bird for the first 100 customers. 7-day free trial." />
+<link rel="icon" type="image/png" href="./assets/icon-128.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600;700&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: {
+    colors: { ember: '#d97757', cream: '#faf9f5', ink: '#1f1d1a', stone: '#cdc9bf', line: '#e6e2d6', muted: '#6b665a' },
+    fontFamily: { ui: ['Inter','system-ui','sans-serif'], display: ['Lora','Georgia','serif'] },
+  } } };
+</script>
+<style>
+  body { font-family: Inter, system-ui, sans-serif; }
+  h1, h2, h3, .font-display { font-family: Lora, Georgia, serif; }
+</style>
+</head>
+<body class="bg-cream text-ink antialiased">
+
+<header class="w-full max-w-6xl mx-auto px-6 py-8 flex items-center justify-between">
+  <a href="./" class="flex items-center gap-2.5">
+    <img src="./assets/logo.svg" alt="" class="w-7 h-7" />
+    <span class="font-display text-2xl font-semibold tracking-tight">SiteLogs</span>
+  </a>
+  <nav class="text-sm text-muted flex gap-6">
+    <a href="./guide.html" class="hover:text-ink">Guide</a>
+    <a href="./pricing.html" class="text-ink">Pricing</a>
+    <a href="./privacy.html" class="hover:text-ink">Privacy</a>
+    <a href="./terms.html" class="hover:text-ink">Terms</a>
+    <a href="./contact.html" class="hover:text-ink">Contact</a>
+  </nav>
+</header>
+
+<main class="w-full max-w-5xl mx-auto px-6 py-12">
+  <p class="font-ui text-xs uppercase tracking-[0.2em] text-ember mb-4">Pricing</p>
+  <h1 class="font-display text-5xl font-semibold tracking-tight mb-6">One price. No subscription.</h1>
+  <p class="text-lg text-muted leading-relaxed max-w-2xl mb-12">
+    Pay once, use forever. No monthly fees, no feature paywalls, no upsells.
+    7-day free trial — try the full product before you decide.
+  </p>
+
+  <div class="grid md:grid-cols-2 gap-6 mb-16">
+    <!-- Lifetime -->
+    <div class="border border-line rounded-2xl p-8 bg-white/40">
+      <div class="text-sm uppercase tracking-wider text-muted mb-2">Lifetime</div>
+      <div class="flex items-baseline gap-2 mb-1">
+        <span class="font-display text-5xl font-semibold">$15</span>
+        <span class="text-muted text-sm">USD</span>
+      </div>
+      <div class="text-sm text-muted mb-6">One-time · keep forever</div>
+      <ul class="space-y-2 text-sm mb-8">
+        <li>✓ All current and future features</li>
+        <li>✓ Activate on up to 5 devices</li>
+        <li>✓ 30-day money-back guarantee</li>
+        <li>✓ License key delivered by email</li>
+      </ul>
+      <a href="https://sitelogs.lemonsqueezy.com/buy/ede8fe62-bd81-4d3d-8301-ced40535196f?logo=0"
+         class="block text-center bg-ink text-cream px-6 py-3 rounded-full font-medium hover:opacity-90">
+        Buy $15 lifetime
+      </a>
+    </div>
+
+    <!-- Early bird -->
+    <div class="border-2 border-ember rounded-2xl p-8 bg-ember/5 relative">
+      <span class="absolute -top-3 left-6 bg-ember text-cream text-xs px-3 py-1 rounded-full font-medium">Early bird · first 100</span>
+      <div class="text-sm uppercase tracking-wider text-ember mb-2">Lifetime · early bird</div>
+      <div class="flex items-baseline gap-2 mb-1">
+        <span class="line-through text-stone text-2xl font-semibold">$15</span>
+        <span class="font-display text-5xl font-semibold text-ember">$10</span>
+        <span class="text-muted text-sm">USD</span>
+      </div>
+      <div class="text-sm text-muted mb-6">$5 off · while supplies last</div>
+      <ul class="space-y-2 text-sm mb-8">
+        <li>✓ Same product, same lifetime access</li>
+        <li>✓ Discount applied automatically at checkout</li>
+        <li>✓ 30-day money-back guarantee</li>
+        <li>✓ Limited to the first 100 customers</li>
+      </ul>
+      <a href="https://sitelogs.lemonsqueezy.com/buy/ede8fe62-bd81-4d3d-8301-ced40535196f?logo=0&checkout%5Bdiscount_code%5D=KXMZIWNQ"
+         class="block text-center bg-ember text-cream px-6 py-3 rounded-full font-medium hover:opacity-90">
+        Buy $10 early bird
+      </a>
+    </div>
+  </div>
+
+  <div class="border-t border-line pt-12 grid md:grid-cols-2 gap-12">
+    <div>
+      <h2 class="font-display text-2xl font-semibold mb-4">7-day free trial</h2>
+      <p class="text-muted leading-relaxed">
+        After installing, you get 7 days of full access — every feature, every
+        view, no credit card required. After day 7 the dashboard locks and
+        continued use requires a license. We don't auto-charge anything; you
+        only pay if you actively buy.
+      </p>
+    </div>
+
+    <div>
+      <h2 class="font-display text-2xl font-semibold mb-4">What you actually get</h2>
+      <p class="text-muted leading-relaxed">
+        A perpetual license to use SiteLogs on your own browsers. One key
+        activates up to 5 devices simultaneously. Free updates for life
+        (current version + every future feature we ship). License is personal
+        and non-transferable; see <a href="./terms.html" class="text-ember underline">Terms</a> for details.
+      </p>
+    </div>
+
+    <div>
+      <h2 class="font-display text-2xl font-semibold mb-4">Refunds</h2>
+      <p class="text-muted leading-relaxed">
+        Not satisfied? Email us within 30 days of purchase with your order ID
+        and we'll refund the full amount, no questions asked. See our
+        <a href="./refund.html" class="text-ember underline">Refund Policy</a> for the full procedure.
+      </p>
+    </div>
+
+    <div>
+      <h2 class="font-display text-2xl font-semibold mb-4">How payment works</h2>
+      <p class="text-muted leading-relaxed">
+        Checkout is hosted by our Merchant of Record partner. They handle
+        credit card processing, sales tax / VAT collection in your country,
+        invoicing, and billing inquiries. SiteLogs never sees your card
+        details.
+      </p>
+    </div>
+  </div>
+</main>
+
+<footer class="w-full max-w-6xl mx-auto px-6 py-12 mt-12 border-t border-line">
+  <div class="flex flex-wrap items-center justify-between gap-6 text-sm text-muted">
+    <div class="flex items-center gap-2">
+      <img src="./assets/logo.svg" alt="" class="w-5 h-5" />
+      <span>© 2026 SiteLogs</span>
+    </div>
+    <div class="flex flex-wrap gap-6">
+      <a href="./guide.html" class="hover:text-ink">Guide</a>
+      <a href="./pricing.html" class="hover:text-ink">Pricing</a>
+      <a href="./privacy.html" class="hover:text-ink">Privacy</a>
+      <a href="./terms.html" class="hover:text-ink">Terms</a>
+      <a href="./refund.html" class="hover:text-ink">Refund</a>
+      <a href="./contact.html" class="hover:text-ink">Contact</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
