@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>SiteLogs — Thank you</title>
+<meta name="robots" content="noindex" />
+<link rel="icon" type="image/png" href="./assets/icon-128.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600;700&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: {
+    colors: { ember: '#d97757', cream: '#faf9f5', ink: '#1f1d1a', stone: '#cdc9bf', line: '#e6e2d6', muted: '#6b665a' },
+    fontFamily: { ui: ['Inter','system-ui','sans-serif'], display: ['Lora','Georgia','serif'] },
+  } } };
+</script>
+<style>
+  body { font-family: Inter, system-ui, sans-serif; }
+  h1, h2, .font-display { font-family: Lora, Georgia, serif; }
+</style>
+</head>
+<body class="bg-cream text-ink antialiased">
+
+<header class="w-full max-w-6xl mx-auto px-6 py-8 flex items-center justify-between">
+  <a href="./" class="flex items-center gap-2.5">
+    <img src="./assets/logo.svg" alt="" class="w-7 h-7" />
+    <span class="font-display text-2xl font-semibold tracking-tight">SiteLogs</span>
+  </a>
+</header>
+
+<main class="w-full max-w-2xl mx-auto px-6 py-16">
+  <p class="font-ui text-xs uppercase tracking-[0.2em] text-ember mb-4">Payment received</p>
+  <h1 class="font-display text-4xl font-semibold tracking-tight mb-6">Thank you 🎉</h1>
+  <p class="text-muted leading-relaxed mb-10">
+    Your purchase is complete. Below is your SiteLogs license key — copy it
+    and paste into the extension's <strong>Settings → License</strong>. We've
+    also sent it to the email address you provided at checkout.
+  </p>
+
+  <div id="loading" class="border border-line rounded-2xl p-8 bg-white/40 text-center">
+    <div class="text-sm text-muted animate-pulse">Generating your license key…</div>
+  </div>
+
+  <div id="key-card" class="hidden border border-ember rounded-2xl p-8 bg-ember/5">
+    <div class="text-xs uppercase tracking-wider text-ember mb-2">Your license key</div>
+    <div id="license-key" class="font-mono text-xl font-semibold tracking-wider mb-4 break-all"></div>
+    <button id="copy-btn" class="font-ui text-xs px-4 py-2 rounded-full bg-ink text-cream hover:opacity-90">Copy</button>
+    <p id="email-line" class="hidden mt-4 text-xs text-muted"></p>
+  </div>
+
+  <div id="error" class="hidden border border-rose-300 bg-rose-50 text-rose-700 rounded-lg p-4 text-sm"></div>
+
+  <div class="mt-10 border-t border-line pt-8 space-y-3 text-sm">
+    <h2 class="font-display text-lg font-semibold">Next steps</h2>
+    <ol class="list-decimal pl-6 space-y-2 text-muted">
+      <li>Open a new Chrome tab to load the SiteLogs dashboard.</li>
+      <li>Go to <strong>Settings → License</strong>.</li>
+      <li>Paste the key above into the activation field and click <strong>Activate</strong>.</li>
+      <li>You'll see "Lifetime license active · &lt;your email&gt;" — done.</li>
+    </ol>
+    <p class="text-xs text-muted pt-3">
+      Lost the key later? Search your inbox for "SiteLogs license", or
+      <a href="./contact.html" class="text-ember underline">contact us</a>.
+    </p>
+  </div>
+</main>
+
+<footer class="w-full max-w-6xl mx-auto px-6 py-12 mt-12 border-t border-line">
+  <div class="flex items-center justify-center gap-2 text-sm text-muted">
+    <img src="./assets/logo.svg" alt="" class="w-5 h-5" />
+    <span>© 2026 SiteLogs</span>
+  </div>
+</footer>
+
+<script>
+  // ============= CONFIG =================
+  const WORKER_BASE = 'https://sitelogs-license.<your-subdomain>.workers.dev';
+  // ======================================
+
+  const params = new URLSearchParams(location.search);
+  const txnId = params.get('txn') || params.get('_ptxn') || '';
+
+  const loading = document.getElementById('loading');
+  const keyCard = document.getElementById('key-card');
+  const keyEl = document.getElementById('license-key');
+  const emailLine = document.getElementById('email-line');
+  const errorBox = document.getElementById('error');
+  const copyBtn = document.getElementById('copy-btn');
+
+  function showError(msg) {
+    loading.classList.add('hidden');
+    errorBox.classList.remove('hidden');
+    errorBox.textContent = msg;
+  }
+
+  if (!txnId) {
+    showError('No transaction id in URL — if you just paid, search your inbox for the SiteLogs receipt.');
+  } else if (WORKER_BASE.includes('<your-subdomain>')) {
+    showError('License server not yet configured on this site. Your key was emailed; please check your inbox.');
+  } else {
+    fetch(`${WORKER_BASE}/license?txn=${encodeURIComponent(txnId)}`)
+      .then((r) => r.json().then((j) => ({ ok: r.ok, body: j })))
+      .then(({ ok, body }) => {
+        if (!ok || !body.license_key) throw new Error(body.error || 'license not found');
+        loading.classList.add('hidden');
+        keyCard.classList.remove('hidden');
+        keyEl.textContent = body.license_key;
+        if (body.email) {
+          emailLine.classList.remove('hidden');
+          emailLine.textContent = `Receipt + key sent to ${body.email}`;
+        }
+      })
+      .catch((e) => showError(`Couldn't fetch your license key: ${e.message}. Check your email — we send a copy on payment.`));
+  }
+
+  copyBtn.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(keyEl.textContent || '');
+      copyBtn.textContent = 'Copied ✓';
+      setTimeout(() => (copyBtn.textContent = 'Copy'), 1500);
+    } catch {
+      copyBtn.textContent = 'Press ⌘C';
+    }
+  });
+</script>
+</body>
+</html>

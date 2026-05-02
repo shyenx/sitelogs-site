@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>SiteLogs — Checkout</title>
+<meta name="robots" content="noindex" />
+<link rel="icon" type="image/png" href="./assets/icon-128.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600;700&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: {
+    colors: { ember: '#d97757', cream: '#faf9f5', ink: '#1f1d1a', stone: '#cdc9bf', line: '#e6e2d6', muted: '#6b665a' },
+    fontFamily: { ui: ['Inter','system-ui','sans-serif'], display: ['Lora','Georgia','serif'] },
+  } } };
+</script>
+<style>
+  body { font-family: Inter, system-ui, sans-serif; }
+  h1, h2, .font-display { font-family: Lora, Georgia, serif; }
+</style>
+<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+</head>
+<body class="bg-cream text-ink antialiased">
+
+<header class="w-full max-w-6xl mx-auto px-6 py-8 flex items-center justify-between">
+  <a href="./" class="flex items-center gap-2.5">
+    <img src="./assets/logo.svg" alt="" class="w-7 h-7" />
+    <span class="font-display text-2xl font-semibold tracking-tight">SiteLogs</span>
+  </a>
+</header>
+
+<main class="w-full max-w-2xl mx-auto px-6 py-16 text-center">
+  <p class="font-ui text-xs uppercase tracking-[0.2em] text-ember mb-4">Checkout</p>
+  <h1 class="font-display text-4xl font-semibold tracking-tight mb-6">Complete your purchase</h1>
+  <p class="text-muted leading-relaxed mb-12 max-w-md mx-auto">
+    Paddle's secure checkout will open in a moment. After payment we'll
+    generate your license key and send it to your email.
+  </p>
+
+  <div id="status" class="text-sm text-muted">Loading checkout…</div>
+
+  <div id="error" class="hidden mt-6 max-w-md mx-auto border border-rose-300 bg-rose-50 text-rose-700 rounded-lg p-4 text-sm text-left"></div>
+</main>
+
+<footer class="w-full max-w-6xl mx-auto px-6 py-12 mt-12 border-t border-line">
+  <div class="flex items-center justify-center gap-2 text-sm text-muted">
+    <img src="./assets/logo.svg" alt="" class="w-5 h-5" />
+    <span>© 2026 SiteLogs</span>
+  </div>
+</footer>
+
+<script>
+  // ============= CONFIG =================
+  // Sandbox values for now. Swap to production when going live.
+  const PADDLE_ENV = 'sandbox'; // 'sandbox' | 'production'
+  const PADDLE_CLIENT_TOKEN = 'test_REPLACE_ME';
+  const PRICE_LIFETIME = 'pri_REPLACE_LIFETIME';
+  const PRICE_EARLY_BIRD = 'pri_REPLACE_EARLY';
+  // ======================================
+
+  const params = new URLSearchParams(location.search);
+  const variant = params.get('variant') === 'early' ? 'early' : 'lifetime';
+  const priceId = variant === 'early' ? PRICE_EARLY_BIRD : PRICE_LIFETIME;
+
+  const status = document.getElementById('status');
+  const errorBox = document.getElementById('error');
+
+  function showError(msg) {
+    status.style.display = 'none';
+    errorBox.classList.remove('hidden');
+    errorBox.textContent = msg;
+  }
+
+  if (!window.Paddle) {
+    showError('Paddle script failed to load. Disable ad-blockers and refresh.');
+  } else if (PADDLE_CLIENT_TOKEN.startsWith('test_REPLACE') || priceId.startsWith('pri_REPLACE')) {
+    showError('Paddle credentials are not yet configured on this site. Check back shortly.');
+  } else {
+    if (PADDLE_ENV === 'sandbox') Paddle.Environment.set('sandbox');
+    Paddle.Initialize({
+      token: PADDLE_CLIENT_TOKEN,
+      eventCallback: (ev) => {
+        if (ev.name === 'checkout.completed') {
+          const txnId = ev.data?.transaction_id ?? '';
+          location.href = `./thanks.html?txn=${encodeURIComponent(txnId)}`;
+        }
+      },
+    });
+    Paddle.Checkout.open({
+      items: [{ priceId, quantity: 1 }],
+      settings: {
+        displayMode: 'overlay',
+        theme: 'light',
+        successUrl: `${location.origin}/thanks.html`,
+      },
+    });
+    status.textContent = 'Opening secure checkout…';
+  }
+</script>
+</body>
+</html>
