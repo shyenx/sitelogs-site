@@ -4,12 +4,103 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>SiteLogs — Local-first browsing analytics & tab manager for Chrome</title>
-<meta name="description" content="See where your time goes online. Local-first browsing analytics, tab grouping, focus blocks. 7-day free trial, then $15 lifetime." />
-<meta property="og:title" content="SiteLogs — Browsing time, made visible" />
-<meta property="og:description" content="Local-first browsing analytics. Your data never leaves your machine." />
-<meta property="og:image" content="./assets/promo-tile.svg" />
+<meta name="description" content="SiteLogs is a Chrome extension that records how long you spend on each website — locally, on your machine. Replaces the new tab page, pins your top sites, and one-click organizes tabs. 7-day free trial, $15 lifetime." />
+<meta name="keywords" content="chrome extension, browsing analytics, time tracker, tab organizer, new tab replacement, local-first, productivity, focus blocks, screen time" />
+<meta name="author" content="SiteLogs" />
+<link rel="canonical" href="https://siteslogs.com/" />
 <meta property="og:type" content="website" />
+<meta property="og:site_name" content="SiteLogs" />
+<meta property="og:title" content="SiteLogs — Local-first browsing analytics & tab manager" />
+<meta property="og:description" content="See where your time actually goes online. Replace Chrome's new tab, pin your top sites, organize tabs in one click. Local-first — your data never leaves your machine." />
+<meta property="og:url" content="https://siteslogs.com/" />
+<meta property="og:image" content="https://siteslogs.com/assets/marquee-1400x560-en.jpg" />
+<meta property="og:image:width" content="1400" />
+<meta property="og:image:height" content="560" />
+<meta property="og:image:alt" content="SiteLogs dashboard showing browsing time analytics" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="SiteLogs — Local-first browsing analytics" />
+<meta name="twitter:description" content="See where your time goes online. Replace Chrome's new tab, pin top sites, one-click tab organizer. Local-first." />
+<meta name="twitter:image" content="https://siteslogs.com/assets/marquee-1400x560-en.jpg" />
 <link rel="icon" type="image/png" href="./assets/icon-128.png" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://siteslogs.com/#software",
+      "name": "SiteLogs",
+      "description": "A Chrome extension that records how long you spend on each website — locally, on your machine. Replaces the new tab page with a dashboard, pins frequently-used sites, and provides a one-click tab organizer that closes duplicates and groups by domain.",
+      "url": "https://siteslogs.com/",
+      "applicationCategory": "BrowserApplication",
+      "operatingSystem": "Chrome 120+",
+      "downloadUrl": "https://chromewebstore.google.com/detail/cgmjcajdmdhmojploigcijmghbchmejj",
+      "installUrl": "https://chromewebstore.google.com/detail/cgmjcajdmdhmojploigcijmghbchmejj",
+      "browserRequirements": "Requires Google Chrome browser",
+      "image": "https://siteslogs.com/assets/marquee-1400x560-en.jpg",
+      "screenshot": [
+        "https://siteslogs.com/assets/screenshots/01-overview.png",
+        "https://siteslogs.com/assets/screenshots/02-tabs.png",
+        "https://siteslogs.com/assets/screenshots/03-category-trend.png",
+        "https://siteslogs.com/assets/screenshots/04-behavior.png"
+      ],
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Lifetime license",
+          "price": "15",
+          "priceCurrency": "USD",
+          "category": "OneTimePayment",
+          "availability": "https://schema.org/PreOrder"
+        },
+        {
+          "@type": "Offer",
+          "name": "Early bird (first 100)",
+          "price": "10",
+          "priceCurrency": "USD",
+          "category": "OneTimePayment",
+          "availability": "https://schema.org/LimitedAvailability"
+        }
+      ],
+      "featureList": [
+        "Replace Chrome's default new tab page",
+        "Pin frequently-used sites for one-click access",
+        "One-click tab cleanup with duplicate removal and domain grouping",
+        "Local-first storage in IndexedDB — no telemetry, no external server",
+        "Active focus time tracking with idle detection",
+        "Daily focus budgets per category",
+        "Bilingual UI (English / 中文)",
+        "Session save and restore"
+      ],
+      "softwareVersion": "0.1.0",
+      "datePublished": "2026-04-29",
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://siteslogs.com/#publisher"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://siteslogs.com/#publisher",
+      "name": "SiteLogs",
+      "url": "https://siteslogs.com/",
+      "logo": "https://siteslogs.com/assets/icon-128.png",
+      "email": "shyenx.site.support@gmail.com"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://siteslogs.com/#website",
+      "url": "https://siteslogs.com/",
+      "name": "SiteLogs",
+      "description": "Local-first browsing analytics and tab manager for Chrome",
+      "publisher": { "@id": "https://siteslogs.com/#publisher" },
+      "inLanguage": "en"
+    }
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600;700&display=swap" rel="stylesheet" />
