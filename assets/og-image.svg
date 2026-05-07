@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#faf9f5"/>
+      <stop offset="100%" stop-color="#f0ede2"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Cream background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Decorative ember accent in top-right -->
+  <circle cx="1080" cy="120" r="280" fill="#d97757" opacity="0.08"/>
+
+  <!-- Logo (three bars, scaled up) at top-left -->
+  <g transform="translate(80,80) scale(2.5)" fill="#d97757">
+    <rect x="4" y="14" width="4" height="11" rx="1"/>
+    <rect x="12" y="6" width="4" height="19" rx="1"/>
+    <rect x="20" y="10" width="4" height="15" rx="1"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="170" y="125" font-family="Georgia, 'Lora', serif" font-size="44" font-weight="700" fill="#1f1d1a">SiteLogs</text>
+
+  <!-- Eyebrow tag -->
+  <text x="80" y="240" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="600" fill="#d97757" letter-spacing="3">CHROME EXTENSION · LOCAL-FIRST</text>
+
+  <!-- Headline (two lines) -->
+  <text x="80" y="320" font-family="Georgia, 'Lora', serif" font-size="72" font-weight="700" fill="#1f1d1a">See where your time</text>
+  <text x="80" y="400" font-family="Georgia, 'Lora', serif" font-size="72" font-weight="700" fill="#1f1d1a">actually goes online.</text>
+
+  <!-- Subhead -->
+  <text x="80" y="455" font-family="Inter, system-ui, sans-serif" font-size="24" fill="#6b665a">Browsing analytics + tab manager · 100% on your machine</text>
+
+  <!-- CTA button -->
+  <rect x="80" y="500" width="350" height="68" rx="34" fill="#1f1d1a"/>
+  <text x="255" y="544" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#faf9f5">Add to Chrome — Free</text>
+
+  <!-- Side hint: pricing -->
+  <text x="455" y="544" font-family="Inter, system-ui, sans-serif" font-size="20" fill="#6b665a">7-day trial · $15 lifetime</text>
+
+  <!-- Footer URL -->
+  <text x="80" y="595" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="500" fill="#6b665a">siteslogs.com</text>
+</svg>
