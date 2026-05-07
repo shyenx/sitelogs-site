@@ -12,16 +12,33 @@
 
 SiteLogs is a Chrome extension that quietly records how long you spend on
 each website — **on your own machine**. Daily, weekly, and yearly views
-that Chrome's built-in History never gave you. A tab organizer is included.
+that Chrome's built-in History never gave you, plus a one-click tab
+organizer and a custom new tab page worth opening.
 
-- 📦 **100% local** — your visit data is stored in IndexedDB on your device. No telemetry, no analytics, no external server.
-- 🪶 **Lightweight** — single new-tab dashboard, < 200 KB packed.
+![Overview dashboard](./assets/screenshots/01-overview.png)
+
+- 🏠 **Replace Chrome's default new tab** — every new tab opens the SiteLogs dashboard with your stats and pinned sites instead of Google's blank search box.
+- 📌 **Pin your top sites** — keep your most-visited workflows one click away on the new tab dashboard.
+- 🗂️ **One-click tab cleanup** — close duplicate URLs, auto-group remaining tabs by domain into Chrome's native colored tab groups, and merge windows.
+- 📦 **100% local** — visit data lives in IndexedDB on your device. No telemetry, no analytics, no external server.
 - 🔍 **Honest time** — counts active focus minutes, pauses on idle.
-- 🗂️ **Tabs you can find** — group by domain, snapshot sessions, close duplicates.
-- 🎯 **Focus budgets** — daily caps per category, with progress bars.
+- 🎯 **Focus budgets** — daily caps per category, with progress bars on the dashboard.
+- 🪶 **Lightweight** — < 200 KB packed, no background tracking beyond what you'd expect.
 - 🌏 **EN / 中文** — fully bilingual UI.
 
-Read the full feature tour and screenshots on [siteslogs.com](https://siteslogs.com).
+### A look inside
+
+![Tab organizer](./assets/screenshots/02-tabs.png)
+*One-click tab organizer — close duplicates, group by domain, save sessions.*
+
+![Category trends](./assets/screenshots/03-category-trend.png)
+*Where your time actually goes — daily, weekly, monthly breakdowns by category.*
+
+![Behavior analysis](./assets/screenshots/04-behavior.png)
+*Behavior view — productive vs leisure split, idle gaps removed.*
+
+Read the full feature tour on [siteslogs.com](https://siteslogs.com) or the
+[user guide](https://siteslogs.com/guide.html).
 
 ---
 
