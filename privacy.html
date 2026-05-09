@@ -98,7 +98,7 @@
       <tbody>
         <tr><td><code>tabs</code></td><td>Read which tab is active and its URL/title to time it.</td></tr>
         <tr><td><code>tabGroups</code></td><td>Required for the "Organize" feature to group same-domain tabs.</td></tr>
-        <tr><td><code>history</code></td><td>Reserved for an opt-in import feature; not actively used today.</td></tr>
+        <tr><td><code>history</code></td><td>Used by the optional <strong>"Import from browser history"</strong> feature (a one-time prompt at first install, plus a button under Settings → Data). Reads your local Chrome history to pre-populate the dashboard so it has shape immediately. Visit counts and dates only — Chrome doesn't expose how long you spent on each page, so we don't import active time. Data stays on your device; nothing is transmitted.</td></tr>
         <tr><td><code>storage</code></td><td>Read/write the local databases above.</td></tr>
         <tr><td><code>idle</code></td><td>Detect when you've been away from the keyboard so we don't count idle time as active.</td></tr>
         <tr><td><code>favicon</code></td><td>Render site icons inline using Chrome's built-in favicon service. No external favicon CDN is contacted.</td></tr>
