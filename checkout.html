@@ -83,17 +83,19 @@
       token: PADDLE_CLIENT_TOKEN,
       eventCallback: (ev) => {
         if (ev.name === 'checkout.completed') {
-          const txnId = ev.data?.transaction_id ?? '';
+          // Paddle's data shape: ev.data.transaction_id (Billing v2)
+          const txnId = ev.data?.transaction_id ?? ev.data?.id ?? '';
           location.href = `./thanks.html?txn=${encodeURIComponent(txnId)}`;
         }
       },
     });
+    // NOTE: do NOT set settings.successUrl here — Paddle's auto-redirect would
+    // strip the transaction_id from the URL. Rely on eventCallback above.
     Paddle.Checkout.open({
       items: [{ priceId, quantity: 1 }],
       settings: {
         displayMode: 'overlay',
         theme: 'light',
-        successUrl: `${location.origin}/thanks.html`,
       },
     });
     status.textContent = 'Opening secure checkout…';
