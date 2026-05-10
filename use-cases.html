@@ -17,17 +17,17 @@
 <link rel="icon" type="image/png" href="./assets/icon-128.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&display=swap" rel="stylesheet" />
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
   tailwind.config = { theme: { extend: {
     colors: { ember: '#d97757', cream: '#faf9f5', ink: '#1f1d1a', stone: '#cdc9bf', line: '#e6e2d6', muted: '#6b665a' },
-    fontFamily: { ui: ['Inter','system-ui','sans-serif'], display: ['Lora','Georgia','serif'] },
+    fontFamily: { ui: ['Inter','system-ui','sans-serif'], display: ['Fraunces','Lora','Georgia','serif'] },
   } } };
 </script>
 <style>
   body { font-family: Inter, system-ui, sans-serif; }
-  h1, h2, h3, .font-display { font-family: Lora, Georgia, serif; }
+  h1, h2, h3, .font-display { font-family: 'Fraunces', 'Newsreader', Georgia, serif; font-optical-sizing: auto; }
   html { scroll-behavior: smooth; }
   .cta-pulse { transition: transform .15s ease, box-shadow .15s ease; }
   .cta-pulse:hover { transform: translateY(-1px) scale(1.02); box-shadow: 0 10px 24px -8px rgba(31,29,26,.25); }
@@ -37,7 +37,7 @@
 </head>
 <body class="bg-cream text-ink antialiased">
 
-<header class="w-full max-w-6xl mx-auto px-6 py-8 flex items-center justify-between">
+<header class="w-full max-w-7xl mx-auto px-6 py-8 flex items-center justify-between">
   <a href="./" class="flex items-center gap-2.5">
     <img src="./assets/logo.svg" alt="" class="w-7 h-7" />
     <span class="font-display text-2xl font-semibold tracking-tight">SiteLogs</span>
@@ -49,6 +49,7 @@
     <a href="./pricing.html" class="hover:text-ink transition-colors">Pricing</a>
     <a href="./contact.html" class="hover:text-ink transition-colors">Contact</a>
   </nav>
+  <a href="./zh/" class="hidden md:inline-flex items-center justify-center text-sm text-muted hover:text-ink w-8 h-8 rounded-full border border-line hover:border-ink transition-colors" title="中文">中</a>
   <a href="https://chromewebstore.google.com/detail/cgmjcajdmdhmojploigcijmghbchmejj" target="_blank" rel="noopener" class="cta-pulse hidden md:inline-flex items-center gap-1.5 bg-ink text-cream px-4 py-2 rounded-full text-sm font-medium">
     Add to Chrome
   </a>
@@ -139,11 +140,11 @@
   </div>
 </main>
 
-<footer class="w-full max-w-6xl mx-auto px-6 py-12 mt-12 border-t border-line">
+<footer class="w-full max-w-7xl mx-auto px-6 py-12 mt-12 border-t border-line">
   <div class="flex flex-wrap items-center justify-between gap-6 text-sm text-muted">
     <div class="flex items-center gap-2">
       <img src="./assets/logo.svg" alt="" class="w-5 h-5" />
-      <span>© 2026 SiteLogs</span>
+      <span>© 2026 SiteLogs · Built by <a href="https://github.com/shyenx" target="_blank" rel="noopener" class="hover:text-ink underline-offset-2 hover:underline">shyenx</a></span>
     </div>
     <div class="flex flex-wrap gap-x-6 gap-y-2">
       <a href="./manifesto.html" class="hover:text-ink">Why</a>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>SiteLogs · 为什么我们做了这个</title>
+<meta name="description" content="一款伪装成时间追踪器的"记忆工具"。每一次记录，都是在时间长河里打下的锚点——你点亮的一盏盏路灯。" />
+<meta name="author" content="shyenx" />
+<link rel="canonical" href="https://siteslogs.com/zh/manifesto.html" />
+<link rel="alternate" hreflang="en" href="https://siteslogs.com/manifesto.html" />
+<link rel="alternate" hreflang="zh" href="https://siteslogs.com/zh/manifesto.html" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="SiteLogs" />
+<meta property="og:title" content="SiteLogs 宣言 · 为什么我们做了这个" />
+<meta property="og:description" content="不被记忆，是永远的死亡。" />
+<meta property="og:url" content="https://siteslogs.com/zh/manifesto.html" />
+<meta property="og:image" content="https://siteslogs.com/assets/og-image.jpg" />
+<meta property="og:locale" content="zh_CN" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://siteslogs.com/assets/og-image.jpg" />
+<link rel="icon" type="image/png" href="../assets/icon-128.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: {
+    colors: { ember: '#d97757', cream: '#faf9f5', ink: '#1f1d1a', stone: '#cdc9bf', line: '#e6e2d6', muted: '#6b665a' },
+    fontFamily: {
+      ui: ['Inter','PingFang SC','Hiragino Sans GB','Microsoft YaHei','system-ui','sans-serif'],
+      display: ['Fraunces','Noto Serif SC','Lora','Georgia','serif'],
+    },
+  } } };
+</script>
+<style>
+  body { font-family: Inter, 'PingFang SC','Hiragino Sans GB','Microsoft YaHei',system-ui,sans-serif; }
+  h1, h2, h3, .font-display { font-family: 'Fraunces','Noto Serif SC',Georgia,serif; font-optical-sizing: auto; }
+  html { scroll-behavior: smooth; }
+  .cta-pulse { transition: transform .15s ease, box-shadow .15s ease; }
+  .cta-pulse:hover { transform: translateY(-1px) scale(1.02); box-shadow: 0 10px 24px -8px rgba(31,29,26,.25); }
+  .prose-poem p { font-family: 'Noto Serif SC','Fraunces','Songti SC',Georgia,serif; font-size: 1.3rem; line-height: 2; color: #1f1d1a; letter-spacing: 0.02em; }
+  .prose-poem p + p { margin-top: 1.6rem; }
+  .prose-poem em { font-style: italic; color: #6b665a; }
+  @media (max-width: 768px) {
+    .prose-poem p { font-size: 1.1rem; line-height: 1.85; }
+  }
+</style>
+</head>
+<body class="bg-cream text-ink antialiased">
+
+<header class="w-full max-w-7xl mx-auto px-6 py-8 flex items-center justify-between">
+  <a href="./" class="flex items-center gap-2.5">
+    <img src="../assets/logo.svg" alt="" class="w-7 h-7" />
+    <span class="font-display text-2xl font-semibold tracking-tight">SiteLogs</span>
+  </a>
+  <nav class="text-sm text-muted hidden md:flex gap-6">
+    <a href="../guide.html" class="hover:text-ink">指南</a>
+    <a href="../use-cases.html" class="hover:text-ink">使用场景</a>
+    <a href="./manifesto.html" class="text-ink">为什么</a>
+    <a href="../pricing.html" class="hover:text-ink">价格</a>
+  </nav>
+  <a href="../manifesto.html" class="hidden md:inline-flex items-center justify-center text-sm text-muted hover:text-ink w-8 h-8 rounded-full border border-line hover:border-ink transition-colors" title="English">EN</a>
+  <a href="https://chromewebstore.google.com/detail/cgmjcajdmdhmojploigcijmghbchmejj" target="_blank" rel="noopener" class="cta-pulse hidden md:inline-flex items-center gap-1.5 bg-ink text-cream px-4 py-2 rounded-full text-sm font-medium">
+    添加到 Chrome
+  </a>
+</header>
+
+<main class="w-full max-w-2xl mx-auto px-6 py-16 md:py-24">
+  <p class="font-ui text-xs uppercase tracking-[0.22em] text-ember mb-6 text-center">来自维护者的一封信</p>
+  <h1 class="font-display text-4xl md:text-5xl font-semibold tracking-tight text-center mb-2 leading-[1.2]">
+    为什么我们做了这个。
+  </h1>
+  <p class="font-display italic text-muted text-center text-lg mb-16">
+    一款伪装成时间追踪器的记忆工具。
+  </p>
+
+  <article class="prose-poem">
+    <p>
+      也许你的每一个浏览动作都微不足道。每一次时间花费都没有明确的价值反馈。但它们不应该被遗忘。
+    </p>
+
+    <p>
+      一周、一个月、一年之后，你回头望去——你会看到热力图上 <span class="text-ember">凌晨 3 点</span> 那块亮起来的色块，想起那个让你睡不着的夜晚。你会看到某个早已遗忘的域名上长长的一条专注块，想起那个差一点就成了的项目。你会看到一个周六的空白时段，想起那一天，没有别的日历记下来过。
+    </p>
+
+    <p>
+      每一次记录，都是在时间长河里打下的一个锚点。是你点亮的一盏盏路灯。
+    </p>
+
+    <p>
+      某一天回头望去，看到的将不再是迷茫和黑暗。<em>你会看到自己走了多远。</em>
+    </p>
+  </article>
+
+  <div class="mt-16 mb-16 flex justify-center">
+    <div class="w-16 h-px bg-ember"></div>
+  </div>
+
+  <p class="font-display text-2xl md:text-3xl font-semibold text-center leading-relaxed text-ink">
+    <span class="text-ember">不被记忆</span>，是永远的死亡。<br/>
+    <span class="font-normal text-muted text-xl md:text-2xl italic">To be unremembered is the only true death.</span>
+  </p>
+
+  <div class="mt-20 max-w-xl mx-auto text-muted leading-loose">
+    <p class="mb-4">
+      大多数"效率"软件把你的时间当作可被优化的库存。SiteLogs 把你的时间当作值得被记住的故事。
+    </p>
+    <p>
+      同样的数据，不同的灵魂。
+    </p>
+  </div>
+
+  <div class="mt-20 pt-8 border-t border-line/50 max-w-md mx-auto text-center">
+    <p class="text-sm text-muted">
+      —— 一封信，来自 SiteLogs 的维护者
+      <a href="https://github.com/shyenx" target="_blank" rel="noopener" class="text-ember hover:underline">shyenx</a>
+    </p>
+  </div>
+
+  <div class="mt-12 text-center">
+    <a href="https://chromewebstore.google.com/detail/cgmjcajdmdhmojploigcijmghbchmejj" target="_blank" rel="noopener" class="cta-pulse inline-flex items-center gap-2 bg-ink text-cream px-7 py-3.5 rounded-full font-medium">
+      点亮你的第一盏路灯 →
+    </a>
+    <p class="mt-4 text-sm text-muted">7 天免费试用 · 无需信用卡 · $15 终身</p>
+  </div>
+</main>
+
+<footer class="w-full max-w-7xl mx-auto px-6 py-12 mt-12 border-t border-line">
+  <div class="flex flex-wrap items-center justify-between gap-6 text-sm text-muted">
+    <div class="flex items-center gap-2">
+      <img src="../assets/logo.svg" alt="" class="w-5 h-5" />
+      <span>© 2026 SiteLogs · 由 <a href="https://github.com/shyenx" target="_blank" rel="noopener" class="hover:text-ink underline-offset-2 hover:underline">shyenx</a> 构建</span>
+    </div>
+    <div class="flex flex-wrap gap-x-6 gap-y-2">
+      <a href="./manifesto.html" class="hover:text-ink">为什么</a>
+      <a href="./" class="hover:text-ink">首页</a>
+      <a href="../use-cases.html" class="hover:text-ink">使用场景</a>
+      <a href="../pricing.html" class="hover:text-ink">价格</a>
+      <a href="../privacy.html" class="hover:text-ink">隐私</a>
+      <a href="../contact.html" class="hover:text-ink">联系</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
