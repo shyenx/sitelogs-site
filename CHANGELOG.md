@@ -13,6 +13,40 @@
 
 ---
 
+## Marketing site · 2026-05-10
+
+> Pure marketing-site rebuild. **No extension changes.** Extension remains on v0.1.2.
+
+### Added (siteslogs.com)
+
+- **Conversion-first homepage** — restructured from 8 sections to 12,
+  adding Problem / Solution / Personas / Comparison / FAQ / Final CTA.
+  Hero headline now anchors directly against Chrome's built-in History
+  to make the value proposition land in two seconds.
+- **`/use-cases.html`** — three long-form persona stories (indie maker,
+  knowledge worker, student/researcher). Each is ~600 words showing
+  how SiteLogs changes a typical day.
+- **`/compare.html`** — full capability comparison vs typical web-time
+  extensions (cloud-sync subscriptions vs SiteLogs's local-first
+  one-time model), with per-row explanations.
+- **`/faq.html`** — 20+ questions across Privacy, Pricing, Activation,
+  Browser, and Features sections.
+- **Five alternating left-right feature blocks** on the homepage in
+  place of the prior 6-grid card list, each with a full-size screenshot.
+- **30-day money-back guarantee callout** on the Pricing section,
+  visually separated for trust-building.
+- **Final CTA card** — full-width ink-on-cream block at the bottom of
+  every page so visitors hit "Add to Chrome" twice during a scroll.
+
+### Changed (siteslogs.com)
+
+- **sitemap.xml** — adds `/use-cases.html`, `/compare.html`, `/faq.html`.
+- **All headers** — nav unified across all sub-pages, includes the new
+  "Use cases" entry.
+- **Footers** — unified across all pages with a consistent link list.
+
+---
+
 ## [0.1.2] — 2026-05-10
 
 ### Added
