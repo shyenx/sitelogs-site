@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./assets/logo.svg" width="64" height="64" alt="SiteLogs logo" />
+<img src="./assets/logo.svg" width="56" height="56" alt="SiteLogs logo" />
 
 # SiteLogs
 
@@ -12,6 +12,12 @@ Local-first browsing analytics, tab grouping, and a custom new tab — for Chrom
 [![Version](https://img.shields.io/github/v/release/shyenx/sitelogs-site?label=version&style=for-the-badge&color=cdc9bf)](https://github.com/shyenx/sitelogs-site/releases)
 
 [**Install**](https://chromewebstore.google.com/detail/cgmjcajdmdhmojploigcijmghbchmejj) · [**Website**](https://siteslogs.com) · [**Pricing**](https://siteslogs.com/pricing.html) · [**Privacy**](https://siteslogs.com/privacy.html) · [**Changelog**](./CHANGELOG.md) · [**Roadmap**](#-roadmap)
+
+<br/>
+
+<a href="https://siteslogs.com">
+<img src="./assets/screenshots/01-overview.png" alt="SiteLogs Overview dashboard" width="100%"/>
+</a>
 
 </div>
 
@@ -44,24 +50,24 @@ on a dashboard that opens every time you open a new tab.
 
 ---
 
-## 🖼 A look inside
+## 🖼 A closer look
 
 <table>
 <tr>
-<td><img src="./assets/screenshots/01-overview.png" alt="Overview dashboard" width="100%"/></td>
 <td><img src="./assets/screenshots/02-tabs.png" alt="Tab organizer" width="100%"/></td>
-</tr>
-<tr>
-<td align="center"><sub><b>Overview</b><br/>Your day at a glance — top sites, focus blocks, hour heatmap.</sub></td>
-<td align="center"><sub><b>Tab organizer</b><br/>One-click dedupe + group by domain. Sessions save & restore.</sub></td>
-</tr>
-<tr>
 <td><img src="./assets/screenshots/03-category-trend.png" alt="Category trends" width="100%"/></td>
-<td><img src="./assets/screenshots/04-behavior.png" alt="Behavior analysis" width="100%"/></td>
 </tr>
 <tr>
+<td align="center"><sub><b>Tab organizer</b><br/>One-click dedupe + group by domain. Sessions save & restore.</sub></td>
 <td align="center"><sub><b>Category trends</b><br/>Daily, weekly, monthly — by category, with comparisons.</sub></td>
+</tr>
+<tr>
+<td><img src="./assets/screenshots/04-behavior.png" alt="Behavior analysis" width="100%"/></td>
+<td><img src="./assets/screenshots/05-license.png" alt="License panel" width="100%"/></td>
+</tr>
+<tr>
 <td align="center"><sub><b>Behavior signals</b><br/>Productive vs leisure split. Idle gaps removed.</sub></td>
+<td align="center"><sub><b>Transparent pricing</b><br/>Trial countdown, license activation — all in Settings.</sub></td>
 </tr>
 </table>
 
