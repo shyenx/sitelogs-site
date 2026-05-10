@@ -4,10 +4,12 @@
 > Format follows [Keep a Changelog](https://keepachangelog.com/) and the
 > project uses [Semantic Versioning](https://semver.org/).
 >
-> Each tagged release also has a downloadable zip + full notes on the
-> [GitHub Releases page](https://github.com/shyenx/sitelogs-site/releases).
-> The canonical install path for end users remains the
-> [Chrome Web Store](https://chromewebstore.google.com/detail/cgmjcajdmdhmojploigcijmghbchmejj).
+> The canonical install path for end users is the
+> [Chrome Web Store](https://chromewebstore.google.com/detail/cgmjcajdmdhmojploigcijmghbchmejj) —
+> we don't distribute the extension binary anywhere else. This file (and the
+> [GitHub Releases page](https://github.com/shyenx/sitelogs-site/releases))
+> exists so you can see exactly what changed between versions before
+> Chrome auto-updates you.
 
 ---
 
