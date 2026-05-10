@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>SiteLogs — Why we built it</title>
+<meta name="description" content="A memory tool disguised as a time tracker. Every record is an anchor we drop in the river of time — lamps along the path you walked." />
+<link rel="canonical" href="https://siteslogs.com/manifesto.html" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="SiteLogs" />
+<meta property="og:title" content="SiteLogs Manifesto — Why we built it" />
+<meta property="og:description" content="A memory tool disguised as a time tracker. Lamps along the path you walked." />
+<meta property="og:url" content="https://siteslogs.com/manifesto.html" />
+<meta property="og:image" content="https://siteslogs.com/assets/og-image.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://siteslogs.com/assets/og-image.jpg" />
+<link rel="icon" type="image/png" href="./assets/icon-128.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: {
+    colors: { ember: '#d97757', cream: '#faf9f5', ink: '#1f1d1a', stone: '#cdc9bf', line: '#e6e2d6', muted: '#6b665a' },
+    fontFamily: { ui: ['Inter','system-ui','sans-serif'], display: ['Lora','Georgia','serif'] },
+  } } };
+</script>
+<style>
+  body { font-family: Inter, system-ui, sans-serif; }
+  h1, h2, h3, .font-display { font-family: Lora, Georgia, serif; }
+  html { scroll-behavior: smooth; }
+  .cta-pulse { transition: transform .15s ease, box-shadow .15s ease; }
+  .cta-pulse:hover { transform: translateY(-1px) scale(1.02); box-shadow: 0 10px 24px -8px rgba(31,29,26,.25); }
+  .prose-poem p { font-family: Lora, Georgia, serif; font-size: 1.35rem; line-height: 1.85; color: #1f1d1a; }
+  .prose-poem p + p { margin-top: 1.5rem; }
+  .prose-poem em { font-style: italic; color: #6b665a; }
+  @media (max-width: 768px) {
+    .prose-poem p { font-size: 1.15rem; line-height: 1.75; }
+  }
+</style>
+</head>
+<body class="bg-cream text-ink antialiased">
+
+<header class="w-full max-w-6xl mx-auto px-6 py-8 flex items-center justify-between">
+  <a href="./" class="flex items-center gap-2.5">
+    <img src="./assets/logo.svg" alt="" class="w-7 h-7" />
+    <span class="font-display text-2xl font-semibold tracking-tight">SiteLogs</span>
+  </a>
+  <nav class="text-sm text-muted hidden md:flex gap-6">
+    <a href="./guide.html" class="hover:text-ink transition-colors">Guide</a>
+    <a href="./use-cases.html" class="hover:text-ink transition-colors">Use cases</a>
+    <a href="./manifesto.html" class="text-ink">Why</a>
+    <a href="./pricing.html" class="hover:text-ink transition-colors">Pricing</a>
+    <a href="./contact.html" class="hover:text-ink transition-colors">Contact</a>
+  </nav>
+  <a href="https://chromewebstore.google.com/detail/cgmjcajdmdhmojploigcijmghbchmejj" target="_blank" rel="noopener" class="cta-pulse hidden md:inline-flex items-center gap-1.5 bg-ink text-cream px-4 py-2 rounded-full text-sm font-medium">
+    Add to Chrome
+  </a>
+</header>
+
+<main class="w-full max-w-2xl mx-auto px-6 py-16 md:py-24">
+  <p class="font-ui text-xs uppercase tracking-[0.22em] text-ember mb-6 text-center">A note from the maintainer</p>
+  <h1 class="font-display text-4xl md:text-5xl font-semibold tracking-tight text-center mb-2 leading-[1.15]">
+    Why we built it.
+  </h1>
+  <p class="font-display italic text-muted text-center text-lg mb-16">
+    A memory tool disguised as a time tracker.
+  </p>
+
+  <article class="prose-poem">
+    <p>
+      Each browsing action you take might feel insignificant. Every
+      minute spent gets no clear value feedback. But these moments
+      shouldn't be forgotten.
+    </p>
+
+    <p>
+      A week, a month, a year from now, when you look back — you'll
+      see the heatmap glowing at <span class="text-ember">3 a.m.</span>,
+      and remember the night that kept you awake. You'll see the long
+      block on a domain you'd long forgotten you cared about, and
+      remember the project that almost was. You'll see the gap on a
+      Saturday and remember the day nobody else marked on a calendar.
+    </p>
+
+    <p>
+      Every record is an anchor we drop in the river of time. Lamps
+      along the path you walked.
+    </p>
+
+    <p>
+      One day, when you turn around to look, it won't be confusion or
+      darkness you see. <em>You'll see how far you've come.</em>
+    </p>
+  </article>
+
+  <!-- divider -->
+  <div class="mt-16 mb-16 flex justify-center">
+    <div class="w-16 h-px bg-ember"></div>
+  </div>
+
+  <p class="font-display text-2xl md:text-3xl font-semibold text-center leading-relaxed text-ink">
+    <span class="text-ember">不被记忆</span>，是永远的死亡。<br/>
+    <span class="font-normal text-muted text-xl md:text-2xl italic">To be unremembered is the only true death.</span>
+  </p>
+
+  <div class="mt-20 max-w-xl mx-auto text-muted leading-relaxed">
+    <p class="mb-4">
+      Most "productivity" software treats your time as inventory to be
+      optimized. SiteLogs treats your time as a story to be remembered.
+    </p>
+    <p>
+      Same data. Different soul.
+    </p>
+  </div>
+
+  <div class="mt-20 text-center">
+    <a href="https://chromewebstore.google.com/detail/cgmjcajdmdhmojploigcijmghbchmejj" target="_blank" rel="noopener" class="cta-pulse inline-flex items-center gap-2 bg-ink text-cream px-7 py-3.5 rounded-full font-medium">
+      Light your first lamp →
+    </a>
+    <p class="mt-4 text-sm text-muted">7-day free trial · no credit card · $15 lifetime</p>
+  </div>
+</main>
+
+<footer class="w-full max-w-6xl mx-auto px-6 py-12 mt-12 border-t border-line">
+  <div class="flex flex-wrap items-center justify-between gap-6 text-sm text-muted">
+    <div class="flex items-center gap-2">
+      <img src="./assets/logo.svg" alt="" class="w-5 h-5" />
+      <span>© 2026 SiteLogs</span>
+    </div>
+    <div class="flex flex-wrap gap-x-6 gap-y-2">
+      <a href="./manifesto.html" class="hover:text-ink">Why</a>
+      <a href="./guide.html" class="hover:text-ink">Guide</a>
+      <a href="./use-cases.html" class="hover:text-ink">Use cases</a>
+      <a href="./compare.html" class="hover:text-ink">Compare</a>
+      <a href="./faq.html" class="hover:text-ink">FAQ</a>
+      <a href="./pricing.html" class="hover:text-ink">Pricing</a>
+      <a href="./privacy.html" class="hover:text-ink">Privacy</a>
+      <a href="./terms.html" class="hover:text-ink">Terms</a>
+      <a href="./refund.html" class="hover:text-ink">Refund</a>
+      <a href="./contact.html" class="hover:text-ink">Contact</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
