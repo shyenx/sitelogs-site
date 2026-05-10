@@ -69,6 +69,45 @@ You can also email **<shyenx.site.support@gmail.com>** — see the
 
 ---
 
+## Roadmap
+
+> Mirrors the maintainer's roadmap kept in the private extension repo.
+> Updated whenever we ship.
+
+### Shipped
+
+- [x] Local-first tracking · IndexedDB-only, no telemetry
+- [x] Heatmap, focus blocks, narrative summaries
+- [x] One-click tab organize (dedupe + group + colour-code)
+- [x] EN / 中 bilingual UI
+- [x] Custom new tab dashboard with pinned-site tiles
+- [x] First-run import from Chrome history (opt-in modal, 30/90/365/All)
+- [x] License-key purchase + email delivery
+- [x] Compact tab-group titles (drops TLD, e.g. `mail.google.com` → `Google`)
+- [x] Confetti celebration on activation 🎉
+- [x] `?` keyboard-shortcut help modal
+
+### Next up
+
+- [ ] **Smarter favicon resolution** — use real visited URL so Chrome's
+      local cache hits more often; letter-avatar fallback for the
+      genuinely missing ones
+- [ ] Self-hosted Inter + Lora fonts (remove the last network dependency)
+- [ ] Bulk export → CSV (currently JSON only)
+
+### Later
+
+- [ ] **Pro tier** — extended scopes, cross-device visit sync, advanced
+      rules, weekly retro reports
+- [ ] Firefox / Edge ports
+- [ ] Optional, opt-in feature-usage telemetry (with explicit consent)
+- [ ] "Ask SiteLogs" — a prompt slot that can ask Claude (BYO API key)
+      questions about your own logs, runs locally
+
+Want something on this list moved up? [Open an issue](https://github.com/shyenx/sitelogs-site/issues/new).
+
+---
+
 ## License & terms
 
 - [Privacy Policy](https://siteslogs.com/privacy.html)
