@@ -69,6 +69,16 @@ You can also email **<shyenx.site.support@gmail.com>** — see the
 
 ---
 
+## Downloads & changelog
+
+- 📦 **[Latest release on GitHub](https://github.com/shyenx/sitelogs-site/releases/latest)** — direct zip download for sideload / audit / CWS-blocked regions.
+- 📜 **[Full changelog](./CHANGELOG.md)** — every shipped change, with rationale.
+- 🛒 **[Chrome Web Store listing](https://chromewebstore.google.com/detail/cgmjcajdmdhmojploigcijmghbchmejj)** — canonical install path, auto-updates.
+
+The zip and the Chrome Web Store version come from the same source build. The CWS path is what 99% of users want — auto-updates, signed by Google, no Developer-mode toggle. The zip is for: power users, security auditors, and people in regions where CWS is blocked.
+
+---
+
 ## Roadmap
 
 > Mirrors the maintainer's roadmap kept in the private extension repo.
