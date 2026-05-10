@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>SiteLogs — Use cases for indie makers, knowledge workers, and students</title>
+<meta name="description" content="Three real-world stories of how SiteLogs changes the day for people who live in their browser — indie makers, knowledge workers, and students or researchers." />
+<link rel="canonical" href="https://siteslogs.com/use-cases.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="SiteLogs" />
+<meta property="og:title" content="SiteLogs — Use cases" />
+<meta property="og:description" content="Indie makers, knowledge workers, students — three stories of putting numbers on a vague feeling about your day." />
+<meta property="og:url" content="https://siteslogs.com/use-cases.html" />
+<meta property="og:image" content="https://siteslogs.com/assets/og-image.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://siteslogs.com/assets/og-image.jpg" />
+<link rel="icon" type="image/png" href="./assets/icon-128.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600;700&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: {
+    colors: { ember: '#d97757', cream: '#faf9f5', ink: '#1f1d1a', stone: '#cdc9bf', line: '#e6e2d6', muted: '#6b665a' },
+    fontFamily: { ui: ['Inter','system-ui','sans-serif'], display: ['Lora','Georgia','serif'] },
+  } } };
+</script>
+<style>
+  body { font-family: Inter, system-ui, sans-serif; }
+  h1, h2, h3, .font-display { font-family: Lora, Georgia, serif; }
+  html { scroll-behavior: smooth; }
+  .cta-pulse { transition: transform .15s ease, box-shadow .15s ease; }
+  .cta-pulse:hover { transform: translateY(-1px) scale(1.02); box-shadow: 0 10px 24px -8px rgba(31,29,26,.25); }
+  article p { line-height: 1.8; }
+  article p + p { margin-top: 1rem; }
+</style>
+</head>
+<body class="bg-cream text-ink antialiased">
+
+<header class="w-full max-w-6xl mx-auto px-6 py-8 flex items-center justify-between">
+  <a href="./" class="flex items-center gap-2.5">
+    <img src="./assets/logo.svg" alt="" class="w-7 h-7" />
+    <span class="font-display text-2xl font-semibold tracking-tight">SiteLogs</span>
+  </a>
+  <nav class="text-sm text-muted hidden md:flex gap-6">
+    <a href="./guide.html" class="hover:text-ink">Guide</a>
+    <a href="./use-cases.html" class="text-ink">Use cases</a>
+    <a href="./pricing.html" class="hover:text-ink">Pricing</a>
+    <a href="./privacy.html" class="hover:text-ink">Privacy</a>
+    <a href="./contact.html" class="hover:text-ink">Contact</a>
+  </nav>
+  <a href="https://chromewebstore.google.com/detail/cgmjcajdmdhmojploigcijmghbchmejj" target="_blank" rel="noopener" class="cta-pulse hidden md:inline-flex items-center gap-1.5 bg-ink text-cream px-4 py-2 rounded-full text-sm font-medium">
+    Add to Chrome
+  </a>
+</header>
+
+<main class="w-full max-w-3xl mx-auto px-6 py-12">
+  <p class="font-ui text-xs uppercase tracking-[0.22em] text-ember mb-4">Use cases</p>
+  <h1 class="font-display text-4xl md:text-5xl font-semibold tracking-tight mb-6 leading-[1.1]">
+    Three stories of "wait, where did my day go?"
+  </h1>
+  <p class="text-lg text-muted leading-relaxed mb-12">
+    SiteLogs is for people who live in their browser. Here's how it
+    changes a typical day for three of them.
+  </p>
+
+  <!-- Quick nav -->
+  <div class="flex flex-wrap gap-3 mb-16 border-y border-line py-4 text-sm text-muted">
+    <a href="#indie" class="hover:text-ink font-medium">→ Indie makers</a>
+    <span class="text-stone">·</span>
+    <a href="#knowledge" class="hover:text-ink font-medium">→ Knowledge workers</a>
+    <span class="text-stone">·</span>
+    <a href="#students" class="hover:text-ink font-medium">→ Students & researchers</a>
+  </div>
+
+  <!-- Indie maker -->
+  <article id="indie" class="mb-24 scroll-mt-12">
+    <div class="text-4xl mb-4" aria-hidden>👩‍💻</div>
+    <h2 class="font-display text-3xl font-semibold mb-3">For indie makers</h2>
+    <p class="text-ember font-medium text-lg mb-6">"I was 'working' for 9 hours but launched nothing today."</p>
+
+    <p class="text-muted">You're building a product. There's no boss watching. Your "office" is a Chrome window with 14 tabs open: GitHub, Linear, Notion, Stripe dashboard, Paddle dashboard, your own staging site, your live site, four Google Docs, Twitter (research, you swear), and three articles you opened "to read later."</p>
+
+    <p class="text-muted">By 6pm, you've been at the desk all day. You're tired. But what shipped? You can't quite say. Was that 4 hours of code or 4 hours of switching between dashboards? Was that "research" or just doomscrolling Hacker News with the volume on guilt?</p>
+
+    <p class="text-muted">SiteLogs gives you the receipt. Open a new tab and the Overview shows: <em>"Online 7h 22m today. Tools 3h 41m, Tech 2h 12m, Social 1h 14m, Other 15m."</em> The 1h 14m on Twitter you don't remember spending? It's there. The 3h 41m in actual product surfaces (your repo, your dashboards) is also there — that's your real builder time.</p>
+
+    <p class="text-muted">What changes the next day: instead of vague "work hours," you've got a number. You can set a budget — "Social ≤ 30 min/day" — and the dashboard shows a progress bar. Most days you stay under. Some days you don't, and that's also data. Either way, the story you tell yourself about "today" matches what actually happened.</p>
+
+    <p class="text-muted"><strong class="text-ink">SiteLogs features that pull weight here:</strong> per-category time, daily focus budgets, period-over-period (this week vs last week), the heatmap (when am I most productive?), one-click tab cleanup at end of day so tomorrow doesn't start with 47 stale tabs.</p>
+  </article>
+
+  <!-- Knowledge worker -->
+  <article id="knowledge" class="mb-24 scroll-mt-12">
+    <div class="text-4xl mb-4" aria-hidden>🧠</div>
+    <h2 class="font-display text-3xl font-semibold mb-3">For knowledge workers</h2>
+    <p class="text-ember font-medium text-lg mb-6">"I'm in 6 tabs at once and zero of them feel deep."</p>
+
+    <p class="text-muted">You're a senior engineer / designer / PM at a company where the workflow happens in the browser. GitHub PRs in one tab. Notion specs in another. Slack pinging in a third. Linear tickets in a fourth. A Figma file in a fifth. A Loom you "should" watch in a sixth.</p>
+
+    <p class="text-muted">By Friday you've context-switched a thousand times. You feel exhausted and oddly under-shipped, and you can't quite explain why — you definitely "worked." Your manager asks how the Tuesday spec doc is going. You think for a second. You don't actually remember Tuesday.</p>
+
+    <p class="text-muted">SiteLogs makes context-switching costs visible. The Behavior page shows your <strong class="text-ink">focus blocks</strong> — continuous reading sessions ≥ 10 minutes — alongside your <strong class="text-ink">switches per hour</strong> count. You discover that on Tuesday you had eight 5-minute "fragments" but only one 23-minute focus block. That's why the spec felt like it didn't move: it didn't, because you were never inside it for long enough.</p>
+
+    <p class="text-muted">Across a week, you start optimizing for fewer, longer blocks. You batch Slack to twice a day. You close Notion tabs you're not actively using. You set a "Notion ≥ 2h/day" budget on the docs you're supposed to ship. The numbers reward the change: focus blocks go from 2/day to 5/day. Average block length goes from 14 min to 28 min. You ship more on the same hours.</p>
+
+    <p class="text-muted"><strong class="text-ink">SiteLogs features that pull weight here:</strong> focus blocks (≥ 10 min), switches-per-hour, attention quality split (productive vs leisure), category trends week-over-week, one-click tab organize to bring order to the workspace.</p>
+  </article>
+
+  <!-- Students & researchers -->
+  <article id="students" class="mb-24 scroll-mt-12">
+    <div class="text-4xl mb-4" aria-hidden>🎓</div>
+    <h2 class="font-display text-3xl font-semibold mb-3">For students & researchers</h2>
+    <p class="text-ember font-medium text-lg mb-6">"I've been studying all weekend." (You haven't.)</p>
+
+    <p class="text-muted">You're a student or PhD researcher. You sit down on Saturday at 10am with your laptop, intend to write the literature review, and somehow it's now Sunday 3pm and you've added 600 words.</p>
+
+    <p class="text-muted">In the moment, you remember it as: lots of focused study with some short breaks. The reality, which the calendar doesn't show: you spent 1h 47m on YouTube ("study music"), 53m on Reddit ("just one more thread"), 38m in WhatsApp, 24m on Twitter, and the actual paper got 2h 12m. Total in <em>any</em> Tools/Research domain over the weekend: 4h 30m.</p>
+
+    <p class="text-muted">SiteLogs is uncomfortable. The 24×7 heatmap shows your "study weekend" with deep red on the Reddit and YouTube hours — bright and undeniable. The category-trend chart shows Leisure ahead of Research by 2 hours.</p>
+
+    <p class="text-muted">The discomfort is the feature. You can't lie to yourself anymore, because the data is on every new tab. By the end of the next week, your Saturday looks different: 4h 12m on the actual paper, 35m on YouTube. You didn't try harder; you just got the receipts you'd been dodging.</p>
+
+    <p class="text-muted"><strong class="text-ink">SiteLogs features that pull weight here:</strong> 24×7 heatmap, category trends with weekly baselines, per-category daily budgets, the dashboard-as-new-tab so the data is unavoidable.</p>
+  </article>
+
+  <!-- CTA -->
+  <div class="mt-12 rounded-3xl bg-ink text-cream p-10 md:p-14 text-center">
+    <h2 class="font-display text-2xl md:text-3xl font-semibold tracking-tight mb-4">Try it for 7 days, free.</h2>
+    <p class="text-cream/70 mb-8 max-w-md mx-auto">No credit card up front. The story your day actually tells will be there in 5 minutes of browsing.</p>
+    <div class="flex flex-wrap items-center justify-center gap-3">
+      <a href="https://chromewebstore.google.com/detail/cgmjcajdmdhmojploigcijmghbchmejj" target="_blank" rel="noopener" class="cta-pulse inline-flex items-center gap-2 bg-ember text-cream px-8 py-4 rounded-full font-medium">
+        Add to Chrome — Free
+      </a>
+      <a href="./pricing.html" class="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-cream/20 text-cream hover:bg-cream/10 transition-colors">
+        See pricing
+      </a>
+    </div>
+  </div>
+</main>
+
+<footer class="w-full max-w-6xl mx-auto px-6 py-12 mt-12 border-t border-line">
+  <div class="flex flex-wrap items-center justify-between gap-6 text-sm text-muted">
+    <div class="flex items-center gap-2">
+      <img src="./assets/logo.svg" alt="" class="w-5 h-5" />
+      <span>© 2026 SiteLogs</span>
+    </div>
+    <div class="flex flex-wrap gap-x-6 gap-y-2">
+      <a href="./guide.html" class="hover:text-ink">Guide</a>
+      <a href="./use-cases.html" class="hover:text-ink">Use cases</a>
+      <a href="./compare.html" class="hover:text-ink">Compare</a>
+      <a href="./faq.html" class="hover:text-ink">FAQ</a>
+      <a href="./pricing.html" class="hover:text-ink">Pricing</a>
+      <a href="./privacy.html" class="hover:text-ink">Privacy</a>
+      <a href="./contact.html" class="hover:text-ink">Contact</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

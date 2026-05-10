@@ -53,7 +53,7 @@
           "price": "15",
           "priceCurrency": "USD",
           "category": "OneTimePayment",
-          "availability": "https://schema.org/PreOrder"
+          "availability": "https://schema.org/InStock"
         },
         {
           "@type": "Offer",
@@ -74,7 +74,7 @@
         "Bilingual UI (English / 中文)",
         "Session save and restore"
       ],
-      "softwareVersion": "0.1.0",
+      "softwareVersion": "0.1.2",
       "datePublished": "2026-04-29",
       "publisher": {
         "@type": "Organization",
@@ -124,6 +124,20 @@
 <style>
   body { font-family: Inter, system-ui, sans-serif; }
   h1, h2, h3, .font-display { font-family: Lora, Georgia, serif; }
+  html { scroll-behavior: smooth; }
+  .cta-pulse { transition: transform .15s ease, box-shadow .15s ease; }
+  .cta-pulse:hover { transform: translateY(-1px) scale(1.02); box-shadow: 0 10px 24px -8px rgba(31,29,26,.25); }
+  .section-divider {
+    display: flex; align-items: center; gap: 12px;
+    color: #cdc9bf;
+  }
+  .section-divider::before, .section-divider::after {
+    content: ''; flex: 1; height: 1px; background: #e6e2d6;
+  }
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+  details[open] .faq-arrow { transform: rotate(45deg); }
+  .faq-arrow { transition: transform .2s ease; }
 </style>
 </head>
 <body class="bg-cream text-ink antialiased">
@@ -134,183 +148,413 @@
     <img src="./assets/logo.svg" alt="" class="w-7 h-7" />
     <span class="font-display text-2xl font-semibold tracking-tight">SiteLogs</span>
   </a>
-  <nav class="text-sm text-muted flex gap-6">
-    <a href="./guide.html" class="hover:text-ink">Guide</a>
-    <a href="./pricing.html" class="hover:text-ink">Pricing</a>
-    <a href="./privacy.html" class="hover:text-ink">Privacy</a>
-    <a href="./terms.html" class="hover:text-ink">Terms</a>
-    <a href="./refund.html" class="hover:text-ink">Refund</a>
-      <a href="./contact.html" class="hover:text-ink">Contact</a>
+  <nav class="text-sm text-muted hidden md:flex gap-6">
+    <a href="./guide.html" class="hover:text-ink transition-colors">Guide</a>
+    <a href="./use-cases.html" class="hover:text-ink transition-colors">Use cases</a>
+    <a href="./pricing.html" class="hover:text-ink transition-colors">Pricing</a>
+    <a href="./privacy.html" class="hover:text-ink transition-colors">Privacy</a>
+    <a href="./contact.html" class="hover:text-ink transition-colors">Contact</a>
   </nav>
+  <a href="https://chromewebstore.google.com/detail/cgmjcajdmdhmojploigcijmghbchmejj" target="_blank" rel="noopener" class="cta-pulse hidden md:inline-flex items-center gap-1.5 bg-ink text-cream px-4 py-2 rounded-full text-sm font-medium">
+    Add to Chrome
+  </a>
 </header>
 
-<!-- ═══ Hero ═══ -->
-<section class="w-full max-w-6xl mx-auto px-6 pt-16 pb-24">
+<!-- ═══ 1. Hero ═══ -->
+<section class="w-full max-w-6xl mx-auto px-6 pt-12 pb-24">
   <div class="max-w-3xl">
-    <p class="font-ui text-xs uppercase tracking-[0.2em] text-ember mb-4">Browsing analytics · Local-first</p>
+    <p class="font-ui text-xs uppercase tracking-[0.22em] text-ember mb-5">100% local · Chrome extension</p>
     <h1 class="font-display text-5xl md:text-6xl font-semibold tracking-tight leading-[1.05]">
-      See where your time<br/>actually goes online.
+      Chrome's history tells you <span class="text-muted">where</span>.<br/>
+      SiteLogs tells you <span class="text-ember">how long</span>.
     </h1>
-    <p class="mt-6 text-lg text-muted leading-relaxed max-w-2xl">
-      SiteLogs is a Chrome extension that quietly records how long you spend
-      on each site — locally, on your machine. Daily, weekly, yearly views
-      Chrome's History never gave you. Tab organizer included.
+    <p class="mt-7 text-lg md:text-xl text-muted leading-relaxed max-w-2xl">
+      A Chrome extension that quietly records how long you actually spend on
+      each site — on your own machine. Replaces your new tab with a personal
+      dashboard, organizes your tabs in one click, and never sends a byte
+      anywhere.
     </p>
     <div class="mt-10 flex flex-wrap items-center gap-3">
-      <a href="https://chromewebstore.google.com/detail/cgmjcajdmdhmojploigcijmghbchmejj" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-ink text-cream px-6 py-3 rounded-full font-medium hover:opacity-90 transition">
-        Add to Chrome — free
+      <a href="https://chromewebstore.google.com/detail/cgmjcajdmdhmojploigcijmghbchmejj" target="_blank" rel="noopener" class="cta-pulse inline-flex items-center gap-2 bg-ink text-cream px-7 py-3.5 rounded-full font-medium">
+        Add to Chrome — Free
       </a>
-      <a href="./pricing.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-line text-ink hover:bg-stone/20">
-        Pricing
+      <a href="#pricing" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-line text-ink hover:bg-stone/20 transition-colors">
+        See pricing
       </a>
-      <span class="text-sm text-muted">Free preview while paid licensing finalizes · no card needed</span>
     </div>
-  </div>
-
-  <!-- Hero narrative box -->
-  <div class="mt-16 border border-line rounded-2xl bg-white/40 p-8 max-w-3xl">
-    <div class="text-xs uppercase tracking-[0.18em] text-muted mb-2">Today, in one line</div>
-    <div class="font-display text-2xl leading-relaxed">
-      Online <span class="text-ember">1h 14m</span>
-      &middot; <span class="text-muted">↑ +12% vs yesterday</span><br/>
-      Longest <span class="text-ink">github.com 47m</span>
-      &middot; <span class="text-muted">switches/hr 8</span>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ Screenshots ═══ -->
-<section class="w-full max-w-6xl mx-auto px-6 py-24 border-t border-line">
-  <div class="flex items-baseline justify-between flex-wrap gap-4 mb-10">
-    <h2 class="font-display text-3xl font-semibold">A look inside</h2>
-    <p class="text-sm text-muted">Click any shot to enlarge</p>
-  </div>
-
-  <!-- Hero shot full-width -->
-  <a href="./assets/screenshots/01-overview.png" target="_blank" class="block group mb-6">
-    <figure class="border border-line rounded-2xl overflow-hidden bg-ink shadow-sm hover:shadow-xl transition-shadow">
-      <img src="./assets/screenshots/01-overview.png"
-           alt="SiteLogs Overview — narrative, top sites, and time-of-day heatmap"
-           width="1280" height="800"
-           class="w-full h-auto group-hover:opacity-95 transition-opacity" />
-    </figure>
-    <figcaption class="mt-3 text-sm text-muted">
-      <strong class="text-ink font-medium">Overview.</strong>
-      One-line narrative, total active time, top domains, top URLs, and the 24×7 heatmap — your day at a glance.
-    </figcaption>
-  </a>
-
-  <!-- 2×2 grid of remaining shots -->
-  <div class="grid md:grid-cols-2 gap-6 mt-10">
-    <a href="./assets/screenshots/02-tabs.png" target="_blank" class="block group">
-      <figure class="border border-line rounded-2xl overflow-hidden bg-ink shadow-sm hover:shadow-xl transition-shadow">
-        <img src="./assets/screenshots/02-tabs.png"
-             alt="Tabs page with one-click organize, dedupe, and group-by-domain"
-             width="1280" height="800"
-             class="w-full h-auto group-hover:opacity-95 transition-opacity" />
-      </figure>
-      <figcaption class="mt-3 text-sm text-muted">
-        <strong class="text-ink font-medium">Tab organizer.</strong>
-        Dedupe by URL, group by domain into Chrome's native tab groups in one click.
-      </figcaption>
-    </a>
-
-    <a href="./assets/screenshots/03-category-trend.png" target="_blank" class="block group">
-      <figure class="border border-line rounded-2xl overflow-hidden bg-ink shadow-sm hover:shadow-xl transition-shadow">
-        <img src="./assets/screenshots/03-category-trend.png"
-             alt="Stacked category trend chart with By-category breakdown"
-             width="1280" height="800"
-             class="w-full h-auto group-hover:opacity-95 transition-opacity" />
-      </figure>
-      <figcaption class="mt-3 text-sm text-muted">
-        <strong class="text-ink font-medium">Category trends.</strong>
-        AI · Tech · Social · Video · Docs … see how your attention shifts week over week.
-      </figcaption>
-    </a>
-
-    <a href="./assets/screenshots/04-behavior.png" target="_blank" class="block group">
-      <figure class="border border-line rounded-2xl overflow-hidden bg-ink shadow-sm hover:shadow-xl transition-shadow">
-        <img src="./assets/screenshots/04-behavior.png"
-             alt="Behavior section: today shape, attention quality, new and lapsed domains, focus blocks"
-             width="1280" height="800"
-             class="w-full h-auto group-hover:opacity-95 transition-opacity" />
-      </figure>
-      <figcaption class="mt-3 text-sm text-muted">
-        <strong class="text-ink font-medium">Behavior signals.</strong>
-        Attention quality, focus blocks, newcomers and lapsed domains — habits, surfaced.
-      </figcaption>
-    </a>
-
-    <a href="./assets/screenshots/05-license.png" target="_blank" class="block group">
-      <figure class="border border-line rounded-2xl overflow-hidden bg-ink shadow-sm hover:shadow-xl transition-shadow">
-        <img src="./assets/screenshots/05-license.png"
-             alt="License panel with trial countdown, early-bird upgrade, and activation field"
-             width="1280" height="800"
-             class="w-full h-auto group-hover:opacity-95 transition-opacity" />
-      </figure>
-      <figcaption class="mt-3 text-sm text-muted">
-        <strong class="text-ink font-medium">Transparent pricing.</strong>
-        7-day trial, $10 early-bird upgrade, license activation — all in Settings.
-      </figcaption>
-    </a>
-  </div>
-</section>
-
-<!-- ═══ Features ═══ -->
-<section class="w-full max-w-6xl mx-auto px-6 py-24 border-t border-line">
-  <h2 class="font-display text-3xl font-semibold mb-12">What it does</h2>
-  <div class="grid md:grid-cols-2 gap-x-12 gap-y-10">
-    <Feature title="📊 Time-spent visibility">
-      Active milliseconds per visit, per URL, per domain, per category.
-      Idle ≥60s automatically pauses tracking, so the number is real focus,
-      not "tab open duration".
-    </Feature>
-    <Feature title="🕒 24×7 heatmap">
-      A GitHub-style grid showing when you actually browse. Switch between
-      calendar years from one dropdown.
-    </Feature>
-    <Feature title="🎯 Focus blocks">
-      Continuous reading sessions ≥10 min surfaced as "best work today".
-      Set per-category daily focus budgets with progress bars.
-    </Feature>
-    <Feature title="📈 Period-over-period">
-      Today vs your average Tuesday, this week vs last week, with weekday
-      baselines. New / lapsed domains show what you started and what you
-      dropped.
-    </Feature>
-    <Feature title="⚡ One-click tab organize">
-      Dedupe by URL, group by domain into Chrome's native colored tab
-      groups. Pinned tabs untouched. Save the current window as a named
-      Session, restore later.
-    </Feature>
-    <Feature title="🏷 Tags & rules">
-      Tag any URL/domain. Custom domain or regex rules override the built-in
-      200+ category dictionary. Filter History by tag.
-    </Feature>
-  </div>
-</section>
-
-<!-- ═══ Privacy ═══ -->
-<section id="privacy-callout" class="w-full max-w-6xl mx-auto px-6 py-24 border-t border-line">
-  <div class="max-w-3xl">
-    <h2 class="font-display text-3xl font-semibold mb-6">Privacy by design</h2>
-    <ul class="space-y-3 text-lg leading-relaxed">
-      <li>🚫 No telemetry. No analytics. No external server.</li>
-      <li>📦 All visit data lives in your browser's <strong>IndexedDB</strong> on this device.</li>
-      <li>🔄 The only outbound call is Google Fonts CSS (will self-host). Once paid licensing launches, license activation will add a second call to our payment provider — nothing else, ever.</li>
-      <li>📤 One click in Settings exports everything to JSON, or wipes it.</li>
-      <li>📜 We commit to a clear privacy policy and never adding hidden trackers.</li>
-    </ul>
-    <p class="mt-6 text-sm text-muted">
-      Read the full <a href="./privacy.html" class="underline">Privacy Policy</a>.
+    <p class="mt-5 text-sm text-muted flex flex-wrap items-center gap-x-4 gap-y-2">
+      <span class="inline-flex items-center gap-1.5">✓ 7-day free trial</span>
+      <span class="inline-flex items-center gap-1.5">✓ No credit card</span>
+      <span class="inline-flex items-center gap-1.5">✓ One-time $15 lifetime</span>
     </p>
   </div>
+
+  <!-- Hero screenshot -->
+  <div class="mt-16">
+    <div class="border border-line rounded-2xl overflow-hidden bg-ink shadow-[0_24px_48px_-16px_rgba(31,29,26,0.18)]">
+      <img src="./assets/screenshots/01-overview.png"
+           alt="SiteLogs Overview dashboard — narrative, top sites, and time-of-day heatmap"
+           width="1280" height="800"
+           class="w-full h-auto" />
+    </div>
+    <p class="mt-4 text-sm text-muted text-center">Your day at a glance — top sites, focus blocks, hour-of-day heatmap.</p>
+  </div>
 </section>
 
-<!-- ═══ Pricing ═══ -->
-<section id="pricing" class="w-full max-w-6xl mx-auto px-6 py-24 border-t border-line">
-  <h2 class="font-display text-3xl font-semibold mb-12">One price. No subscription.</h2>
-  <div class="grid md:grid-cols-2 gap-6 max-w-4xl">
+<!-- ═══ 2. Problem ═══ -->
+<section class="w-full max-w-6xl mx-auto px-6 py-24 border-t border-line">
+  <div class="max-w-3xl mb-12">
+    <p class="font-ui text-xs uppercase tracking-[0.22em] text-ember mb-3">The problem</p>
+    <h2 class="font-display text-3xl md:text-4xl font-semibold tracking-tight leading-tight">
+      You finish the day not really sure where 8 hours went.
+    </h2>
+    <p class="mt-4 text-muted text-lg leading-relaxed">
+      Chrome's built-in History tells you the URL list. It doesn't answer the
+      questions you actually have.
+    </p>
+  </div>
+  <div class="grid md:grid-cols-3 gap-5">
+    <div class="border border-line rounded-2xl p-6 bg-white/40">
+      <div class="font-display text-xl font-semibold mb-2">"How long did I work today?"</div>
+      <p class="text-sm text-muted leading-relaxed">
+        Counting URLs in History is meaningless — you can't tell 30s glances
+        from 30-min reading sessions. So you guess, and the guess feels off.
+      </p>
+    </div>
+    <div class="border border-line rounded-2xl p-6 bg-white/40">
+      <div class="font-display text-xl font-semibold mb-2">"Why am I tired but feel like I did nothing?"</div>
+      <p class="text-sm text-muted leading-relaxed">
+        Attention-switching costs are invisible. Without focus-block data,
+        you'll never see that 14 context switches an hour are eating you
+        alive.
+      </p>
+    </div>
+    <div class="border border-line rounded-2xl p-6 bg-white/40">
+      <div class="font-display text-xl font-semibold mb-2">"Which 'important' sites do I actually use?"</div>
+      <p class="text-sm text-muted leading-relaxed">
+        That bookmark you starred 6 months ago? You haven't opened it. The
+        site you swore you'd "look at later"? Same. Without numbers, the
+        story you tell yourself doesn't match reality.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 3. Solution ═══ -->
+<section class="w-full max-w-6xl mx-auto px-6 py-24 border-t border-line">
+  <div class="max-w-3xl mb-12">
+    <p class="font-ui text-xs uppercase tracking-[0.22em] text-ember mb-3">The fix</p>
+    <h2 class="font-display text-3xl md:text-4xl font-semibold tracking-tight leading-tight">
+      SiteLogs makes your time on the web <span class="text-ember">visible</span>,
+      <span class="text-ember">private</span>, and <span class="text-ember">yours</span>.
+    </h2>
+  </div>
+  <div class="grid md:grid-cols-3 gap-5">
+    <div class="border-l-4 border-ember bg-white/40 rounded-r-2xl p-6">
+      <div class="text-xs uppercase tracking-wider text-ember mb-2 font-semibold">Visibility</div>
+      <h3 class="font-display text-lg font-semibold mb-2">Real numbers, not guesses</h3>
+      <p class="text-sm text-muted leading-relaxed">
+        Active milliseconds per visit, per URL, per domain, per category.
+        Idle ≥ 60s pauses tracking — you see real focus time.
+      </p>
+    </div>
+    <div class="border-l-4 border-ember bg-white/40 rounded-r-2xl p-6">
+      <div class="text-xs uppercase tracking-wider text-ember mb-2 font-semibold">Privacy</div>
+      <h3 class="font-display text-lg font-semibold mb-2">Stays on your device</h3>
+      <p class="text-sm text-muted leading-relaxed">
+        Visit data lives in your browser's IndexedDB — locally, on this
+        machine. No telemetry. No analytics. No external server.
+      </p>
+    </div>
+    <div class="border-l-4 border-ember bg-white/40 rounded-r-2xl p-6">
+      <div class="text-xs uppercase tracking-wider text-ember mb-2 font-semibold">Control</div>
+      <h3 class="font-display text-lg font-semibold mb-2">Own your data, always</h3>
+      <p class="text-sm text-muted leading-relaxed">
+        One-click JSON export. One-click wipe. Custom rules to override
+        categories. The dashboard is yours, the data is yours.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 4. Personas ═══ -->
+<section class="w-full max-w-6xl mx-auto px-6 py-24 border-t border-line">
+  <div class="max-w-3xl mb-12">
+    <p class="font-ui text-xs uppercase tracking-[0.22em] text-ember mb-3">Who it's for</p>
+    <h2 class="font-display text-3xl md:text-4xl font-semibold tracking-tight leading-tight">
+      Built for people who live in their browser.
+    </h2>
+  </div>
+  <div class="grid md:grid-cols-3 gap-6">
+    <div class="border border-line rounded-2xl p-7 bg-white/40 flex flex-col">
+      <div class="text-3xl mb-4" aria-hidden>👩‍💻</div>
+      <h3 class="font-display text-xl font-semibold mb-2">Indie makers</h3>
+      <p class="text-sm text-muted leading-relaxed mb-4 flex-1">
+        Switching between 5 SaaS dashboards all day. Was that "work" or
+        admin? SiteLogs splits Tools from Leisure so you see the real
+        creative hours.
+      </p>
+      <a href="./use-cases.html#indie" class="text-sm text-ember hover:underline font-medium mt-auto">Read the indie story →</a>
+    </div>
+    <div class="border border-line rounded-2xl p-7 bg-white/40 flex flex-col">
+      <div class="text-3xl mb-4" aria-hidden>🧠</div>
+      <h3 class="font-display text-xl font-semibold mb-2">Knowledge workers</h3>
+      <p class="text-sm text-muted leading-relaxed mb-4 flex-1">
+        GitHub, Notion, Slack, Linear, Jira. Focus blocks (≥ 10 min
+        continuous) surface where you actually shipped vs where you just
+        replied to pings.
+      </p>
+      <a href="./use-cases.html#knowledge" class="text-sm text-ember hover:underline font-medium mt-auto">Read the knowledge-worker story →</a>
+    </div>
+    <div class="border border-line rounded-2xl p-7 bg-white/40 flex flex-col">
+      <div class="text-3xl mb-4" aria-hidden>🎓</div>
+      <h3 class="font-display text-xl font-semibold mb-2">Students & researchers</h3>
+      <p class="text-sm text-muted leading-relaxed mb-4 flex-1">
+        Felt productive? The 24×7 heatmap and category trends will tell
+        you in numbers what the diary won't admit.
+      </p>
+      <a href="./use-cases.html#students" class="text-sm text-ember hover:underline font-medium mt-auto">Read the student story →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 5. Feature deep-dive (alternating) ═══ -->
+<section class="w-full max-w-6xl mx-auto px-6 py-24 border-t border-line">
+  <div class="max-w-3xl mb-16">
+    <p class="font-ui text-xs uppercase tracking-[0.22em] text-ember mb-3">What it does</p>
+    <h2 class="font-display text-3xl md:text-4xl font-semibold tracking-tight leading-tight">
+      Five things you couldn't do before.
+    </h2>
+  </div>
+
+  <!-- Feature 1: Overview / narrative -->
+  <div class="grid md:grid-cols-2 gap-12 items-center mb-24">
+    <div>
+      <div class="text-xs uppercase tracking-[0.18em] text-ember mb-3 font-semibold">Today, in one line</div>
+      <h3 class="font-display text-2xl md:text-3xl font-semibold mb-4 leading-tight">
+        A narrative summary that reads like a sentence.
+      </h3>
+      <p class="text-muted leading-relaxed mb-4">
+        Forget pivot tables. The Overview opens with one English line:
+        <em>"Online 1h 14m today, ↑ 12% vs your average Tuesday. Longest
+        focus: github.com 47m."</em> Then you scroll for depth.
+      </p>
+      <ul class="text-sm text-muted space-y-2 leading-relaxed">
+        <li>✓ Per-period totals (today / 7d / 30d / year / all-time)</li>
+        <li>✓ Period-over-period comparison vs your weekday baseline</li>
+        <li>✓ Top domains and top URLs side by side</li>
+      </ul>
+    </div>
+    <a href="./assets/screenshots/01-overview.png" target="_blank" class="block border border-line rounded-2xl overflow-hidden bg-ink shadow-[0_16px_32px_-12px_rgba(31,29,26,0.15)]">
+      <img src="./assets/screenshots/01-overview.png" alt="Overview dashboard" class="w-full h-auto" />
+    </a>
+  </div>
+
+  <!-- Feature 2: Tab organizer (image left) -->
+  <div class="grid md:grid-cols-2 gap-12 items-center mb-24">
+    <a href="./assets/screenshots/02-tabs.png" target="_blank" class="block md:order-1 border border-line rounded-2xl overflow-hidden bg-ink shadow-[0_16px_32px_-12px_rgba(31,29,26,0.15)]">
+      <img src="./assets/screenshots/02-tabs.png" alt="Tab organizer" class="w-full h-auto" />
+    </a>
+    <div class="md:order-2">
+      <div class="text-xs uppercase tracking-[0.18em] text-ember mb-3 font-semibold">One-click tab cleanup</div>
+      <h3 class="font-display text-2xl md:text-3xl font-semibold mb-4 leading-tight">
+        From 47 tabs to 6 groups in 3 seconds.
+      </h3>
+      <p class="text-muted leading-relaxed mb-4">
+        ✨ Organize closes duplicate URLs, then groups remaining tabs by
+        domain into Chrome's native colored tab groups. Pinned tabs stay put.
+        Save the current window as a named Session, restore it later — your
+        whole workspace, named and revivable.
+      </p>
+      <ul class="text-sm text-muted space-y-2 leading-relaxed">
+        <li>✓ Dedupe by URL, keeping the most-recently-used tab</li>
+        <li>✓ Auto-name groups by brand (e.g. <code class="bg-line px-1 rounded text-xs">mail.google.com → Google</code>)</li>
+        <li>✓ Sessions = named workspace snapshots</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Feature 3: Category trends -->
+  <div class="grid md:grid-cols-2 gap-12 items-center mb-24">
+    <div>
+      <div class="text-xs uppercase tracking-[0.18em] text-ember mb-3 font-semibold">Category trends</div>
+      <h3 class="font-display text-2xl md:text-3xl font-semibold mb-4 leading-tight">
+        Watch your attention shift, week over week.
+      </h3>
+      <p class="text-muted leading-relaxed mb-4">
+        AI · Tech · Social · Video · Docs · Shopping · Work — every visited
+        domain gets a category from a built-in 200+ entry dictionary, fully
+        overridable with your own domain or regex rules. Stacked area
+        charts, weekly baselines, period-over-period comparisons.
+      </p>
+      <ul class="text-sm text-muted space-y-2 leading-relaxed">
+        <li>✓ 13 built-in categories, fully customizable</li>
+        <li>✓ Per-category daily focus budgets with progress bars</li>
+        <li>✓ Tag any domain or URL freeform on top</li>
+      </ul>
+    </div>
+    <a href="./assets/screenshots/03-category-trend.png" target="_blank" class="block border border-line rounded-2xl overflow-hidden bg-ink shadow-[0_16px_32px_-12px_rgba(31,29,26,0.15)]">
+      <img src="./assets/screenshots/03-category-trend.png" alt="Category trends" class="w-full h-auto" />
+    </a>
+  </div>
+
+  <!-- Feature 4: Behavior signals (image left) -->
+  <div class="grid md:grid-cols-2 gap-12 items-center mb-24">
+    <a href="./assets/screenshots/04-behavior.png" target="_blank" class="block md:order-1 border border-line rounded-2xl overflow-hidden bg-ink shadow-[0_16px_32px_-12px_rgba(31,29,26,0.15)]">
+      <img src="./assets/screenshots/04-behavior.png" alt="Behavior signals" class="w-full h-auto" />
+    </a>
+    <div class="md:order-2">
+      <div class="text-xs uppercase tracking-[0.18em] text-ember mb-3 font-semibold">Behavior signals</div>
+      <h3 class="font-display text-2xl md:text-3xl font-semibold mb-4 leading-tight">
+        Habits, surfaced — not buried.
+      </h3>
+      <p class="text-muted leading-relaxed mb-4">
+        Focus blocks (≥ 10 min continuous reading) surface as "best work
+        today". New domains in the last window highlight what you started.
+        Lapsed domains highlight what you dropped. Attention quality scores
+        the productive-vs-leisure split.
+      </p>
+      <ul class="text-sm text-muted space-y-2 leading-relaxed">
+        <li>✓ Focus blocks ≥ 10 min auto-detected</li>
+        <li>✓ New / Lapsed domain pairs (recent vs prior 3× window)</li>
+        <li>✓ Productive vs leisure split, idle gaps removed</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Feature 5: Custom new tab + pinned -->
+  <div class="grid md:grid-cols-2 gap-12 items-center">
+    <div>
+      <div class="text-xs uppercase tracking-[0.18em] text-ember mb-3 font-semibold">Replaces Chrome's new tab</div>
+      <h3 class="font-display text-2xl md:text-3xl font-semibold mb-4 leading-tight">
+        Every new tab is a tiny status meeting with yourself.
+      </h3>
+      <p class="text-muted leading-relaxed mb-4">
+        SiteLogs takes over the new tab page with a personal dashboard:
+        today's stats, your pinned shortcuts, top domains, the heatmap. No
+        Google search bar, no sponsored links, no doomscroll feed — just
+        your numbers.
+      </p>
+      <ul class="text-sm text-muted space-y-2 leading-relaxed">
+        <li>✓ Pin frequently-used sites for one-click access</li>
+        <li>✓ Drag-and-drop tile reordering</li>
+        <li>✓ Bilingual UI — switch EN ↔ 中文 in Settings</li>
+      </ul>
+    </div>
+    <a href="./assets/screenshots/05-license.png" target="_blank" class="block border border-line rounded-2xl overflow-hidden bg-ink shadow-[0_16px_32px_-12px_rgba(31,29,26,0.15)]">
+      <img src="./assets/screenshots/05-license.png" alt="License panel" class="w-full h-auto" />
+    </a>
+  </div>
+</section>
+
+<!-- ═══ 6. Comparison ═══ -->
+<section class="w-full max-w-5xl mx-auto px-6 py-24 border-t border-line">
+  <div class="max-w-3xl mb-12">
+    <p class="font-ui text-xs uppercase tracking-[0.22em] text-ember mb-3">How SiteLogs differs</p>
+    <h2 class="font-display text-3xl md:text-4xl font-semibold tracking-tight leading-tight">
+      Why we built it instead of installing one of the others.
+    </h2>
+    <p class="mt-4 text-muted leading-relaxed">
+      Most "web time tracker" extensions ship your browsing data to a server,
+      lock the good features behind a subscription, and only do tracking —
+      you'd need a second extension for tab management. SiteLogs is a
+      different shape on every dimension.
+    </p>
+  </div>
+
+  <div class="border border-line rounded-2xl overflow-hidden bg-white/40">
+    <div class="grid grid-cols-[1fr_120px_120px] text-sm">
+      <div class="px-6 py-4 bg-stone/20 font-display font-semibold">Capability</div>
+      <div class="px-6 py-4 bg-stone/20 font-display font-semibold text-center text-ember">SiteLogs</div>
+      <div class="px-6 py-4 bg-stone/20 font-display font-semibold text-center text-muted">Typical</div>
+
+      <div class="px-6 py-5 border-t border-line">
+        <div class="font-medium">100% local-first</div>
+        <div class="text-xs text-muted mt-0.5">Your browsing data never leaves the device</div>
+      </div>
+      <div class="px-6 py-5 border-t border-line text-center text-2xl text-ember">✓</div>
+      <div class="px-6 py-5 border-t border-line text-center text-muted text-sm">Cloud sync · login required</div>
+
+      <div class="px-6 py-5 border-t border-line">
+        <div class="font-medium">One-time payment</div>
+        <div class="text-xs text-muted mt-0.5">Pay $15 once, use forever</div>
+      </div>
+      <div class="px-6 py-5 border-t border-line text-center text-2xl text-ember">✓</div>
+      <div class="px-6 py-5 border-t border-line text-center text-muted text-sm">Monthly / yearly subscription</div>
+
+      <div class="px-6 py-5 border-t border-line">
+        <div class="font-medium">Tab manager + time stats in one</div>
+        <div class="text-xs text-muted mt-0.5">Dedupe, group, sessions — built in</div>
+      </div>
+      <div class="px-6 py-5 border-t border-line text-center text-2xl text-ember">✓</div>
+      <div class="px-6 py-5 border-t border-line text-center text-muted text-sm">Need a second extension</div>
+
+      <div class="px-6 py-5 border-t border-line">
+        <div class="font-medium">Replaces Chrome's new tab</div>
+        <div class="text-xs text-muted mt-0.5">Personal dashboard, not a popup</div>
+      </div>
+      <div class="px-6 py-5 border-t border-line text-center text-2xl text-ember">✓</div>
+      <div class="px-6 py-5 border-t border-line text-center text-muted text-sm">Just a toolbar popup</div>
+
+      <div class="px-6 py-5 border-t border-line">
+        <div class="font-medium">EN / 中文 bilingual UI</div>
+        <div class="text-xs text-muted mt-0.5">Full localization, switch in Settings</div>
+      </div>
+      <div class="px-6 py-5 border-t border-line text-center text-2xl text-ember">✓</div>
+      <div class="px-6 py-5 border-t border-line text-center text-muted text-sm">English only</div>
+    </div>
+  </div>
+
+  <p class="mt-6 text-sm text-muted">
+    <a href="./compare.html" class="text-ember hover:underline font-medium">Read the full comparison →</a>
+  </p>
+</section>
+
+<!-- ═══ 7. Privacy ═══ -->
+<section id="privacy-callout" class="w-full max-w-6xl mx-auto px-6 py-24 border-t border-line">
+  <div class="max-w-3xl mb-10">
+    <p class="font-ui text-xs uppercase tracking-[0.22em] text-ember mb-3">Privacy by design</p>
+    <h2 class="font-display text-3xl md:text-4xl font-semibold tracking-tight leading-tight">
+      The simplest privacy policy in the category: <span class="text-ember">we don't have a server.</span>
+    </h2>
+  </div>
+  <div class="grid md:grid-cols-2 gap-5">
+    <div class="border border-line rounded-2xl p-6 bg-white/40">
+      <div class="text-2xl mb-3" aria-hidden>🚫</div>
+      <h3 class="font-display text-base font-semibold mb-1.5">No telemetry. No analytics.</h3>
+      <p class="text-sm text-muted leading-relaxed">No third-party SDKs, no event pings, no "anonymous" usage tracking — none of that.</p>
+    </div>
+    <div class="border border-line rounded-2xl p-6 bg-white/40">
+      <div class="text-2xl mb-3" aria-hidden>📦</div>
+      <h3 class="font-display text-base font-semibold mb-1.5">All data lives on your device</h3>
+      <p class="text-sm text-muted leading-relaxed">Visit records sit in your browser's IndexedDB. We have no copy. We can't see what you visit.</p>
+    </div>
+    <div class="border border-line rounded-2xl p-6 bg-white/40">
+      <div class="text-2xl mb-3" aria-hidden>🔄</div>
+      <h3 class="font-display text-base font-semibold mb-1.5">Two outbound calls — that's it</h3>
+      <p class="text-sm text-muted leading-relaxed">Google Fonts CSS (will self-host) and license activation when you pay. Nothing else, ever.</p>
+    </div>
+    <div class="border border-line rounded-2xl p-6 bg-white/40">
+      <div class="text-2xl mb-3" aria-hidden>📤</div>
+      <h3 class="font-display text-base font-semibold mb-1.5">Your data, your rules</h3>
+      <p class="text-sm text-muted leading-relaxed">One click in Settings exports everything as JSON or wipes it clean. Uninstalling removes everything.</p>
+    </div>
+  </div>
+  <p class="mt-8 text-sm text-muted">
+    <a href="./privacy.html" class="text-ember hover:underline font-medium">Read the full Privacy Policy →</a>
+  </p>
+</section>
+
+<!-- ═══ 8. Pricing ═══ -->
+<section id="pricing" class="w-full max-w-5xl mx-auto px-6 py-24 border-t border-line">
+  <div class="max-w-3xl mb-12">
+    <p class="font-ui text-xs uppercase tracking-[0.22em] text-ember mb-3">Pricing</p>
+    <h2 class="font-display text-3xl md:text-4xl font-semibold tracking-tight leading-tight">
+      One price. No subscription. No tiers.
+    </h2>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6 mb-10">
     <div class="border border-line rounded-2xl p-8 bg-white/40">
       <div class="text-sm uppercase tracking-wider text-muted mb-2">Lifetime</div>
       <div class="font-display text-5xl font-semibold mb-1">$15</div>
@@ -320,11 +564,11 @@
         <li>✓ Activate on up to 5 devices</li>
         <li>✓ 30-day money-back guarantee</li>
       </ul>
-      <a href="./checkout.html?variant=lifetime"
-         class="block text-center bg-ink text-cream px-6 py-3 rounded-full font-medium hover:opacity-90">
+      <a href="./checkout.html?variant=lifetime" class="cta-pulse block text-center bg-ink text-cream px-6 py-3 rounded-full font-medium">
         Buy $15 lifetime
       </a>
     </div>
+
     <div class="border-2 border-ember rounded-2xl p-8 bg-ember/5 relative">
       <span class="absolute -top-3 left-6 bg-ember text-cream text-xs px-3 py-1 rounded-full font-medium">Early bird · first 100</span>
       <div class="text-sm uppercase tracking-wider text-ember mb-2">Lifetime · early bird</div>
@@ -335,67 +579,163 @@
         <li>✓ Limited to the first 100 customers</li>
         <li>✓ 30-day money-back guarantee</li>
       </ul>
-      <a href="./checkout.html?variant=early"
-         class="block text-center bg-ember text-cream px-6 py-3 rounded-full font-medium hover:opacity-90">
+      <a href="./checkout.html?variant=early" class="cta-pulse block text-center bg-ember text-cream px-6 py-3 rounded-full font-medium">
         Buy $10 early bird
       </a>
     </div>
   </div>
-  <p class="mt-8 text-sm text-muted max-w-2xl">
-    7-day free trial — no credit card up front. After purchase you'll
-    receive a license key by email; paste it into Settings → License to
-    unlock. Payments are handled by our Merchant of Record partner —
-    SiteLogs never sees your card details.
+
+  <div class="border border-line rounded-2xl p-6 bg-stone/10 max-w-2xl">
+    <div class="flex items-start gap-4">
+      <div class="text-3xl flex-shrink-0" aria-hidden>🛡</div>
+      <div>
+        <div class="font-display text-lg font-semibold mb-1">30-day money-back guarantee</div>
+        <p class="text-sm text-muted leading-relaxed">
+          Not satisfied? Email us within 30 days with your order ID — full
+          refund, no questions asked. <a href="./refund.html" class="text-ember hover:underline">Refund policy</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <p class="mt-6 text-sm text-muted max-w-2xl">
+    7-day free trial — no credit card up front. Payments handled by our
+    Merchant of Record (Paddle); SiteLogs never sees your card details.
   </p>
 </section>
 
-<!-- ═══ Install ═══ -->
-<section id="install" class="w-full max-w-6xl mx-auto px-6 py-24 border-t border-line">
-  <h2 class="font-display text-3xl font-semibold mb-6">Install</h2>
-  <div class="border border-line rounded-2xl p-10 bg-white/40 max-w-2xl">
-    <div class="text-xs uppercase tracking-wider text-muted mb-3">Chrome Web Store</div>
-    <h3 class="font-display text-2xl font-semibold mb-3">One-click install</h3>
-    <p class="text-muted mb-6 leading-relaxed">
-      Install in two clicks from the Chrome Web Store. Your dashboard opens on
-      the next new tab — no signup, no credit card.
-    </p>
-    <a href="https://chromewebstore.google.com/detail/cgmjcajdmdhmojploigcijmghbchmejj" target="_blank" rel="noopener" class="block text-center w-full bg-ink text-cream px-6 py-3 rounded-full hover:opacity-90 font-medium">
-      Add to Chrome
-    </a>
-    <p class="mt-4 text-xs text-muted">
-      Already a customer? Your license activates on the same install when paid checkout opens.
-    </p>
+<!-- ═══ 9. FAQ ═══ -->
+<section class="w-full max-w-4xl mx-auto px-6 py-24 border-t border-line">
+  <div class="mb-10">
+    <p class="font-ui text-xs uppercase tracking-[0.22em] text-ember mb-3">Frequently asked</p>
+    <h2 class="font-display text-3xl md:text-4xl font-semibold tracking-tight leading-tight">
+      Things people ask before installing.
+    </h2>
+  </div>
+
+  <div class="space-y-3">
+    <details class="border border-line rounded-2xl bg-white/40 px-6 py-4 group">
+      <summary class="flex items-center justify-between gap-4 font-medium">
+        <span>Will my browsing data ever leave my device?</span>
+        <span class="faq-arrow text-ember text-2xl leading-none font-light">+</span>
+      </summary>
+      <p class="mt-3 text-sm text-muted leading-relaxed">
+        No. SiteLogs has no server. Visit data lives in your browser's
+        IndexedDB on this device only. The only outbound calls are Google
+        Fonts CSS (will self-host) and our license-key activation flow when
+        you pay. See the <a href="./privacy.html" class="text-ember hover:underline">full Privacy Policy</a>.
+      </p>
+    </details>
+
+    <details class="border border-line rounded-2xl bg-white/40 px-6 py-4 group">
+      <summary class="flex items-center justify-between gap-4 font-medium">
+        <span>Is this a subscription?</span>
+        <span class="faq-arrow text-ember text-2xl leading-none font-light">+</span>
+      </summary>
+      <p class="mt-3 text-sm text-muted leading-relaxed">
+        No. $15 once, yours forever. Includes every current and future
+        feature. The first 100 customers get early-bird $10.
+      </p>
+    </details>
+
+    <details class="border border-line rounded-2xl bg-white/40 px-6 py-4 group">
+      <summary class="flex items-center justify-between gap-4 font-medium">
+        <span>Can I use one license on multiple devices?</span>
+        <span class="faq-arrow text-ember text-2xl leading-none font-light">+</span>
+      </summary>
+      <p class="mt-3 text-sm text-muted leading-relaxed">
+        Yes — up to 5 devices on a single license key. Free up a slot from
+        Settings → License → Deactivate this device.
+      </p>
+    </details>
+
+    <details class="border border-line rounded-2xl bg-white/40 px-6 py-4 group">
+      <summary class="flex items-center justify-between gap-4 font-medium">
+        <span>Can I export or wipe my data?</span>
+        <span class="faq-arrow text-ember text-2xl leading-none font-light">+</span>
+      </summary>
+      <p class="mt-3 text-sm text-muted leading-relaxed">
+        Yes — Settings → Data → Export JSON dumps everything; Wipe all data
+        clears IndexedDB and chrome.storage. Uninstalling the extension
+        also removes everything stored in your browser.
+      </p>
+    </details>
+
+    <details class="border border-line rounded-2xl bg-white/40 px-6 py-4 group">
+      <summary class="flex items-center justify-between gap-4 font-medium">
+        <span>What if I don't like it?</span>
+        <span class="faq-arrow text-ember text-2xl leading-none font-light">+</span>
+      </summary>
+      <p class="mt-3 text-sm text-muted leading-relaxed">
+        30-day no-questions-asked refund. Email us with your order ID and
+        we'll process it the same day. <a href="./refund.html" class="text-ember hover:underline">Refund policy</a>.
+      </p>
+    </details>
+
+    <details class="border border-line rounded-2xl bg-white/40 px-6 py-4 group">
+      <summary class="flex items-center justify-between gap-4 font-medium">
+        <span>Does my visit data sync across devices?</span>
+        <span class="faq-arrow text-ember text-2xl leading-none font-light">+</span>
+      </summary>
+      <p class="mt-3 text-sm text-muted leading-relaxed">
+        No — and on purpose. Your settings (rules, tags, pinned sites,
+        budgets) sync via Chrome Sync if you have it on. Visit records
+        stay on each device, so the maintainer never has access to them.
+      </p>
+    </details>
+  </div>
+
+  <p class="mt-8 text-sm text-muted">
+    <a href="./faq.html" class="text-ember hover:underline font-medium">Read all 20+ questions →</a>
+  </p>
+</section>
+
+<!-- ═══ 10. Final CTA ═══ -->
+<section class="w-full max-w-6xl mx-auto px-6 py-24 border-t border-line">
+  <div class="rounded-3xl bg-ink text-cream p-12 md:p-16 text-center relative overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.07] pointer-events-none" style="background-image: radial-gradient(circle at 20% 30%, #d97757 0%, transparent 50%), radial-gradient(circle at 80% 70%, #d97757 0%, transparent 50%);"></div>
+    <div class="relative">
+      <p class="font-ui text-xs uppercase tracking-[0.22em] text-ember mb-4">Ready?</p>
+      <h2 class="font-display text-3xl md:text-5xl font-semibold tracking-tight leading-tight max-w-2xl mx-auto">
+        See where your hours actually went today.
+      </h2>
+      <p class="mt-5 text-cream/70 text-lg max-w-xl mx-auto">
+        Install in two clicks. Browse normally for a few minutes. Open a
+        new tab. There's your day.
+      </p>
+      <div class="mt-10 flex flex-wrap items-center justify-center gap-3">
+        <a href="https://chromewebstore.google.com/detail/cgmjcajdmdhmojploigcijmghbchmejj" target="_blank" rel="noopener" class="cta-pulse inline-flex items-center gap-2 bg-ember text-cream px-8 py-4 rounded-full font-medium text-base">
+          Add to Chrome — Free
+        </a>
+        <a href="#pricing" class="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-cream/20 text-cream hover:bg-cream/10 transition-colors text-base">
+          See pricing
+        </a>
+      </div>
+      <p class="mt-6 text-sm text-cream/50">7-day free trial · no credit card · 30-day money-back</p>
+    </div>
   </div>
 </section>
 
 <!-- ═══ Footer ═══ -->
-<footer class="w-full max-w-6xl mx-auto px-6 py-12 border-t border-line">
+<footer class="w-full max-w-6xl mx-auto px-6 py-12 mt-12 border-t border-line">
   <div class="flex flex-wrap items-center justify-between gap-6 text-sm text-muted">
     <div class="flex items-center gap-2">
       <img src="./assets/logo.svg" alt="" class="w-5 h-5" />
       <span>© 2026 SiteLogs</span>
     </div>
-    <div class="flex flex-wrap gap-6">
+    <div class="flex flex-wrap gap-x-6 gap-y-2">
       <a href="./guide.html" class="hover:text-ink">Guide</a>
+      <a href="./use-cases.html" class="hover:text-ink">Use cases</a>
+      <a href="./compare.html" class="hover:text-ink">Compare</a>
+      <a href="./faq.html" class="hover:text-ink">FAQ</a>
       <a href="./pricing.html" class="hover:text-ink">Pricing</a>
-    <a href="./privacy.html" class="hover:text-ink">Privacy</a>
+      <a href="./privacy.html" class="hover:text-ink">Privacy</a>
       <a href="./terms.html" class="hover:text-ink">Terms</a>
-    <a href="./contact.html" class="hover:text-ink">Contact</a>
+      <a href="./refund.html" class="hover:text-ink">Refund</a>
+      <a href="./contact.html" class="hover:text-ink">Contact</a>
     </div>
   </div>
 </footer>
-
-<!-- Custom <Feature> via inline component pattern (simulated) -->
-<script>
-  // Replace <Feature> tags with proper markup since this is plain HTML
-  document.querySelectorAll('Feature').forEach(el => {
-    const title = el.getAttribute('title');
-    const body = el.innerHTML;
-    const div = document.createElement('div');
-    div.innerHTML = `<h3 class="font-display text-xl font-semibold mb-2">${title}</h3><p class="text-muted leading-relaxed">${body}</p>`;
-    el.replaceWith(div);
-  });
-</script>
 
 </body>
 </html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>SiteLogs vs typical web-time extensions — Compare</title>
+<meta name="description" content="How SiteLogs differs from typical web-time tracker extensions: 100% local-first, one-time payment, tab manager included, replaces Chrome's new tab, EN/中文 bilingual UI." />
+<link rel="canonical" href="https://siteslogs.com/compare.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="SiteLogs" />
+<meta property="og:title" content="How SiteLogs differs from typical web-time extensions" />
+<meta property="og:description" content="Local-first vs cloud sync · one-time vs subscription · tab manager built in vs separate extension." />
+<meta property="og:url" content="https://siteslogs.com/compare.html" />
+<meta property="og:image" content="https://siteslogs.com/assets/og-image.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://siteslogs.com/assets/og-image.jpg" />
+<link rel="icon" type="image/png" href="./assets/icon-128.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600;700&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: {
+    colors: { ember: '#d97757', cream: '#faf9f5', ink: '#1f1d1a', stone: '#cdc9bf', line: '#e6e2d6', muted: '#6b665a' },
+    fontFamily: { ui: ['Inter','system-ui','sans-serif'], display: ['Lora','Georgia','serif'] },
+  } } };
+</script>
+<style>
+  body { font-family: Inter, system-ui, sans-serif; }
+  h1, h2, h3, .font-display { font-family: Lora, Georgia, serif; }
+  html { scroll-behavior: smooth; }
+  .cta-pulse { transition: transform .15s ease, box-shadow .15s ease; }
+  .cta-pulse:hover { transform: translateY(-1px) scale(1.02); box-shadow: 0 10px 24px -8px rgba(31,29,26,.25); }
+</style>
+</head>
+<body class="bg-cream text-ink antialiased">
+
+<header class="w-full max-w-6xl mx-auto px-6 py-8 flex items-center justify-between">
+  <a href="./" class="flex items-center gap-2.5">
+    <img src="./assets/logo.svg" alt="" class="w-7 h-7" />
+    <span class="font-display text-2xl font-semibold tracking-tight">SiteLogs</span>
+  </a>
+  <nav class="text-sm text-muted hidden md:flex gap-6">
+    <a href="./guide.html" class="hover:text-ink">Guide</a>
+    <a href="./use-cases.html" class="hover:text-ink">Use cases</a>
+    <a href="./pricing.html" class="hover:text-ink">Pricing</a>
+    <a href="./privacy.html" class="hover:text-ink">Privacy</a>
+    <a href="./contact.html" class="hover:text-ink">Contact</a>
+  </nav>
+  <a href="https://chromewebstore.google.com/detail/cgmjcajdmdhmojploigcijmghbchmejj" target="_blank" rel="noopener" class="cta-pulse hidden md:inline-flex items-center gap-1.5 bg-ink text-cream px-4 py-2 rounded-full text-sm font-medium">
+    Add to Chrome
+  </a>
+</header>
+
+<main class="w-full max-w-4xl mx-auto px-6 py-12">
+  <p class="font-ui text-xs uppercase tracking-[0.22em] text-ember mb-4">Compare</p>
+  <h1 class="font-display text-4xl md:text-5xl font-semibold tracking-tight mb-6 leading-[1.1]">
+    SiteLogs vs typical web-time extensions
+  </h1>
+  <p class="text-lg text-muted leading-relaxed max-w-3xl mb-12">
+    There are plenty of "see where your time goes" Chrome extensions. Most
+    of them ship your browsing data to a server, lock the good features
+    behind a subscription, and only do tracking — you'd need a second
+    extension for tab management. SiteLogs is shaped differently on every
+    one of those dimensions. Here's the honest breakdown.
+  </p>
+
+  <!-- Table -->
+  <div class="border border-line rounded-2xl overflow-hidden bg-white/40 mb-16">
+    <div class="grid grid-cols-[1fr_120px_120px] text-sm">
+      <div class="px-6 py-4 bg-stone/20 font-display font-semibold">Capability</div>
+      <div class="px-6 py-4 bg-stone/20 font-display font-semibold text-center text-ember">SiteLogs</div>
+      <div class="px-6 py-4 bg-stone/20 font-display font-semibold text-center text-muted">Typical</div>
+
+      <div class="px-6 py-5 border-t border-line"><div class="font-medium">100% local-first</div></div>
+      <div class="px-6 py-5 border-t border-line text-center text-2xl text-ember">✓</div>
+      <div class="px-6 py-5 border-t border-line text-center text-muted text-sm">Cloud · login</div>
+
+      <div class="px-6 py-5 border-t border-line"><div class="font-medium">One-time payment</div></div>
+      <div class="px-6 py-5 border-t border-line text-center text-2xl text-ember">✓</div>
+      <div class="px-6 py-5 border-t border-line text-center text-muted text-sm">Subscription</div>
+
+      <div class="px-6 py-5 border-t border-line"><div class="font-medium">Tab manager + time stats in one</div></div>
+      <div class="px-6 py-5 border-t border-line text-center text-2xl text-ember">✓</div>
+      <div class="px-6 py-5 border-t border-line text-center text-muted text-sm">Two extensions</div>
+
+      <div class="px-6 py-5 border-t border-line"><div class="font-medium">Replaces Chrome's new tab</div></div>
+      <div class="px-6 py-5 border-t border-line text-center text-2xl text-ember">✓</div>
+      <div class="px-6 py-5 border-t border-line text-center text-muted text-sm">Toolbar popup</div>
+
+      <div class="px-6 py-5 border-t border-line"><div class="font-medium">EN / 中文 bilingual UI</div></div>
+      <div class="px-6 py-5 border-t border-line text-center text-2xl text-ember">✓</div>
+      <div class="px-6 py-5 border-t border-line text-center text-muted text-sm">English only</div>
+    </div>
+  </div>
+
+  <!-- Detailed explanations -->
+  <article class="space-y-12">
+    <div>
+      <h2 class="font-display text-2xl md:text-3xl font-semibold tracking-tight mb-4">1. Local-first means your data has nowhere else to go.</h2>
+      <p class="text-muted leading-relaxed mb-3">
+        Most web-time extensions need a server. They have to — that's where
+        cross-browser sync comes from, that's where the dashboard runs,
+        that's where the analytics get aggregated. The trade-off: every
+        URL you visit is sent to that server, indexed there, and tied to
+        your account.
+      </p>
+      <p class="text-muted leading-relaxed">
+        SiteLogs has no server. Visit records sit in your browser's
+        IndexedDB on the device they were created on. The publisher has no
+        copy. We can't see what you visit even if subpoenaed. The
+        trade-off goes the other way: cross-device sync of visit history
+        isn't a feature we offer (settings sync, but visit data doesn't).
+        For most people, that's exactly the trade they want.
+      </p>
+    </div>
+
+    <div>
+      <h2 class="font-display text-2xl md:text-3xl font-semibold tracking-tight mb-4">2. One-time payment vs subscription.</h2>
+      <p class="text-muted leading-relaxed mb-3">
+        $15 once, yours forever. Includes every current and future
+        feature. No tier, no upsell modal, no "you've reached your free
+        limit" wall on day 31.
+      </p>
+      <p class="text-muted leading-relaxed">
+        Subscription extensions in this category usually run $5–$10/mo or
+        $40–$100/yr. After the second year, our $15 has paid for itself
+        many times over. We picked one-time pricing on purpose: a tool
+        that's in your browser every day shouldn't be a recurring
+        decision.
+      </p>
+    </div>
+
+    <div>
+      <h2 class="font-display text-2xl md:text-3xl font-semibold tracking-tight mb-4">3. Tab manager + time stats — same extension.</h2>
+      <p class="text-muted leading-relaxed mb-3">
+        If you want time tracking AND tab management today, you're
+        installing two extensions, paying two subscriptions, and learning
+        two UIs. SiteLogs ships both: one-click "Organize" closes
+        duplicate tabs, groups remaining ones by domain into Chrome's
+        native colored tab groups, and you can save the current window as
+        a named Session for later restore.
+      </p>
+      <p class="text-muted leading-relaxed">
+        Why bundle them? Because the same person who wants to see "how
+        long am I in Google Docs" usually also wants "let me clean up
+        these 47 tabs first." Treating them as separate concerns ignores
+        how people actually browse.
+      </p>
+    </div>
+
+    <div>
+      <h2 class="font-display text-2xl md:text-3xl font-semibold tracking-tight mb-4">4. Replace Chrome's new tab page, not just a popup.</h2>
+      <p class="text-muted leading-relaxed mb-3">
+        Most tracking extensions live in a toolbar popup — you click the
+        icon, see a tiny window, and close it. Awareness is a deliberate
+        action you have to remember to take. So you don't.
+      </p>
+      <p class="text-muted leading-relaxed">
+        SiteLogs takes over the new tab page. Every time you open a tab,
+        you see your day's stats, your pinned shortcuts, your top domains,
+        the heatmap. No remembering, no friction. Awareness becomes the
+        default state of "I'm about to open a new tab."
+      </p>
+    </div>
+
+    <div>
+      <h2 class="font-display text-2xl md:text-3xl font-semibold tracking-tight mb-4">5. EN / 中文 bilingual — every label, switchable.</h2>
+      <p class="text-muted leading-relaxed mb-3">
+        Most productivity extensions in the Chrome Web Store are
+        English-only. Chinese-speaking users (a huge slice of the
+        productivity-tooling market) are stuck with un-localized UIs that
+        feel like a translation barrier on top of a habit-change tool.
+      </p>
+      <p class="text-muted leading-relaxed">
+        SiteLogs has full Chinese localization for every label, message,
+        category name, and FAQ. Switch in Settings. The data stays the
+        same; only the language changes.
+      </p>
+    </div>
+  </article>
+
+  <!-- CTA -->
+  <div class="mt-16 rounded-3xl bg-ink text-cream p-10 md:p-14 text-center">
+    <h2 class="font-display text-2xl md:text-3xl font-semibold tracking-tight mb-4">Try it for 7 days, free.</h2>
+    <p class="text-cream/70 mb-8 max-w-md mx-auto">No credit card up front. If you don't fall in love with the new tab dashboard, cancel and walk away.</p>
+    <a href="https://chromewebstore.google.com/detail/cgmjcajdmdhmojploigcijmghbchmejj" target="_blank" rel="noopener" class="cta-pulse inline-flex items-center gap-2 bg-ember text-cream px-8 py-4 rounded-full font-medium">
+      Add to Chrome — Free
+    </a>
+  </div>
+</main>
+
+<footer class="w-full max-w-6xl mx-auto px-6 py-12 mt-12 border-t border-line">
+  <div class="flex flex-wrap items-center justify-between gap-6 text-sm text-muted">
+    <div class="flex items-center gap-2">
+      <img src="./assets/logo.svg" alt="" class="w-5 h-5" />
+      <span>© 2026 SiteLogs</span>
+    </div>
+    <div class="flex flex-wrap gap-x-6 gap-y-2">
+      <a href="./guide.html" class="hover:text-ink">Guide</a>
+      <a href="./use-cases.html" class="hover:text-ink">Use cases</a>
+      <a href="./compare.html" class="hover:text-ink">Compare</a>
+      <a href="./faq.html" class="hover:text-ink">FAQ</a>
+      <a href="./pricing.html" class="hover:text-ink">Pricing</a>
+      <a href="./privacy.html" class="hover:text-ink">Privacy</a>
+      <a href="./contact.html" class="hover:text-ink">Contact</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

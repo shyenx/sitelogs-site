@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>SiteLogs — Frequently asked questions</title>
+<meta name="description" content="Everything people ask about SiteLogs before installing — privacy, pricing, devices, refunds, sync, history import, browser support, and more." />
+<link rel="canonical" href="https://siteslogs.com/faq.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="SiteLogs" />
+<meta property="og:title" content="SiteLogs FAQ" />
+<meta property="og:description" content="Privacy, pricing, devices, refunds, sync — everything in one place." />
+<meta property="og:url" content="https://siteslogs.com/faq.html" />
+<meta property="og:image" content="https://siteslogs.com/assets/og-image.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://siteslogs.com/assets/og-image.jpg" />
+<link rel="icon" type="image/png" href="./assets/icon-128.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600;700&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: {
+    colors: { ember: '#d97757', cream: '#faf9f5', ink: '#1f1d1a', stone: '#cdc9bf', line: '#e6e2d6', muted: '#6b665a' },
+    fontFamily: { ui: ['Inter','system-ui','sans-serif'], display: ['Lora','Georgia','serif'] },
+  } } };
+</script>
+<style>
+  body { font-family: Inter, system-ui, sans-serif; }
+  h1, h2, h3, .font-display { font-family: Lora, Georgia, serif; }
+  html { scroll-behavior: smooth; }
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+  details[open] .faq-arrow { transform: rotate(45deg); }
+  .faq-arrow { transition: transform .2s ease; }
+</style>
+</head>
+<body class="bg-cream text-ink antialiased">
+
+<header class="w-full max-w-6xl mx-auto px-6 py-8 flex items-center justify-between">
+  <a href="./" class="flex items-center gap-2.5">
+    <img src="./assets/logo.svg" alt="" class="w-7 h-7" />
+    <span class="font-display text-2xl font-semibold tracking-tight">SiteLogs</span>
+  </a>
+  <nav class="text-sm text-muted hidden md:flex gap-6">
+    <a href="./guide.html" class="hover:text-ink">Guide</a>
+    <a href="./use-cases.html" class="hover:text-ink">Use cases</a>
+    <a href="./pricing.html" class="hover:text-ink">Pricing</a>
+    <a href="./privacy.html" class="hover:text-ink">Privacy</a>
+    <a href="./contact.html" class="hover:text-ink">Contact</a>
+  </nav>
+  <a href="https://chromewebstore.google.com/detail/cgmjcajdmdhmojploigcijmghbchmejj" target="_blank" rel="noopener" class="hidden md:inline-flex items-center gap-1.5 bg-ink text-cream px-4 py-2 rounded-full text-sm font-medium hover:opacity-90">
+    Add to Chrome
+  </a>
+</header>
+
+<main class="w-full max-w-3xl mx-auto px-6 py-12">
+  <p class="font-ui text-xs uppercase tracking-[0.22em] text-ember mb-4">FAQ</p>
+  <h1 class="font-display text-4xl md:text-5xl font-semibold tracking-tight mb-6 leading-[1.1]">
+    Frequently asked questions
+  </h1>
+  <p class="text-lg text-muted leading-relaxed mb-12">
+    Everything people ask before (and after) installing. If your question
+    isn't here, <a href="./contact.html" class="text-ember hover:underline">drop us an email</a>
+    or <a href="https://github.com/shyenx/sitelogs-site/issues/new" class="text-ember hover:underline">open an issue</a>.
+  </p>
+
+  <!-- Privacy -->
+  <h2 class="font-display text-xl font-semibold mb-4 mt-12">Privacy & data</h2>
+  <div class="space-y-3">
+    <details class="border border-line rounded-2xl bg-white/40 px-6 py-4">
+      <summary class="flex items-center justify-between gap-4 font-medium"><span>Will my browsing data ever leave my device?</span><span class="faq-arrow text-ember text-2xl leading-none font-light">+</span></summary>
+      <p class="mt-3 text-sm text-muted leading-relaxed">No. SiteLogs has no server. Visit data lives in your browser's IndexedDB on this device only. The only outbound calls are Google Fonts CSS (will self-host) and our license-key activation flow when you pay. See the <a href="./privacy.html" class="text-ember hover:underline">full Privacy Policy</a>.</p>
+    </details>
+    <details class="border border-line rounded-2xl bg-white/40 px-6 py-4">
+      <summary class="flex items-center justify-between gap-4 font-medium"><span>Does my visit data sync across devices?</span><span class="faq-arrow text-ember text-2xl leading-none font-light">+</span></summary>
+      <p class="mt-3 text-sm text-muted leading-relaxed">No — and on purpose. Your settings (rules, tags, pinned sites, budgets) sync via Chrome Sync if you have it on. Visit records stay on each device, so the maintainer never has access to them.</p>
+    </details>
+    <details class="border border-line rounded-2xl bg-white/40 px-6 py-4">
+      <summary class="flex items-center justify-between gap-4 font-medium"><span>Can I export or wipe my data?</span><span class="faq-arrow text-ember text-2xl leading-none font-light">+</span></summary>
+      <p class="mt-3 text-sm text-muted leading-relaxed">Yes — Settings → Data → Export JSON dumps everything. Wipe all data clears IndexedDB and chrome.storage. Uninstalling the extension also removes everything stored in your browser.</p>
+    </details>
+    <details class="border border-line rounded-2xl bg-white/40 px-6 py-4">
+      <summary class="flex items-center justify-between gap-4 font-medium"><span>What does SiteLogs <em>not</em> record?</span><span class="faq-arrow text-ember text-2xl leading-none font-light">+</span></summary>
+      <p class="mt-3 text-sm text-muted leading-relaxed">Page content, form input, passwords, cookies, network requests, anything from <code>chrome://</code> / <code>chrome-extension://</code> / <code>file://</code> URLs, anything from incognito windows, and anything from domains on your ignore list.</p>
+    </details>
+    <details class="border border-line rounded-2xl bg-white/40 px-6 py-4">
+      <summary class="flex items-center justify-between gap-4 font-medium"><span>Can I import my existing Chrome history?</span><span class="faq-arrow text-ember text-2xl leading-none font-light">+</span></summary>
+      <p class="mt-3 text-sm text-muted leading-relaxed">Yes. On first install, a modal asks if you'd like to pre-populate the dashboard from your Chrome history (30 days / 90 days / 1 year / All). It's opt-in — pick "Skip" if you'd rather start fresh. You can also re-run the import any time from Settings → Data.</p>
+    </details>
+  </div>
+
+  <!-- Pricing -->
+  <h2 class="font-display text-xl font-semibold mb-4 mt-12">Pricing & purchase</h2>
+  <div class="space-y-3">
+    <details class="border border-line rounded-2xl bg-white/40 px-6 py-4">
+      <summary class="flex items-center justify-between gap-4 font-medium"><span>Is this a subscription?</span><span class="faq-arrow text-ember text-2xl leading-none font-light">+</span></summary>
+      <p class="mt-3 text-sm text-muted leading-relaxed">No. $15 once, yours forever. Includes every current and future feature. The first 100 customers get early-bird $10.</p>
+    </details>
+    <details class="border border-line rounded-2xl bg-white/40 px-6 py-4">
+      <summary class="flex items-center justify-between gap-4 font-medium"><span>What's the trial period?</span><span class="faq-arrow text-ember text-2xl leading-none font-light">+</span></summary>
+      <p class="mt-3 text-sm text-muted leading-relaxed">7 days from install. Full feature set, no credit card up front. After day 7 the dashboard locks and continued use requires a license. We don't auto-charge anything.</p>
+    </details>
+    <details class="border border-line rounded-2xl bg-white/40 px-6 py-4">
+      <summary class="flex items-center justify-between gap-4 font-medium"><span>What if I don't like it?</span><span class="faq-arrow text-ember text-2xl leading-none font-light">+</span></summary>
+      <p class="mt-3 text-sm text-muted leading-relaxed">30-day no-questions-asked refund. Email us with your order ID and we'll process it the same day. <a href="./refund.html" class="text-ember hover:underline">Refund policy</a>.</p>
+    </details>
+    <details class="border border-line rounded-2xl bg-white/40 px-6 py-4">
+      <summary class="flex items-center justify-between gap-4 font-medium"><span>How do payments work?</span><span class="faq-arrow text-ember text-2xl leading-none font-light">+</span></summary>
+      <p class="mt-3 text-sm text-muted leading-relaxed">Checkout is hosted by our Merchant of Record (Paddle). They handle credit card processing, tax / VAT collection in your country, invoicing, and chargebacks. SiteLogs never sees your card details.</p>
+    </details>
+    <details class="border border-line rounded-2xl bg-white/40 px-6 py-4">
+      <summary class="flex items-center justify-between gap-4 font-medium"><span>What payment methods do you accept?</span><span class="faq-arrow text-ember text-2xl leading-none font-light">+</span></summary>
+      <p class="mt-3 text-sm text-muted leading-relaxed">All major cards (Visa / Mastercard / Amex / UnionPay), PayPal, Apple Pay, Google Pay, WeChat Pay, plus regional methods (iDEAL, Bancontact, Pix, BLIK, MB Way, Korean local cards) — whichever Paddle offers in your country at checkout.</p>
+    </details>
+  </div>
+
+  <!-- Activation -->
+  <h2 class="font-display text-xl font-semibold mb-4 mt-12">Activation & devices</h2>
+  <div class="space-y-3">
+    <details class="border border-line rounded-2xl bg-white/40 px-6 py-4">
+      <summary class="flex items-center justify-between gap-4 font-medium"><span>Can I use one license on multiple devices?</span><span class="faq-arrow text-ember text-2xl leading-none font-light">+</span></summary>
+      <p class="mt-3 text-sm text-muted leading-relaxed">Yes — up to 5 devices on a single license key. Free up a slot from Settings → License → Deactivate this device.</p>
+    </details>
+    <details class="border border-line rounded-2xl bg-white/40 px-6 py-4">
+      <summary class="flex items-center justify-between gap-4 font-medium"><span>I lost my license key. How do I recover it?</span><span class="faq-arrow text-ember text-2xl leading-none font-light">+</span></summary>
+      <p class="mt-3 text-sm text-muted leading-relaxed">Search your inbox for "SiteLogs license" — the original purchase confirmation email contains it. If you can't find it, <a href="./contact.html" class="text-ember hover:underline">email us</a> with the address you used to buy.</p>
+    </details>
+    <details class="border border-line rounded-2xl bg-white/40 px-6 py-4">
+      <summary class="flex items-center justify-between gap-4 font-medium"><span>I reinstalled and lost a device slot. What do I do?</span><span class="faq-arrow text-ember text-2xl leading-none font-light">+</span></summary>
+      <p class="mt-3 text-sm text-muted leading-relaxed">Reinstalling generates a new device ID, so it counts as a new slot. If you've used all 5 slots, <a href="./contact.html" class="text-ember hover:underline">email us</a> and we'll reset slots on your license key — usually within a business day.</p>
+    </details>
+  </div>
+
+  <!-- Browser & compatibility -->
+  <h2 class="font-display text-xl font-semibold mb-4 mt-12">Browser & compatibility</h2>
+  <div class="space-y-3">
+    <details class="border border-line rounded-2xl bg-white/40 px-6 py-4">
+      <summary class="flex items-center justify-between gap-4 font-medium"><span>Which browsers are supported?</span><span class="faq-arrow text-ember text-2xl leading-none font-light">+</span></summary>
+      <p class="mt-3 text-sm text-muted leading-relaxed">Chrome 120+ today. Edge / Brave / Vivaldi (Chromium-based) typically work but aren't officially supported yet. Firefox / Safari ports are on the roadmap, no ETA.</p>
+    </details>
+    <details class="border border-line rounded-2xl bg-white/40 px-6 py-4">
+      <summary class="flex items-center justify-between gap-4 font-medium"><span>Does it work in incognito?</span><span class="faq-arrow text-ember text-2xl leading-none font-light">+</span></summary>
+      <p class="mt-3 text-sm text-muted leading-relaxed">No — Chrome blocks extensions in incognito by default, and we don't override that. It's intentional: if you're in incognito, you presumably don't want anything (including SiteLogs) tracking the session.</p>
+    </details>
+    <details class="border border-line rounded-2xl bg-white/40 px-6 py-4">
+      <summary class="flex items-center justify-between gap-4 font-medium"><span>Will it slow down my browser?</span><span class="faq-arrow text-ember text-2xl leading-none font-light">+</span></summary>
+      <p class="mt-3 text-sm text-muted leading-relaxed">No measurable slowdown. The extension runs a tiny content script (a few hundred bytes) that posts visibility events to a background service worker. The dashboard only renders when you open a new tab. Total disk: < 200 KB.</p>
+    </details>
+  </div>
+
+  <!-- Features -->
+  <h2 class="font-display text-xl font-semibold mb-4 mt-12">Features</h2>
+  <div class="space-y-3">
+    <details class="border border-line rounded-2xl bg-white/40 px-6 py-4">
+      <summary class="flex items-center justify-between gap-4 font-medium"><span>What's "active time" exactly?</span><span class="faq-arrow text-ember text-2xl leading-none font-light">+</span></summary>
+      <p class="mt-3 text-sm text-muted leading-relaxed">Time the tab was focused AND you weren't idle. Chrome's native idle API marks you idle after 60s without keyboard or mouse input — SiteLogs pauses the timer for that period. So if you open a tab and walk away for 10 min, those 10 min don't count.</p>
+    </details>
+    <details class="border border-line rounded-2xl bg-white/40 px-6 py-4">
+      <summary class="flex items-center justify-between gap-4 font-medium"><span>How does category classification work?</span><span class="faq-arrow text-ember text-2xl leading-none font-light">+</span></summary>
+      <p class="mt-3 text-sm text-muted leading-relaxed">A 200+ entry built-in dictionary maps domains to one of 13 categories (AI, Tech, Social, Video, News, Shopping, Docs, Tools, Work, Finance, Research, Leisure, Other). You can override any domain with a custom rule, or use regex rules for URL patterns. First match wins.</p>
+    </details>
+    <details class="border border-line rounded-2xl bg-white/40 px-6 py-4">
+      <summary class="flex items-center justify-between gap-4 font-medium"><span>Can I pin sites to the new tab?</span><span class="faq-arrow text-ember text-2xl leading-none font-light">+</span></summary>
+      <p class="mt-3 text-sm text-muted leading-relaxed">Yes — hover any "hot site" tile on the Overview, click the pin icon. Pinned tiles stay first, even if usage drops. Settings sync via Chrome Sync if you have it on, so pins follow your profile across machines.</p>
+    </details>
+    <details class="border border-line rounded-2xl bg-white/40 px-6 py-4">
+      <summary class="flex items-center justify-between gap-4 font-medium"><span>What's a "Session"?</span><span class="faq-arrow text-ember text-2xl leading-none font-light">+</span></summary>
+      <p class="mt-3 text-sm text-muted leading-relaxed">A named snapshot of all tabs in a window. Use it to switch contexts (work / research / personal). Save: Tabs page → "Save as session". Restore: Sessions page → "Restore in new window". Sessions are stored locally and don't sync.</p>
+    </details>
+    <details class="border border-line rounded-2xl bg-white/40 px-6 py-4">
+      <summary class="flex items-center justify-between gap-4 font-medium"><span>Does SiteLogs support Chinese?</span><span class="faq-arrow text-ember text-2xl leading-none font-light">+</span></summary>
+      <p class="mt-3 text-sm text-muted leading-relaxed">Yes — full Chinese localization for every label, message, category name, and FAQ. Switch in Settings.</p>
+    </details>
+    <details class="border border-line rounded-2xl bg-white/40 px-6 py-4">
+      <summary class="flex items-center justify-between gap-4 font-medium"><span>Are there keyboard shortcuts?</span><span class="faq-arrow text-ember text-2xl leading-none font-light">+</span></summary>
+      <p class="mt-3 text-sm text-muted leading-relaxed">Yes. Press <kbd class="bg-line px-1 rounded text-xs">?</kbd> in the dashboard to see all of them — Overview / Tabs / History / Sessions / Tags / Settings each have a leader-key combo.</p>
+    </details>
+  </div>
+
+  <!-- CTA -->
+  <div class="mt-16 rounded-3xl bg-ink text-cream p-10 md:p-14 text-center">
+    <h2 class="font-display text-2xl md:text-3xl font-semibold tracking-tight mb-4">Still have questions?</h2>
+    <p class="text-cream/70 mb-8 max-w-md mx-auto">Reach out — we read every message.</p>
+    <a href="./contact.html" class="inline-flex items-center gap-2 bg-ember text-cream px-8 py-4 rounded-full font-medium hover:opacity-90 transition-opacity">
+      Contact us
+    </a>
+  </div>
+</main>
+
+<footer class="w-full max-w-6xl mx-auto px-6 py-12 mt-12 border-t border-line">
+  <div class="flex flex-wrap items-center justify-between gap-6 text-sm text-muted">
+    <div class="flex items-center gap-2">
+      <img src="./assets/logo.svg" alt="" class="w-5 h-5" />
+      <span>© 2026 SiteLogs</span>
+    </div>
+    <div class="flex flex-wrap gap-x-6 gap-y-2">
+      <a href="./guide.html" class="hover:text-ink">Guide</a>
+      <a href="./use-cases.html" class="hover:text-ink">Use cases</a>
+      <a href="./compare.html" class="hover:text-ink">Compare</a>
+      <a href="./faq.html" class="hover:text-ink">FAQ</a>
+      <a href="./pricing.html" class="hover:text-ink">Pricing</a>
+      <a href="./privacy.html" class="hover:text-ink">Privacy</a>
+      <a href="./contact.html" class="hover:text-ink">Contact</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
