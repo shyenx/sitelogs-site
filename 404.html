@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>SiteLogs — Page not found</title>
+<title>SiteLogs — Lost in the river of time (404)</title>
+<meta name="description" content="That page isn't here — but the dashboard, the manifesto, and the install page all are. SiteLogs is a local-first browsing analytics extension for Chrome." />
+<meta name="robots" content="noindex" />
 <link rel="icon" type="image/png" href="./assets/icon-128.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,22 +13,86 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
   tailwind.config = { theme: { extend: {
-    colors: { ember: '#d97757', cream: '#faf9f5', ink: '#1f1d1a', muted: '#6b665a' },
+    colors: { ember: '#d97757', cream: '#faf9f5', ink: '#1f1d1a', stone: '#cdc9bf', line: '#e6e2d6', muted: '#6b665a' },
+    fontFamily: { ui: ['Inter','system-ui','sans-serif'], display: ['Fraunces','Lora','Georgia','serif'] },
   } } };
 </script>
 <style>
   body { font-family: Inter, system-ui, sans-serif; }
-  h1 { font-family: 'Fraunces', 'Newsreader', Georgia, serif; font-optical-sizing: auto; }
+  h1, h2, .font-display { font-family: 'Fraunces', 'Newsreader', Georgia, serif; font-optical-sizing: auto; }
+  .cta-pulse { transition: transform .15s ease, box-shadow .15s ease; }
+  .cta-pulse:hover { transform: translateY(-1px) scale(1.02); box-shadow: 0 10px 24px -8px rgba(31,29,26,.25); }
 </style>
 </head>
-<body class="bg-cream text-ink min-h-screen flex items-center justify-center">
-  <main class="text-center px-6">
-    <img src="./assets/logo.svg" alt="" class="w-12 h-12 mx-auto mb-6" />
-    <h1 class="text-6xl font-semibold mb-4">404</h1>
-    <p class="text-muted text-lg mb-8">That page isn't here.</p>
-    <a href="./" class="inline-block bg-ink text-cream px-6 py-2.5 rounded-full font-medium hover:opacity-90">
-      Go home
+<body class="bg-cream text-ink antialiased">
+
+<header class="w-full max-w-7xl mx-auto px-6 py-8 flex items-center justify-between">
+  <a href="./" class="flex items-center gap-2.5">
+    <img src="./assets/logo.svg" alt="" class="w-7 h-7" />
+    <span class="font-display text-2xl font-semibold tracking-tight">SiteLogs</span>
+  </a>
+  <nav class="text-sm text-muted hidden md:flex gap-6">
+    <a href="./guide.html" class="hover:text-ink">Guide</a>
+    <a href="./use-cases.html" class="hover:text-ink">Use cases</a>
+    <a href="./manifesto.html" class="hover:text-ink">Why</a>
+    <a href="./pricing.html" class="hover:text-ink">Pricing</a>
+  </nav>
+  <a href="https://chromewebstore.google.com/detail/cgmjcajdmdhmojploigcijmghbchmejj" target="_blank" rel="noopener" class="cta-pulse hidden md:inline-flex items-center gap-1.5 bg-ink text-cream px-4 py-2 rounded-full text-sm font-medium">
+    Add to Chrome
+  </a>
+</header>
+
+<main class="w-full max-w-2xl mx-auto px-6 py-20 md:py-32 text-center">
+  <p class="font-ui text-xs uppercase tracking-[0.22em] text-ember mb-6">404 · lost in the river of time</p>
+  <h1 class="font-display text-6xl md:text-8xl font-semibold tracking-tight mb-6">404</h1>
+  <p class="font-display italic text-muted text-xl md:text-2xl leading-relaxed mb-12 max-w-lg mx-auto">
+    Even a careful cartographer drops a lamp now and then.
+    <br/>This page isn't on the map.
+  </p>
+
+  <div class="border-t border-line/60 pt-12">
+    <p class="font-ui text-xs uppercase tracking-[0.18em] text-muted mb-6">Maybe you wanted one of these</p>
+    <div class="grid sm:grid-cols-2 gap-3 text-left max-w-md mx-auto">
+      <a href="./" class="block border border-line rounded-xl p-4 bg-white/40 hover:border-ink transition-colors">
+        <div class="font-display font-semibold text-sm mb-1">🏠 Home</div>
+        <div class="text-xs text-muted">What SiteLogs does + screenshots</div>
+      </a>
+      <a href="./manifesto.html" class="block border border-line rounded-xl p-4 bg-white/40 hover:border-ink transition-colors">
+        <div class="font-display font-semibold text-sm mb-1">📜 Why we built it</div>
+        <div class="text-xs text-muted">The 4-paragraph manifesto</div>
+      </a>
+      <a href="./guide.html" class="block border border-line rounded-xl p-4 bg-white/40 hover:border-ink transition-colors">
+        <div class="font-display font-semibold text-sm mb-1">📖 Guide</div>
+        <div class="text-xs text-muted">Install, activate, shortcuts, FAQ</div>
+      </a>
+      <a href="./pricing.html" class="block border border-line rounded-xl p-4 bg-white/40 hover:border-ink transition-colors">
+        <div class="font-display font-semibold text-sm mb-1">💸 Pricing</div>
+        <div class="text-xs text-muted">$15 lifetime · 30-day MBG</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="mt-12">
+    <a href="https://chromewebstore.google.com/detail/cgmjcajdmdhmojploigcijmghbchmejj" target="_blank" rel="noopener" class="cta-pulse inline-flex items-center gap-2 bg-ink text-cream px-6 py-3 rounded-full font-medium">
+      Add to Chrome — Free
     </a>
-  </main>
+  </div>
+</main>
+
+<footer class="w-full max-w-7xl mx-auto px-6 py-12 mt-12 border-t border-line">
+  <div class="flex flex-wrap items-center justify-between gap-6 text-sm text-muted">
+    <div class="flex items-center gap-2">
+      <img src="./assets/logo.svg" alt="" class="w-5 h-5" />
+      <span>© 2026 SiteLogs · Built by <a href="https://github.com/shyenx" target="_blank" rel="noopener" class="hover:text-ink underline-offset-2 hover:underline">shyenx</a></span>
+    </div>
+    <div class="flex flex-wrap gap-x-6 gap-y-2">
+      <a href="./manifesto.html" class="hover:text-ink">Why</a>
+      <a href="./guide.html" class="hover:text-ink">Guide</a>
+      <a href="./pricing.html" class="hover:text-ink">Pricing</a>
+      <a href="./privacy.html" class="hover:text-ink">Privacy</a>
+      <a href="./contact.html" class="hover:text-ink">Contact</a>
+    </div>
+  </div>
+</footer>
 </body>
 </html>
