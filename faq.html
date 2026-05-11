@@ -15,6 +15,24 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="https://siteslogs.com/assets/og-image.jpg" />
 <link rel="icon" type="image/png" href="./assets/icon-128.png" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Will my browsing data ever leave my device?","acceptedAnswer":{"@type":"Answer","text":"No. SiteLogs has no server. Visit data lives in your browser's IndexedDB on this device only. The only outbound calls are Google Fonts CSS and our license-key activation flow when you pay."}},
+    {"@type":"Question","name":"Does my visit data sync across devices?","acceptedAnswer":{"@type":"Answer","text":"No, on purpose. Your settings sync via Chrome Sync if enabled. Visit records stay on each device so the maintainer never has access to them."}},
+    {"@type":"Question","name":"Can I export or wipe my data?","acceptedAnswer":{"@type":"Answer","text":"Yes. Settings, Data, Export JSON dumps everything. Wipe all data clears IndexedDB and chrome.storage. Uninstalling the extension also removes everything stored in your browser."}},
+    {"@type":"Question","name":"Is SiteLogs a subscription?","acceptedAnswer":{"@type":"Answer","text":"No. 15 dollars once, yours forever. Includes every current and future feature. The first 100 customers get early-bird 10 dollars."}},
+    {"@type":"Question","name":"What is the trial period?","acceptedAnswer":{"@type":"Answer","text":"7 days from install. Full feature set, no credit card up front. After day 7 the dashboard locks and continued use requires a license."}},
+    {"@type":"Question","name":"What if I do not like SiteLogs?","acceptedAnswer":{"@type":"Answer","text":"30-day no-questions-asked refund. Email us with your order ID and we will process it the same day."}},
+    {"@type":"Question","name":"Can I use one license on multiple devices?","acceptedAnswer":{"@type":"Answer","text":"Yes, up to 5 devices on a single license key. Free a slot anytime from Settings, License, Deactivate this device."}},
+    {"@type":"Question","name":"Which browsers are supported?","acceptedAnswer":{"@type":"Answer","text":"Chrome 120+ today. Chromium-based browsers like Edge, Brave, Vivaldi typically work but are not officially supported. Firefox and Safari ports are on the roadmap."}},
+    {"@type":"Question","name":"Does SiteLogs support Chinese?","acceptedAnswer":{"@type":"Answer","text":"Yes, full Chinese localization for every label, message, category name, and FAQ. Switch in Settings."}},
+    {"@type":"Question","name":"Can I import my existing Chrome history?","acceptedAnswer":{"@type":"Answer","text":"Yes. On first install, a modal asks if you would like to pre-populate the dashboard from your Chrome history (30 days, 90 days, 1 year, or All). Opt-in. You can re-run the import any time from Settings, Data."}}
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&display=swap" rel="stylesheet" />
