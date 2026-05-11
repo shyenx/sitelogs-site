@@ -13,6 +13,32 @@
 
 ---
 
+## [0.1.3] — 2026-05-11
+
+### Changed
+
+- **Brand-soul copy refresh** on the three transactional touchpoints
+  the user actually reads — first-run history-import modal, dashboard
+  empty state, and license-key delivery email. All three now match
+  the manifesto's "memory tool / cartographer" voice instead of the
+  default "thanks for using our productivity tool" feel. Bilingual.
+- **License email signature** changed from a generic "The SiteLogs
+  team" to **shyenx**, with a closing italic line: *"May your map of
+  hours come back richer than you remember."*
+
+### Site polish
+
+- All outbound `target="_blank"` links got `rel="noopener"` (security:
+  closes the tabnabbing window).
+- `/404.html` rewritten as a branded recovery page with the
+  cartographer voice ("Even a careful cartographer drops a lamp now
+  and then") and a 4-tile recovery grid pointing readers at Home /
+  Why / Guide / Pricing.
+- Language toggle (EN/中) is now visible on mobile — the previous
+  `hidden md:inline-flex` kept it desktop-only.
+
+---
+
 ## Marketing site · 2026-05-10
 
 > Pure marketing-site rebuild. **No extension changes.** Extension remains on v0.1.2.
