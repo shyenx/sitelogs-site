@@ -13,6 +13,31 @@
 
 ---
 
+## [0.1.4] — 2026-05-11
+
+### Changed
+
+- **CWS listing title + short summary** rewritten for store-search SEO.
+  Title: `SiteLogs` → `SiteLogs · Local-first time tracker + tabs`.
+  Summary: rewritten to lead with "Local-first browsing analytics +
+  one-click tab organizer" — the two highest-volume keywords for the
+  category, with the privacy wedge kept in front.
+
+### Unchanged
+
+- **No functional changes.** Same code as 0.1.3, only the
+  `manifest.json` `name` and `description` strings were updated.
+- Same privacy posture, same features, same data shape.
+
+### Background
+
+CWS internal search weights `name` and `description` heavily. The old
+title carried zero search-volume keywords, so users searching for
+"time tracker" or "tab manager" in the Chrome Web Store never saw us
+in results. This release fixes the discoverability gap.
+
+---
+
 ## [0.1.3] — 2026-05-11
 
 ### Changed
