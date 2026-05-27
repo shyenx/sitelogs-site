@@ -41,6 +41,21 @@
 
   <div id="status" class="text-sm text-muted">Loading checkout…</div>
 
+  <div id="discount-applied" class="hidden mt-4 inline-flex items-center gap-2 text-sm text-ember">
+    <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.293 9.293a1 1 0 011.414 0L8 11.586l6.293-6.293a1 1 0 111.414 1.414l-7 7a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+    <span>Discount <code id="discount-code" class="font-medium"></code> applied</span>
+  </div>
+
+  <details id="manual-code" class="mt-8 max-w-sm mx-auto text-sm text-muted">
+    <summary class="cursor-pointer hover:text-ink select-none">Have a discount code?</summary>
+    <form id="discount-form" class="mt-4 flex gap-2">
+      <input type="text" id="discount-input" placeholder="e.g. FRIEND" autocomplete="off" autocapitalize="characters"
+             class="flex-1 border border-line rounded-md px-3 py-2 text-ink uppercase tracking-wide focus:outline-none focus:border-ember" />
+      <button type="submit" class="bg-ink text-cream px-4 py-2 rounded-md text-sm font-medium hover:opacity-90">Apply</button>
+    </form>
+    <p class="mt-2 text-xs text-stone">Reloads the page with the code applied.</p>
+  </details>
+
   <div id="error" class="hidden mt-6 max-w-md mx-auto border border-rose-300 bg-rose-50 text-rose-700 rounded-lg p-4 text-sm text-left"></div>
 </main>
 
@@ -63,9 +78,32 @@
   const params = new URLSearchParams(location.search);
   const variant = params.get('variant') === 'early' ? 'early' : 'lifetime';
   const priceId = variant === 'early' ? PRICE_EARLY_BIRD : PRICE_LIFETIME;
+  // Magic-link discount: ?discount=FRIEND auto-applies the code in Paddle.
+  // Codes are normalized to UPPERCASE since Paddle stores them that way.
+  const discountCode = (params.get('discount') || '').trim().toUpperCase() || null;
 
   const status = document.getElementById('status');
   const errorBox = document.getElementById('error');
+  const discountApplied = document.getElementById('discount-applied');
+  const discountCodeEl = document.getElementById('discount-code');
+  const manualCodeDetails = document.getElementById('manual-code');
+  const discountForm = document.getElementById('discount-form');
+  const discountInput = document.getElementById('discount-input');
+
+  if (discountCode) {
+    discountCodeEl.textContent = discountCode;
+    discountApplied.classList.remove('hidden');
+    manualCodeDetails.classList.add('hidden'); // hide manual entry once applied
+  }
+
+  discountForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const code = (discountInput.value || '').trim().toUpperCase();
+    if (!code) return;
+    const next = new URLSearchParams(location.search);
+    next.set('discount', code);
+    location.search = '?' + next.toString();
+  });
 
   function showError(msg) {
     status.style.display = 'none';
@@ -91,14 +129,21 @@
     });
     // NOTE: do NOT set settings.successUrl here — Paddle's auto-redirect would
     // strip the transaction_id from the URL. Rely on eventCallback above.
-    Paddle.Checkout.open({
+    const checkoutOptions = {
       items: [{ priceId, quantity: 1 }],
       settings: {
         displayMode: 'overlay',
         theme: 'light',
+        allowDiscountRemoval: true,
       },
-    });
-    status.textContent = 'Opening secure checkout…';
+    };
+    if (discountCode) {
+      checkoutOptions.discountCode = discountCode;
+    }
+    Paddle.Checkout.open(checkoutOptions);
+    status.textContent = discountCode
+      ? `Opening secure checkout with ${discountCode} applied…`
+      : 'Opening secure checkout…';
   }
 </script>
 </body>

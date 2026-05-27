@@ -13,6 +13,31 @@
 
 ---
 
+## Marketing site · 2026-05-12
+
+> Pure marketing-site update. **No extension changes.** Extension remains on v0.1.4.
+
+### Added (siteslogs.com)
+
+- **Discount code support on checkout** — `siteslogs.com/checkout.html?discount=CODE`
+  now auto-applies a Paddle discount in the checkout overlay (magic-link style,
+  zero typing for the recipient). The page also surfaces a "Have a discount code?"
+  expandable input as a manual fallback, so paying customers who got a code via
+  email or social can apply it without hunting for Paddle's hidden coupon link.
+- **Visual confirmation** when a discount is applied (small ember-coloured
+  "Discount FRIEND applied" badge above the loader), so recipients know the link
+  worked before the Paddle overlay opens.
+
+### Background
+
+Until today, the Paddle overlay's coupon field was technically present but
+buried — most recipients would never find it. With promo/complimentary
+licenses now flowing through Paddle 100%-off codes (see maintainer
+`PROCESS.md` §6), the checkout page needs to make the discount path
+first-class, not a hidden corner.
+
+---
+
 ## [0.1.4] — 2026-05-11
 
 ### Changed
