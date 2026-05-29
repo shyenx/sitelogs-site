@@ -13,6 +13,50 @@
 
 ---
 
+## [0.1.5] — 2026-05-12
+
+### Fixed
+
+- **Critical · tracker no longer accumulates time on unfocused Chrome.**
+  Earlier versions credited time spent in other apps (VS Code, WeChat,
+  any non-Chrome window) to whichever Chrome tab was last active. The
+  worst real-world case observed was a single download page showing
+  14 hours of "active" time. The heartbeat now bails when Chrome isn't
+  the foreground application, so any miscounting is bounded to the
+  60-second heartbeat interval at worst.
+- **Defensive cap on single-visit time.** Any individual visit's active
+  time is now hard-capped at 4 hours in the database layer. Even if a
+  regression slips back into the tracker, no single row can poison the
+  dashboard with impossible numbers — you'll see a warning in the
+  console instead.
+- **Race condition in tracker state.** All session mutations are now
+  serialized through a single mutex. Concurrent events (heartbeat +
+  tab close + idle change firing at the same moment) can no longer
+  read-modify-write the same record and double-count time.
+- **Crash on the "All time" view.** Power users with 100,000+ visits
+  no longer hit `RangeError: Maximum call stack size exceeded` when
+  switching scope to All (caused by `Math.min(...visits)` argument
+  overflow — replaced with explicit loop).
+- **Switches-per-hour metric** was using accumulated active time as
+  the denominator, producing absurd values like "125 switches/hour"
+  for users who barely browsed. Now uses the scope's wall-clock window.
+
+### Background
+
+The 14-hour download-page report turned into a full data-correctness
+audit of the tracker → DB → queries pipeline. Five Critical-tier
+issues were found and fixed in this release; the remaining
+medium/low-priority issues from the audit (DST bucket alignment, URL
+query-string fragmentation, `chrome.storage.sync` quota guards) are
+queued for v0.1.6 / v0.2.0.
+
+Pre-existing bad rows (visits longer than ~30 minutes that you don't
+recognise) will remain in your IndexedDB until manually deleted —
+this fix prevents new ones but doesn't auto-clean old ones. A
+single-URL delete affordance is on the v0.1.6 list.
+
+---
+
 ## Marketing site · 2026-05-12
 
 > Pure marketing-site update. **No extension changes.** Extension remains on v0.1.4.

@@ -140,6 +140,7 @@ Refund requests, license-key trouble, just-saying-hi: all welcome.
 - Compact tab-group titles (drops TLD, e.g. `mail.google.com` → `Google`)
 - Confetti celebration on activation 🎉
 - `?` keyboard-shortcut help modal
+- Tracker hardening (v0.1.5) — heartbeat now respects Chrome focus, per-visit time capped at 4h, mutex against race conditions, switches-per-hour metric fixed, "All time" view no longer crashes on large datasets
 
 ### 🛠 Next up
 
