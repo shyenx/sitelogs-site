@@ -13,6 +13,31 @@
 
 ---
 
+## [0.1.6] — 2026-05-12
+
+### Fixed (architectural)
+
+- **Tracker now records only time we have positive evidence for.**
+  v0.1.5 capped any single visit at 4 hours to prevent the worst
+  symptoms of service-worker death gaps. That was a band-aid: it still
+  let a dead SW gap inflate a session by up to 4 hours, and it would
+  silently truncate the (rare) legitimate long sessions. v0.1.6
+  replaces the cap with a `lastAliveAt` liveness marker: every signal
+  that could only come from a live, focused Chrome (heartbeat fire,
+  user interaction, tab event) advances the marker. When a session
+  flushes, its effective end time is bounded by `lastAliveAt + 90s`,
+  so any gap longer than ~1.5 heartbeats is dropped as dead time
+  rather than credited as activity. Legitimate long sessions are now
+  unaffected — the heartbeat already slices them into ~1-minute Visit
+  rows, so the dashboard totals still sum to the real wall time.
+
+### Removed
+
+- The arbitrary 4-hour per-visit cap introduced in v0.1.5 — superseded
+  by the liveness-marker fix above.
+
+---
+
 ## [0.1.5] — 2026-05-12
 
 ### Fixed

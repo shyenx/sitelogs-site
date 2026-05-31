@@ -140,7 +140,7 @@ Refund requests, license-key trouble, just-saying-hi: all welcome.
 - Compact tab-group titles (drops TLD, e.g. `mail.google.com` → `Google`)
 - Confetti celebration on activation 🎉
 - `?` keyboard-shortcut help modal
-- Tracker hardening (v0.1.5) — heartbeat now respects Chrome focus, per-visit time capped at 4h, mutex against race conditions, switches-per-hour metric fixed, "All time" view no longer crashes on large datasets
+- Tracker correctness (v0.1.5 + v0.1.6) — heartbeat respects Chrome focus; a `lastAliveAt` liveness marker bounds session end-times so dead service-worker gaps are never credited as active time; state mutations serialized via mutex; "All time" view no longer crashes on large datasets; switches-per-hour uses wall-clock denominator
 
 ### 🛠 Next up
 
