@@ -132,7 +132,7 @@ Refund requests, license-key trouble, just-saying-hi: all welcome.
 
 - Local-first tracking · IndexedDB-only, no telemetry
 - Heatmap, focus blocks, narrative summaries
-- One-click tab organize (dedupe + group + colour-code)
+- One-click tab organize (dedupe + group + colour-code; reuses existing groups instead of duplicating them)
 - EN / 中 bilingual UI
 - Custom new tab dashboard with pinned-site tiles
 - First-run import from Chrome history (opt-in modal, 30/90/365/All)

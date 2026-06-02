@@ -13,6 +13,31 @@
 
 ---
 
+## [0.1.7] — 2026-06-02
+
+### Fixed
+
+- **One-click Organize no longer creates duplicate tab groups.**
+  Every time you ran Organize, it called `chrome.tabs.group()` without
+  a target group id — which *always* creates a brand-new group. So if a
+  "Github" group already existed from a previous Organize, a second
+  identical "Github" group was spawned, and colors reshuffled on every
+  run. Organize now indexes the groups already open in the window by
+  their label and **merges** matching domains into the existing group
+  instead of stacking a new one.
+- **Bonus cleanup of pre-existing duplicates.** Because Organize now
+  folds every tab of a domain into the *first* group with that label,
+  running it once collapses any duplicate groups you'd accumulated —
+  the now-empty extras are auto-removed by Chrome.
+- **Stray single tabs rejoin their group.** A domain with only one open
+  tab is now folded back into its existing group (previously it was
+  left ungrouped because grouping required ≥2 tabs).
+- **No more color flicker.** Reusing a group never recolors or renames
+  it, so groups you've customised stay put. Colors are only assigned to
+  newly created groups.
+
+---
+
 ## [0.1.6] — 2026-05-12
 
 ### Fixed (architectural)
